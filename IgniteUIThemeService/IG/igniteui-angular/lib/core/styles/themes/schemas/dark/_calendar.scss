@@ -1,0 +1,13 @@
+@import '../light/calendar';
+////
+/// @group schemas
+/// @access private
+/// @author <a href="https://github.com/simeonoff" target="_blank">Simeon Simeonoff</a>
+////
+
+/// Generates a dark calendar schema.
+/// @type {Map}
+/// @requires extend
+/// @requires $_light-calendar
+/// @see $default-palette
+$_dark-calendar: extend($_light-calendar, ());

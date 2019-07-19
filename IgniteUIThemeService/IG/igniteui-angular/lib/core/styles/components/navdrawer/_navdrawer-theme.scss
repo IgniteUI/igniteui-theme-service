@@ -1,0 +1,357 @@
+////
+/// @group themes
+/// @access public
+/// @author <a href="https://github.com/simeonoff" target="_blank">Simeon Simeonoff</a>
+/// @author <a href="https://github.com/desig9stein" target="_blank">Marin Popov</a>
+////
+
+/// @param {Map} $palette [$default-palette] - The palette used as basis for styling the component.
+/// @param {Map} $schema [$light-schema] - The schema used as basis for styling the component.
+/// @param {Map} $elevations [$elevations] - The elevations (shadows) map to be used.
+///
+/// @param {Color} $background [null] - The navigation drawer background color.
+/// @param {Color} $border-color [null] - The navigation drawer right border color.
+/// @param {Color} $item-header-text-color [null] - The header's idle text color.
+/// @param {Color} $item-text-color [null] - The item's idle text color.
+/// @param {Color} $item-icon-color [null] - The item's icon color.
+/// @param {Color} $item-active-text-color [null] - The item's active text color.
+/// @param {Color} $item-active-background [null] - The item's active background color.
+/// @param {Color} $item-active-icon-color [null] - The item's icon active color.
+/// @param {Color} $item-hover-background [null] - The item's hover background color.
+/// @param {Color} $item-hover-text-color [null] - The item's hover text color.
+/// @param {Color} $item-hover-icon-color [null] - The item's hover icon color.
+/// @param {Color} $shadow [null] - Sets a custom shadow to be used by the drawer.
+/// @param {border-radius} border-radius [null] - The border radius used for the navdrawer.
+/// @param {border-radius} item-border-radius [null] - The border radius used for the navdrawer item.
+///
+/// @requires $default-palette
+/// @requires $light-schema
+/// @requires apply-palette
+/// @requires extend
+/// @requires text-contrast
+/// @requires igx-elevation
+/// @requires $elevations
+/// @requires round-borders
+///
+/// @example scss Change the background and item colors
+///   $navdrawer-theme: igx-navdrawer-theme(
+///     $background: #2d313a,
+///     $item-active-background: #ecc256,
+///     $item-icon-color: #ecc256
+///   );
+///   // Pass the theme to the igx-navdrawer component mixin
+///   @include igx-navdrawer($navdrawer-theme);
+@function igx-navdrawer-theme(
+    $palette: $default-palette,
+    $schema: $light-schema,
+    $elevations: $elevations,
+
+    $border-radius: null,
+    $item-border-radius: null,
+
+    $background: null,
+    $border-color: null,
+
+    $item-header-text-color: null,
+    $item-text-color: null,
+    $item-icon-color: null,
+
+    $item-active-text-color: null,
+    $item-active-background: null,
+    $item-active-icon-color:null,
+
+    $item-hover-background: null,
+    $item-hover-text-color: null,
+    $item-hover-icon-color: null,
+    $shadow: null
+) {
+    $name: 'igx-navdrawer';
+    $navdrawer-schema: map-get($schema, $name);
+    $theme: apply-palette($navdrawer-schema, $palette);
+
+    $border-radius: round-borders(
+        if($border-radius, $border-radius, map-get($navdrawer-schema, 'border-radius')), 0, 36px
+    );
+
+    $item-border-radius: round-borders(
+        if($item-border-radius, $item-border-radius, map-get($navdrawer-schema, 'item-border-radius')), 0, 24px
+    );
+
+    @if not($item-header-text-color) and $background {
+        $item-header-text-color: text-contrast($background);
+    }
+
+    @if not($item-text-color) and $background {
+        $item-text-color: text-contrast($background);
+    }
+
+    @if not($item-icon-color) and $background {
+        $item-icon-color: text-contrast($background);
+    }
+
+    @if not($item-active-background) and $background {
+        @if type-of($background) == 'color' {
+            $item-active-background: rgba(text-contrast($background), .24);
+        }
+    }
+
+    @if not($item-active-text-color) and $item-active-background {
+        $item-active-text-color: text-contrast($item-active-background);
+    }
+
+    @if not($item-active-icon-color) and $item-active-background {
+        $item-active-icon-color: text-contrast($item-active-background);
+    }
+
+    @if not($item-hover-background) and $background {
+        @if type-of($background) == 'color' {
+            $item-hover-background: rgba(text-contrast($background), .08);
+        }
+    }
+
+    @if not($item-hover-text-color) and $background {
+        $item-hover-text-color: text-contrast($background);
+    }
+
+    @if not($shadow) {
+        $elevation: map-get($navdrawer-schema, 'elevation');
+        $shadow: igx-elevation($elevations, $elevation);
+    }
+
+    @return extend($theme, (
+        name: $name,
+        palette: $palette,
+        border-radius: $border-radius,
+        item-border-radius: $item-border-radius,
+        background: $background,
+        border-color: $border-color,
+        item-text-color:$item-text-color,
+        item-active-text-color: $item-active-text-color,
+        item-active-background: $item-active-background,
+        item-hover-background: $item-hover-background,
+        item-hover-text-color:$item-hover-text-color,
+        item-header-text-color:$item-header-text-color,
+        item-icon-color:$item-icon-color,
+        item-active-icon-color:$item-active-icon-color,
+        item-hover-icon-color: $item-hover-icon-color,
+        shadow: $shadow,
+    ));
+}
+
+/// @param {Map} $theme - The theme used to style the component.
+/// @requires {mixin} igx-root-css-vars
+/// @requires $overlay-color
+/// @requires rem
+/// @requires --var
+@mixin igx-navdrawer($theme) {
+    @include igx-root-css-vars($theme);
+
+    %animation {
+        transition: flex-basis;
+        transition-duration: .3s;
+        transition-timing-function: $ease-out-quad;
+    }
+
+    %aside {
+        position: fixed;
+        height: 100%;
+        max-width: 90%;
+        min-height: 100%;
+        overflow-x: hidden;
+        background: --var($theme, 'background');
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        transition: width, transform;
+        transition-timing-function: $ease-out-quad, $ease-out-quad;
+        box-shadow: --var($theme, 'shadow');
+        border-right: 1px solid --var($theme, 'border-color');
+        border-radius: --var($theme, 'border-radius');
+    }
+
+    %aside-panning {
+        overflow-x: hidden;
+        transition: none;
+    }
+
+    %aside--pinned {
+        position: relative;
+        max-width: 100%;
+        box-shadow: none;
+        z-index: 0;
+    }
+
+    %aside--collapsed--right {
+        transform: translate3d(300px, 0, 0);
+        box-shadow: none;
+    }
+
+    %igx-nav-drawer__aside--collapsed {
+        transform: none;
+        width: 0;
+        overflow: hidden;
+        border: none;
+    }
+
+    %aside--collapsed {
+        transform: translate3d(-300px, 0, 0);
+        box-shadow: none;
+    }
+
+    %aside--right {
+        left: auto;
+        right: 0;
+        border-right: none;
+        border-left: 1px solid --var($theme, 'border-color');
+    }
+
+    %aside--mini {
+        width: rem(60px);
+        transition-duration: .2s, .2s;
+    }
+
+    %aside--normal {
+        width: rem(242px);
+        transition-duration: .3s, .3s;
+    }
+
+    %overlay {
+        opacity: 1;
+        background: $overlay-color;
+        transition: opacity, visibility;
+        transition-duration: .25s, .25s;
+        transition-timing-function: ease-in, step-start;
+        transition-delay: 0s, 0s;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        visibility: visible;
+        z-index: 999;
+    }
+
+    %overlay-panning {
+        transform: translate3d(0, 0, 0);
+        transition: none;
+    }
+
+    %overlay--hidden {
+        transition-timing-function: ease-in-out, step-end;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    %overlay-panning--hidden {
+        /* must be visible during pan.. */
+        visibility: visible;
+    }
+
+    %item {
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        color: --var($theme, 'item-text-color');
+        max-height: rem(48px);
+        padding: rem(12px) rem(16px);
+        cursor: pointer;
+        align-items: center;
+        user-select: none;
+        outline: transparent;
+        white-space: nowrap;
+        border-radius: --var($theme, 'item-border-radius');
+        margin: 8px;
+
+        > igx-icon + span {
+            margin-left: rem(32px);
+        }
+
+        &[dir='rtl'] {
+            > igx-icon + span {
+                margin-right: rem(32px);
+            }
+        }
+
+        igx-icon {
+            color: --var($theme, 'item-icon-color');
+        }
+
+        &:hover,
+        &:focus {
+            background: --var($theme, 'item-hover-background');
+            color: --var($theme, 'item-hover-text-color');
+
+            igx-icon {
+                color: --var($theme, 'item-hover-icon-color');
+            }
+        }
+    }
+
+    %item--active {
+        // should be app primary color
+        color: --var($theme, 'item-active-text-color');
+        background: --var($theme, 'item-active-background');
+
+        igx-icon {
+            color: --var($theme, 'item-active-icon-color');
+        }
+
+        &:focus,
+        &:hover {
+            color: --var($theme, 'item-active-text-color');
+            background: --var($theme, 'item-active-background');
+
+            igx-icon {
+                color: --var($theme, 'item-active-icon-color');
+            }
+        }
+    }
+
+    %item--header {
+        display: block;
+        padding: rem(12px) rem(16px);
+        white-space: nowrap;
+        color: --var($theme, 'item-header-text-color');
+    }
+
+    %style-dummy {
+        height: 0;
+        background: none;
+        box-shadow: none;
+        transition: none;
+        visibility: hidden;
+    }
+}
+
+/// Adds typography styles for the igx-navdrawer component.
+/// Uses the 'subtitle-1', 'subtitle-2'
+/// category from the typographic scale.
+/// @group typography
+/// @param {Map} $type-scale - A typographic scale as produced by igx-type-scale.
+/// @param {Map} $categories [(item: 'subtitle-2', header: 'subtitle-1')] - The categories from the typographic scale used for type styles.
+/// @requires {mixin} igx-type-style
+@mixin igx-navdrawer-typography(
+    $type-scale,
+    $categories: (
+        item: 'subtitle-2',
+        header: 'subtitle-1'
+    )
+) {
+    $item: map-get($categories, 'item');
+    $header: map-get($categories, 'header');
+
+    @include igx-scope('.igx-typography') {
+        %item {
+            @include igx-type-style($type-scale, $item) {
+                margin: 0;
+            }
+        }
+
+        %item--header {
+            @include igx-type-style($type-scale, $header) {
+                margin: 0;
+            }
+        }
+    }
+}

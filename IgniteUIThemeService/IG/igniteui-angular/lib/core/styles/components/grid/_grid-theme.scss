@@ -1,0 +1,2282 @@
+@import './excel-filtering-theme';
+
+////
+/// @group themes
+/// @access public
+/// @author <a href="https://github.com/simeonoff" target="_blank">Simeon Simeonoff</a>
+/// @author <a href="https://github.com/desig9stein" target="_blank">Marin Popov</a>
+////
+
+/// @param {Map} $palette [$default-palette] - The palette used as basis for styling the component.
+/// @param {Map} $schema [$light-schema] - The schema used as basis for styling the component.
+/// @param {Map} $elevations [$elevations] - The elevations (shadows) map to be used.
+///
+/// @param {Color} $header-background [null] - The table header background color.
+/// @param {Color} $header-text-color [null] - The table header text color.
+/// @param {String} $header-border-width [null] - The border width used for header borders.
+/// @param {String} $header-border-style [null] - The border style used for header borders.
+/// @param {Color} $header-border-color [null] - The color used for header borders.
+///
+/// @param {Color} $sorted-header-icon-color [null] - The sort icon color when sorted.
+///
+/// @param {Color} $ghost-header-text-color [null] - The dragged header text color.
+/// @param {Color} $ghost-header-icon-color [null] - The dragged header icon color.
+/// @param {Color} $ghost-header-background [null] - The dragged header background color.
+/// @param {Color} $content-background [null] - The table body background color.
+/// @param {Color} $content-text-color [null] - The table body text color.
+/// @param {Color} $row-odd-background [null] - The background color of odd rows.
+/// @param {Color} $row-even-background [null] - The background color of even rows.
+/// @param {Color} $row-odd-text-color [null] - The text color of odd rows.
+/// @param {Color} $row-even-text-color [null] - The text color of even rows.
+/// @param {Color} $row-selected-background [null] - The selected row background color.
+/// @param {Color} $row-selected-text-color [null] - The selected row text color.
+/// @param {Color} $row-hover-background [null] - The hover row background color.
+/// @param {Color} $row-hover-text-color [null] - The hover row text color.
+/// @param {Color} $row-border-color [null] - The row bottom border color.
+/// @param {Color} $row-highlight [null] - The grid row highlight indication color.
+/// @param {String} $pinned-border-width [null] - The border width of the pinned border.
+/// @param {String} $pinned-border-style [null] - The CSS border style of the pinned border.
+/// @param {Color} $pinned-border-color [null] - The color of the pinned border.
+/// @param {Color} $cell-active-border-color [null] - The border color for the currently active(focused) cell.
+/// @param {Color} $cell-selected-background [null] - The selected cell background color.
+/// @param {Color} $cell-selected-text-color [null] - The selected cell text color.
+/// @param {Color} $resize-line-color [null] - The table header resize line color.
+///
+/// @param {Color} $grouparea-background [null] - The grid group area background color.
+///
+/// @param {Color} $group-row-background [null] - The grid group row background color.
+/// @param {Color} $group-row-selected-background [null] - The drop area background on drop color.
+/// @param {Color} $active-expand-icon-color [null] - The drop area background on drop color.
+/// @param {Color} $active-expand-icon-hover-color [null] - The drop area background on drop color.
+/// @param {Color} $group-label-column-name-text [null] - The grid group row column name text color.
+/// @param {Color} $group-label-icon [null] - The grid group row icon color.
+/// @param {Color} $group-label-text [null] - The grid group row text color.
+///
+/// @param {Color} $expand-all-icon-color [null] - The grid header expand all group rows icon color.
+/// @param {Color} $expand-all-icon-hover-color [null] - The grid header expand all group rows icon hover color.
+/// @param {Color} $expand-icon-color [null] - The grid row expand icon color.
+/// @param {Color} $expand-icon-hover-color [null] - The grid row expand icon hover color.
+/// @param {Color} $group-count-background [null] - The grid group row cont badge background color.
+/// @param {Color} $group-count-text-color [null] - The grid group row cont badge text color.
+/// @param {Color} $drop-area-text-color [null] - The drop area text color.
+/// @param {Color} $drop-area-icon-color [null] - The drop area icon color.
+/// @param {Color} $drop-area-background [null] - The drop area background color.
+/// @param {Color} $drop-area-on-drop-background [null] - The drop area background on drop color.
+/// @param {Color} $tree-filtered-text-color [null] - grouping row background color on focus.
+///
+/// @param {Color} $filtering-header-background [null] - The background color of the filtered column header.
+/// @param {Color} $filtering-header-text-color [null] - The text color color of the filtered column header.
+/// @param {Color} $filtering-row-background [null] - The background color of the filtering row.
+/// @param {Color} $filtering-row-text-color [null] - The text-color color of the filtering row.
+///
+/// @param {Color} $body-summaries-background [null] - The background color of the summary groups located the body.
+/// @param {Color} $body-summaries-text-color [null] - The text color of the summary results located the body.
+/// @param {Color} $root-summaries-background [null] - The background color of the summary groups located the footer.
+/// @param {Color} $root-summaries-text-color [null] - The text color of the summary results located the footer.
+/// @param {box-shadow} $grid-shadow [null] - The shadow of the grid.
+/// @param {box-shadow} $drag-shadow [null] - The shadow used for movable elements (ex. column headers).
+/// @param {color} $row-drag-color [null] - The row drag handle color.
+/// @param {color} $row-ghost-background [null] - The dragged row background color.
+/// @param {border-radius} $drop-area-border-radius [null] - The border radius used for column drop area.
+///
+/// @requires $default-palette
+/// @requires $light-schema
+/// @requires apply-palette
+/// @requires luminance
+/// @requires text-contrast
+/// @requires hexrgba
+/// @requires extend
+/// @requires igx-elevation
+/// @requires $elevations
+@function igx-grid-theme(
+    $palette: $default-palette,
+    $schema: $light-schema,
+
+    $header-background: null,
+    $header-text-color: null,
+    $header-border-width: null,
+    $header-border-style: null,
+    $header-border-color: null,
+
+    $sorted-header-icon-color: null,
+
+    $content-background: null,
+    $content-text-color: null,
+
+    $ghost-header-text-color: null,
+    $ghost-header-icon-color: null,
+    $ghost-header-background: null,
+
+    $row-odd-background: null,
+    $row-even-background: null,
+    $row-odd-text-color: null,
+    $row-even-text-color: null,
+    $row-selected-background: null,
+    $row-selected-text-color: null,
+    $row-hover-background: null,
+    $row-hover-text-color: null,
+    $row-border-color: null,
+
+    $pinned-border-width: null,
+    $pinned-border-style: null,
+    $pinned-border-color: null,
+
+    $cell-active-border-color: null,
+    $cell-selected-background: null,
+    $cell-selected-text-color: null,
+    $cell-editing-background: null,
+
+    $edit-mode-color: null,
+    $edited-row-indicator: null,
+    $cell-edited-value-color: null,
+
+    $resize-line-color: null,
+    $drop-indicator-color: null,
+
+    $grouparea-background: null,
+
+    $group-row-background: null,
+    $group-row-selected-background: null,
+    $group-label-column-name-text: null,
+    $group-label-icon: null,
+    $group-label-text: null,
+
+    $expand-all-icon-color: null,
+    $expand-all-icon-hover-color: null,
+
+    $expand-icon-color: null,
+    $expand-icon-hover-color: null,
+
+    $active-expand-icon-color: null,
+    $active-expand-icon-hover-color: null,
+
+    $group-count-background: null,
+    $group-count-text-color: null,
+
+    $drop-area-text-color: null,
+    $drop-area-icon-color: null,
+    $drop-area-background: null,
+    $drop-area-on-drop-background: null,
+
+    $filtering-header-background: null,
+    $filtering-header-text-color: null,
+    $filtering-row-background: null,
+    $filtering-row-text-color: null,
+    $tree-filtered-text-color: null,
+
+    $body-summaries-background: null,
+    $body-summaries-text-color: null,
+    $root-summaries-background: null,
+    $root-summaries-text-color: null,
+
+    $row-highlight: null,
+    $grid-shadow: null,
+    $drag-shadow: null,
+    $row-ghost-background: null,
+    $row-drag-color: null,
+    $drop-area-border-radius: null,
+) {
+    $name: 'igx-grid';
+    $grid-schema: map-get($schema, $name);
+    $theme: apply-palette($grid-schema, $palette);
+
+    $drop-area-border-radius: round-borders(
+        if($drop-area-border-radius, $drop-area-border-radius, map-get($grid-schema, 'drop-area-border-radius')), 0, 16px
+    );
+
+
+    $tree-selected-filtered-row-text-color: rgba(text-contrast(map-get($theme, 'row-selected-background')), .5);
+    $tree-selected-filtered-cell-text-color: rgba(text-contrast(map-get($theme, 'cell-selected-background')), .5);
+    $row-selected-cell-background: darken-color(map-get($theme, 'row-selected-background'), 8%);
+
+    @if not($ghost-header-icon-color) and $ghost-header-background {
+        @if type-of($ghost-header-background) == 'color' {
+            $ghost-header-icon-color: rgba(text-contrast($ghost-header-background), .07);
+        }
+    }
+
+    @if not($ghost-header-text-color) and $ghost-header-background {
+        $ghost-header-text-color: text-contrast($ghost-header-background);
+    }
+
+    @if $header-background and alpha($header-background) < 1 {
+        $header-background: hexrgba($header-background, igx-color($palette, 'surface'));
+    }
+
+    @if not($header-text-color) and $header-background {
+        $header-text-color: text-contrast($header-background);
+    }
+
+    @if not($header-border-color) and $header-background {
+        @if type-of($header-background) == 'color' {
+            $header-border-color: rgba(text-contrast($header-background), .24);
+        }
+    }
+
+    @if not($content-text-color) and $content-background {
+        $content-text-color: text-contrast($content-background);
+    }
+
+    @if not($row-odd-background) and $content-background {
+        $row-odd-background: $content-background;
+    }
+
+    @if not($row-even-background) and $content-background {
+        $row-even-background: $content-background;
+    }
+
+    @if not($row-odd-text-color) and $row-odd-background {
+        $row-odd-text-color: text-contrast($row-odd-background);
+    }
+
+    @if not($row-even-text-color) and $row-even-background {
+        $row-even-text-color: text-contrast($row-even-background);
+    }
+
+    @if not($row-hover-background) and $content-background {
+        @if type-of($content-background) == 'color' {
+            $row-hover-background: rgba(text-contrast($content-background), .08)
+        }
+    }
+
+    @if not($row-hover-text-color) and $row-hover-background {
+        $row-hover-text-color: text-contrast($row-hover-background);
+    }
+
+    @if not($cell-selected-text-color) and $cell-selected-background {
+        $cell-selected-text-color: text-contrast($cell-selected-background);
+    }
+
+    @if not($row-selected-text-color) and $row-selected-background {
+        $row-selected-text-color: $row-selected-background;
+    }
+
+    @if not($row-border-color) and $content-background {
+        @if type-of($content-background) == 'color' {
+            $row-border-color: rgba(text-contrast($content-background), .08)
+        }
+    }
+
+    @if not($pinned-border-color) and $content-background {
+        @if type-of($content-background) == 'color' {
+            $pinned-border-color: rgba(text-contrast($content-background), .08)
+        }
+    }
+
+    @if not($group-row-background) and $header-background {
+        $group-row-background: $header-background
+    }
+
+    @if not($expand-icon-color) and $group-row-background {
+        $expand-icon-color: text-contrast($group-row-background)
+    }
+
+    @if not($group-label-text) and $group-row-selected-background {
+        $group-label-text: text-contrast($group-row-selected-background)
+    }
+
+    @if not($expand-icon-color) and $group-row-selected-background {
+        $expand-icon-color: text-contrast($group-row-selected-background)
+    }
+
+    @if not($group-count-background) and $group-row-selected-background {
+        $group-count-background: text-contrast($group-row-selected-background);
+    }
+
+    @if not($expand-all-icon-color) and $header-background {
+        @if type-of($header-background) == 'color' {
+            $expand-all-icon-color: rgba(text-contrast($header-background), .87);
+        }
+    }
+
+    @if not($expand-all-icon-hover-color) and $header-background {
+        $expand-all-icon-hover-color: text-contrast($header-background);
+    }
+
+    @if not($group-label-text) and $group-row-background {
+        $group-label-text: text-contrast($group-row-background)
+    }
+
+    @if not($group-count-background) and $group-row-background {
+        $group-count-background: text-contrast($group-row-background);
+    }
+
+    @if not($group-count-text-color) and $group-count-background {
+        $group-count-text-color: text-contrast($group-count-background);
+    }
+
+    @if not($grouparea-background) and $header-background {
+        $grouparea-background: $header-background
+    }
+
+    @if not($drop-area-background) and $grouparea-background {
+        $drop-area-background: text-contrast($grouparea-background);
+    }
+
+    @if not($drop-area-on-drop-background) and $drop-area-background {
+        $drop-area-on-drop-background: $drop-area-background;
+    }
+
+    @if not($drop-area-text-color) and $drop-area-background {
+        $drop-area-text-color: text-contrast($drop-area-background)
+    }
+
+    @if not($drop-area-icon-color) and $drop-area-background {
+        $drop-area-icon-color: text-contrast($drop-area-background)
+    }
+
+    @if not($filtering-header-background) and $header-background {
+        @if type-of($header-background) == 'color' and luminance($header-background) < .5 {
+            $filtering-header-background: hexrgba(lighten-color($header-background, 5%));
+        } @else {
+            $filtering-header-background: hexrgba(darken-color($header-background, 5%));
+        }
+    }
+
+    @if not($filtering-header-text-color) and $filtering-header-background {
+        $filtering-header-text-color: text-contrast($filtering-header-background);
+    }
+
+    @if not($filtering-row-background) and $header-background {
+        @if type-of($header-background) == 'color' and luminance($header-background) < .5 {
+            $filtering-row-background: hexrgba(lighten-color($header-background, 5%));
+        } @else {
+            $filtering-row-background: hexrgba(darken-color($header-background, 5%));
+        }
+    }
+
+    @if not($filtering-row-text-color) and $filtering-row-background {
+        $filtering-row-text-color: text-contrast(hexrgba($filtering-row-background));
+    }
+
+    @if not($body-summaries-text-color) and $body-summaries-background {
+        $body-summaries-text-color: text-contrast($body-summaries-background);
+    }
+
+    @if not($root-summaries-text-color) and $root-summaries-background {
+        $root-summaries-text-color: text-contrast($root-summaries-background);
+    }
+
+    @if not($grid-shadow) {
+        $grid-elevation: map-get($grid-schema, 'grid-elevation');
+        $grid-shadow: igx-elevation($elevations, $grid-elevation);
+    }
+
+    @if not($drag-shadow) {
+        $drag-elevation: map-get($grid-schema, 'drag-elevation');
+        $drag-shadow: igx-elevation($elevations, $drag-elevation);
+    }
+
+    @return extend($theme, (
+        name: $name,
+        palette: $palette,
+
+        header-background: $header-background,
+        header-text-color: $header-text-color,
+        header-border-width: $header-border-width,
+        header-border-style: $header-border-style,
+        header-border-color: $header-border-color,
+
+        sorted-header-icon-color: $sorted-header-icon-color,
+
+        ghost-header-text-color: $ghost-header-text-color,
+        ghost-header-icon-color: $ghost-header-icon-color,
+        ghost-header-background: $ghost-header-background,
+
+        content-background: $content-background,
+        content-text-color: $content-text-color,
+
+        row-odd-background: $row-odd-background,
+        row-even-background: $row-even-background,
+        row-odd-text-color: $row-odd-text-color,
+        row-even-text-color: $row-even-text-color,
+        row-selected-background: $row-selected-background,
+        row-selected-text-color: $row-selected-text-color,
+        row-hover-background: $row-hover-background,
+        row-hover-text-color: $row-hover-text-color,
+        row-border-color: $row-border-color,
+
+        pinned-border-width: $pinned-border-width,
+        pinned-border-style: $pinned-border-style,
+        pinned-border-color: $pinned-border-color,
+
+        cell-active-border-color: $cell-active-border-color,
+        cell-selected-background: $cell-selected-background,
+        cell-editing-background: $cell-editing-background,
+        cell-selected-text-color: $cell-selected-text-color,
+
+        edit-mode-color: $edit-mode-color,
+        edited-row-indicator: $edited-row-indicator,
+        cell-edited-value-color: $cell-edited-value-color,
+
+        resize-line-color: $resize-line-color,
+
+        drop-indicator-color: $drop-indicator-color,
+
+        grouparea-background: $grouparea-background,
+        group-label-column-name-text: $group-label-column-name-text,
+        group-label-icon: $group-label-icon,
+        group-label-text: $group-label-text,
+
+        expand-all-icon-color: $expand-all-icon-color,
+        expand-all-icon-hover-color: $expand-all-icon-hover-color,
+
+        expand-icon-color: $expand-icon-color,
+        expand-icon-hover-color: $expand-icon-hover-color,
+        active-expand-icon-color: $active-expand-icon-color,
+        active-expand-icon-hover-color: $active-expand-icon-hover-color,
+
+        group-count-background: $group-count-background,
+        group-count-text-color: $group-count-text-color,
+
+        group-row-background: $group-row-background,
+        group-row-selected-background: $group-row-selected-background,
+
+        drop-area-text-color: $drop-area-text-color,
+        drop-area-icon-color: $drop-area-icon-color,
+        drop-area-on-drop-background: $drop-area-on-drop-background,
+        drop-area-background: $drop-area-background,
+
+        filtering-header-background: $filtering-header-background,
+        filtering-header-text-color: $filtering-header-text-color,
+        filtering-row-background: $filtering-row-background,
+        filtering-row-text-color: $filtering-row-text-color,
+
+        tree-filtered-text-color: $tree-filtered-text-color,
+        tree-selected-filtered-row-text-color: $tree-selected-filtered-row-text-color,
+        tree-selected-filtered-cell-text-color: $tree-selected-filtered-cell-text-color,
+
+        body-summaries-background: $body-summaries-background,
+        body-summaries-text-color: $body-summaries-text-color,
+        root-summaries-background: $root-summaries-background,
+        root-summaries-text-color: $root-summaries-text-color,
+        row-selected-cell-background: $row-selected-cell-background,
+
+        row-highlight: $row-highlight,
+        grid-shadow: $grid-shadow,
+        drag-shadow: $drag-shadow,
+        row-ghost-background: $row-ghost-background,
+        row-drag-color: $row-drag-color,
+        drop-area-border-radius: $drop-area-border-radius
+    ));
+}
+
+/// @param {Map} $theme - The theme used to style the component.
+/// @requires {mixin} igx-root-css-vars
+/// @requires {mixin} ellipsis
+/// @requires {mixin} _excel-filtering
+/// @requires igx-color
+/// @requires igx-contrast-color
+/// @requires rem
+/// @requires --var
+@mixin igx-grid($theme) {
+    @include igx-root-css-vars($theme);
+
+    $palette: map-get($theme, 'palette');
+    // @debug $theme;
+
+    $grid-shadow: --var($theme, 'grid-shadow');
+
+    $grid-caption-fs: rem(20px);
+    $grid-caption-lh: rem(32px);
+    $grid-caption-padding: rem(16px) rem(24px);
+
+    $grid-head-fs: rem(12px);
+    $grid-head-fw: 600;
+    $transition: all 120ms $ease-in-out-cubic;
+
+    // Cell
+    $grid-cell-align-num: right;
+    $grid-cell-fs: rem(13px);
+    $grid-cell-lh: rem(16px);
+    $grid-cell-pinned-style: 1px solid;
+    $grid-cell-pinned-border-color: igx-color($palette, 'grays', 300);
+
+    $grid-header-border: --var($theme, 'header-border-width') --var($theme, 'header-border-style') --var($theme, 'header-border-color');
+
+    $cell-pin: (
+        style: --var($theme, 'pinned-border-width') --var($theme, 'pinned-border-style'),
+        color: --var($theme, 'pinned-border-color')
+    );
+
+    $grid-header-padding: (
+        comfortable: 0 rem(24px),
+        cosy: 0 rem(16px),
+        compact: 0 rem(12px)
+    );
+
+    $grid-header-height: (
+        comfortable: rem(50px),
+        cosy: rem(40px),
+        compact: rem(32px)
+    );
+
+    $drop-area-height: (
+        comfortable: rem(32px),
+        cosy: rem(24px),
+        compact: rem(24px)
+    );
+
+    $cell-padding-comfortable: rem(24px);
+    $cell-padding-cosy: rem(16px);
+    $cell-padding-compact: rem(12px);
+
+    $grid-cell-padding: (
+        comfortable: 0 $cell-padding-comfortable,
+        cosy: 0 $cell-padding-cosy,
+        compact: 0 $cell-padding-compact
+    );
+
+    $hierarchical-grid-indent: (
+        comfortable: rem(24px),
+        cosy: rem(16px),
+        compact: rem(12px)
+    );
+
+    $hierarchical-action-icon: 24px;
+
+    $grouparea-padding: (
+        comfortable: rem(8px) rem(24px),
+        cosy: rem(8px) rem(16px),
+        compact: rem(4px) rem(12px)
+    );
+
+    $grouparea-min-height: (
+        comfortable: rem(57px),
+        cosy: rem(49px),
+        compact: rem(41px)
+    );
+
+    $grid-grouping-indicator-padding: (
+        comfortable: rem(24px),
+        cosy: rem(16px),
+        compact: rem(12px)
+    );
+
+    $indicator-icon-width: rem(24px);
+    $drag-icon-size: rem(24px);
+    $grouping-padding-right: rem(12px);
+
+    %grid-display {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto auto auto 1fr auto auto;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+        box-shadow: $grid-shadow;
+        outline-style: none;
+        z-index: 0;
+
+        %cbx-display {
+            min-width: rem(20px);
+        }
+    }
+
+    %grid-caption {
+        display: flex;
+        align-items: center;
+        font-size: $grid-caption-fs;
+        line-height: $grid-caption-lh;
+        padding: $grid-caption-padding;
+        grid-row: 1;
+    }
+
+    %grid-thead,
+    %grid-tfoot {
+        position: relative;
+        display: flex;
+        background: --var($theme, 'header-background');
+        color: --var($theme, 'header-text-color');
+        overflow: hidden;
+
+        %grid-row {
+            position: relative;
+            background: inherit;
+            color: inherit;
+            z-index: 2;
+
+            &:hover {
+                background: inherit;
+                color: inherit;
+            }
+        }
+    }
+
+    %grid-thead {
+        border-bottom: $grid-header-border;
+        z-index: 2;
+
+        %grid__group-indentation {
+            &::after {
+                display: none;
+            }
+        }
+
+        %grid__cbx-selection--push {
+            align-items: flex-start;
+            padding-top: (map-get($grid-header-height, 'comfortable') - rem(20px)) / 2;
+        }
+
+        %grid-row:last-of-type {
+            border-bottom: none;
+        }
+    }
+
+    %grid-thead-container {
+        grid-row: 3;
+        display: flex;
+
+        %igx-grid__drag-indicator {
+            cursor: default;
+        }
+
+        %grid-row--mrl {
+            %igx-grid__hierarchical-expander--header,
+            %igx-grid__header-indentation,
+            %igx-grid__row-indentation,
+            %grid__cbx-selection {
+                border-bottom: --var($theme, 'header-border-width') --var($theme, 'header-border-style') --var($theme, 'header-border-color');
+            }
+        }
+    }
+
+    %grid-thead--cosy {
+        %grid__cbx-selection--push--cosy {
+            align-items: flex-start;
+            padding-top: (map-get($grid-header-height, 'cosy') - rem(20px)) / 2;
+        }
+    }
+
+    %grid-thead--compact {
+        %grid__cbx-selection--push--compact {
+            align-items: flex-start;
+            padding-top: (map-get($grid-header-height, 'compact') - rem(20px)) / 2;
+        }
+    }
+
+    %grid-thead-title {
+        flex-basis: auto !important;
+        align-items: center !important;
+        border-bottom: $grid-header-border;
+        height: map-get($grid-header-height, 'comfortable');
+    }
+
+    %grid-thead-title--pinned {
+        border-right: map-get($cell-pin, 'style') map-get($cell-pin, 'color') !important;
+    }
+
+    %grid-thead-title--cosy {
+        height: map-get($grid-header-height, 'cosy');
+        padding: map-get($grid-cell-padding, 'cosy');
+    }
+
+    %grid-thead-title--compact {
+        height: map-get($grid-header-height, 'compact');
+        padding: map-get($grid-cell-padding, 'compact');
+    }
+
+    %grid-thead-group {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    /* We set those with position relative
+    so that the drop indicators be scoped
+    to their respective group. The item
+    being the topmost element, while the
+    subgroup encapsulates children of each
+    thead item and group.
+    */
+    %grid-thead-item {
+        display: flex;
+        flex-flow: column nowrap;
+
+        %grid-thead-group {
+            flex: 1 1 auto;
+        }
+
+        %grid-cell-header {
+            flex: 1 1 auto;
+        }
+
+        %grid-thead-title {
+            flex: 0 0 auto;
+        }
+    }
+
+    %grid-thead-item,
+    %grid-thead-subgroup {
+        position: relative;
+    }
+
+    %grid-tfoot {
+        grid-row: 5;
+        border-top: $grid-header-border;
+        z-index: 10001;
+    }
+
+    %grid-display-container-thead {
+        width: 100%;
+        overflow: visible;
+    }
+
+    %grid-display-container-tr {
+        width: 100%;
+        overflow: visible;
+    }
+
+    %grid-mrl-block {
+        display: grid;
+        background: inherit;
+
+        %grid-thead-item {
+            display: flex;
+        }
+
+        %grid-cell-header {
+            align-items: center;
+            flex-grow: 1;
+            border-bottom: $grid-header-border;
+        }
+
+        %grid-cell-display {
+            border-right: 1px solid --var($theme, 'row-border-color');
+            border-bottom: 1px solid --var($theme, 'row-border-color');
+        }
+    }
+
+    %grid-row--mrl {
+        &%grid-row {
+            border-bottom-color: transparent;
+        }
+
+        %grid__cbx-selection,
+        %igx-grid__row-indentation,
+        %igx-grid__drag-indicator {
+            border-bottom: 1px solid --var($theme, 'row-border-color');
+        }
+    }
+
+    %grid-tbody {
+        position: relative;
+        background: --var($theme, 'content-background');
+        color: --var($theme, 'content-text-color');
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    %grid-tbody-container {
+        position: relative;
+        display: flex;
+        grid-row: 4;
+    }
+
+    %grid-tbody-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: --var($theme, 'content-text-color');
+    }
+
+    %igx-grid__loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        min-height: 100px;
+
+        > %circular-display {
+            width: rem(50);
+            height: rem(50);
+        }
+    }
+
+    %grid-scroll {
+        grid-row: 6;
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        background: --var($theme, 'header-background');
+        z-index: 10001;
+    }
+
+    %grid-thead-thumb {
+        background: --var($theme, 'header-background');
+        border-left: 1px solid igx-color($palette, 'grays', 300);
+    }
+
+    %grid-tfoot-thumb {
+        background: --var($theme, 'header-background');
+        border-left: 1px solid igx-color($palette, 'grays', 300);
+    }
+
+    %grid-tbody-scrollbar {
+        border-left: 1px solid igx-color($palette, 'grays', 300);
+    }
+
+    %grid-scroll-start {
+        background: --var($theme, 'header-background');
+    }
+
+    %grid-scroll-main {
+        igx-display-container {
+            height: 0;
+        }
+
+        igx-horizontal-virtual-helper {
+            height: 100%;
+        }
+    }
+
+    %grid-row {
+        display: flex;
+        background: --var($theme, 'content-background');
+        border-bottom: 1px solid --var($theme, 'row-border-color');
+        outline-style: none;
+        position: relative;
+
+        &:hover {
+            background: --var($theme, 'row-hover-background');
+            color: --var($theme, 'row-hover-text-color');
+        }
+
+        &%igx-grid__tr--ghost {
+            background: --var($theme, 'row-ghost-background');
+        }
+    }
+
+    %igx-grid__drag-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: map-get($grid-cell-padding, 'comfortable');
+        padding-right: 0;
+        // Fix for IE 11
+        min-width: calc(#{$drag-icon-size} + #{$cell-padding-comfortable});
+        background: inherit;
+        z-index: 4;
+        cursor: move;
+
+        %igx-icon-display {
+            width: $drag-icon-size;
+            height: $drag-icon-size;
+            font-size: $drag-icon-size;
+        }
+    }
+
+    %igx-grid__drag-indicator--cosy{
+        padding: map-get($grid-cell-padding, 'cosy');
+        // Fix for IE 11
+        min-width: calc(#{$drag-icon-size} + #{$cell-padding-cosy});
+        padding-right: 0;
+    }
+
+    %igx-grid__drag-indicator--compact {
+        padding: map-get($grid-cell-padding, 'compact');
+        // Fix for IE 11
+        min-width: calc(#{$drag-icon-size} + #{$cell-padding-compact});
+        padding-right: 0;
+    }
+
+    %igx-grid__drag-indicator--header {
+        border-right: $grid-header-border;
+    }
+
+    %igx-grid__hierarchical-expander + %igx-grid__drag-indicator {
+        padding-left: 0;
+        min-width: $drag-icon-size;
+    }
+
+    %igx-grid__drag-indicator--off {
+        color: --var($theme, 'row-drag-color');
+    }
+
+    %igx-grid__tr--drag {
+        opacity: .5;
+    }
+
+    %grid-row--odd {
+        background: --var($theme, 'row-odd-background');
+        color: --var($theme, 'row-odd-text-color');
+    }
+
+    %grid-row--even {
+        background: --var($theme, 'row-even-background');
+        color: --var($theme, 'row-even-text-color');
+    }
+
+    %grid-row--selected {
+        color: --var($theme, 'row-selected-text-color');
+        background: --var($theme, 'row-selected-background');
+
+        %grid-cell--selected,
+        %grid-cell--pinned-selected {
+            background: --var($theme, 'row-selected-cell-background');
+        }
+
+        &:hover {
+            background: --var($theme, 'row-selected-background');
+            color: --var($theme, 'row-selected-text-color');
+        }
+
+        %igx-grid__tree-grouping-indicator {
+            color: --var($theme, 'row-selected-text-color');
+
+            &:hover {
+                color: --var($theme, 'row-selected-text-color');
+            }
+        }
+    }
+
+    %igx-grid__tr--expanded {
+        border-bottom: none;
+    }
+
+    %igx-grid__tr--edit {
+        border-bottom: 1px solid --var($theme, 'edit-mode-color');
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: rem(1);
+            width: 100%;
+            top: rem(-1);
+            left: 0;
+            background: --var($theme, 'edit-mode-color');
+        }
+
+        &%grid-row {
+            border-bottom: 1px solid --var($theme, 'edit-mode-color');
+        }
+
+        %igx-grid__td--editing {
+            border: none;
+
+            %form-group-bundle--focus {
+                caret-color: --var($theme, 'edit-mode-color') !important;
+            }
+
+            %form-group-border {
+                background: --var($theme, 'edit-mode-color') !important;
+            }
+        }
+    }
+
+    %grid-row--edit-mrl {
+        &:first-of-type::after {
+            top: 0;
+            z-index: 5;
+        }
+    }
+
+    %igx-grid__tr--edited {
+        &::before {
+            content: '';
+            position: absolute;
+            width: rem(2);
+            height: 100%;
+            z-index: 10000;
+            background: --var($theme, 'edited-row-indicator');
+        }
+    }
+
+    %grid-row--group {
+        position: relative;
+        background: --var($theme, 'header-background') !important;
+    }
+
+    %igx-grid-row--filtered {
+        %grid-cell-text {
+            color: --var($theme, 'tree-filtered-text-color');
+        }
+
+        %igx-grid__tree-grouping-indicator {
+            color: --var($theme, 'tree-filtered-text-color');
+
+            &:hover {
+                color: --var($theme, 'tree-filtered-text-color');
+            }
+        }
+
+        %grid-cell--selected {
+            %grid-cell-text {
+                color: --var($theme, 'tree-selected-filtered-cell-text-color');
+            }
+
+            %igx-grid__tree-grouping-indicator {
+                color: --var($theme, 'tree-selected-filtered-cell-text-color');
+
+                &:hover {
+                    color: --var($theme, 'tree-selected-filtered-cell-text-color');
+                }
+            }
+        }
+    }
+
+    %grid-row--selected--filtered {
+        %grid-cell-text {
+            color: --var($theme, 'tree-selected-filtered-row-text-color');
+        }
+
+        %igx-grid__tree-grouping-indicator {
+            color: --var($theme, 'tree-selected-filtered-row-text-color');
+
+            &:hover {
+                color: --var($theme, 'tree-selected-filtered-row-text-color');
+            }
+        }
+
+        %grid-cell--selected {
+            %grid-cell-text {
+                color: --var($theme, 'tree-selected-filtered-cell-text-color');
+            }
+
+            %igx-grid__tree-grouping-indicator {
+                color: --var($theme, 'tree-selected-filtered-cell-text-color');
+
+                &:hover {
+                    color: --var($theme, 'tree-selected-filtered-cell-text-color');
+                }
+            }
+        }
+    }
+
+    %igx-grid__tree-grouping-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        outline-style: none;
+        margin-right: rem(8);
+        cursor: pointer;
+
+        color: --var($theme, 'expand-icon-color');
+
+        &:hover {
+            color: --var($theme, 'expand-icon-hover-color')
+        }
+    }
+
+    %igx-grid__tree-loading-indicator {
+        width: rem(24px, 16px);
+        height: rem(24px, 16px);
+        margin-right: rem(8px, 16px);
+
+        %circular-outer {
+            stroke: --var($theme, 'expand-icon-color');
+        }
+
+        > %circular-display {
+            width: rem(24);
+            height: rem(24);
+        }
+    }
+
+    %grid-cell-display {
+        position: relative;
+        display: flex;
+        flex: 1 1 0%;
+        align-items: center;
+        outline-style: none;
+        padding: map-get($grid-cell-padding, 'comfortable');
+        font-size: $grid-cell-fs;
+        line-height: $grid-cell-lh;
+        color: inherit;
+        text-align: left;
+    }
+
+    %igx-grid__td--tree-cell {
+        overflow: hidden;
+    }
+
+    %grid-cell-text {
+        @include ellipsis();
+    }
+
+    %grid-cell-display--cosy {
+        padding: map-get($grid-cell-padding, 'cosy');
+    }
+
+    %grid-cell-display--compact {
+        padding: map-get($grid-cell-padding, 'compact');
+    }
+
+    %grid-cell--fixed-width {
+        flex-grow: 0;
+        outline-style: none;
+    }
+
+    %grid-cell--active {
+        box-shadow: inset 0 0 0 1px --var($theme, 'cell-active-border-color');
+    }
+
+    %grid-cell--selected {
+        color: --var($theme, 'cell-selected-text-color');
+        background: --var($theme, 'cell-selected-background');
+        border-bottom: 0;
+
+        %igx-grid__tree-grouping-indicator {
+            color: --var($theme, 'cell-selected-text-color');
+
+            &:hover {
+                color: --var($theme, 'cell-selected-text-color');
+            }
+        }
+    }
+
+    %igx-grid__td--edited {
+        %grid-cell-text {
+            font-style: italic;
+            color: --var($theme, 'cell-edited-value-color');
+        }
+    }
+
+    %igx-grid__tr--deleted {
+        %grid-cell-text {
+            font-style: italic;
+            color: igx-color(map-get($theme, 'palette'), 'error');
+            text-decoration: line-through;
+        }
+    }
+
+    %igx-grid__td--editing {
+        background: --var($theme, 'cell-editing-background') !important;
+        box-shadow: inset 0 0 0 rem(2px) --var($theme, 'edit-mode-color');
+
+        igx-input-group {
+            width: 100%;
+            margin-top: -16px;
+        }
+
+        %form-group-input {
+            // ignore global typography
+            font-size: $grid-cell-fs !important;
+            line-height: $grid-cell-lh !important;
+        }
+    }
+
+    %grid-cell--pinned {
+        position: relative;
+        background: inherit;
+        z-index: 9999;
+    }
+
+    %grid-cell--pinned-selected {
+        color: --var($theme, 'cell-selected-text-color');
+        background: --var($theme, 'cell-selected-background');
+        border-bottom: 0;
+    }
+
+    %grid-cell--pinned-last {
+        border-right: map-get($cell-pin, 'style') map-get($cell-pin, 'color') !important;
+
+        &%grid-cell--editing {
+            border-right: map-get($cell-pin, 'style') --var($theme, 'cell-selected-background') !important;
+        }
+    }
+
+    %grid-cell-header {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: $grid-head-fs;
+        font-weight: $grid-head-fw;
+        min-width: 0;
+        padding: map-get($grid-header-padding, 'comfortable');
+        border-right: $grid-header-border;
+        outline-style: none;
+        overflow: hidden;
+        transition: color 250ms ease-in-out;
+    }
+
+    %grid-cell-header--filtering {
+        background: --var($theme, 'filtering-header-background');
+        color: --var($theme, 'filtering-header-text-color');
+        z-index: 3;
+    }
+
+    %grid-cell-header--cosy {
+        padding: map-get($grid-header-padding, 'cosy');
+        min-height: map-get($grid-header-height, 'cosy');
+    }
+
+    %grid-cell-header--compact {
+        padding: map-get($grid-header-padding, 'compact');
+        min-height: map-get($grid-header-height, 'compact');
+    }
+
+    %grid-cell-header-title {
+        @include ellipsis();
+        min-width: 3ch;
+        user-select: none;
+        cursor: initial;
+        flex-grow: 1; /* hey IE, the text should take most of the space */
+        // align-self: flex-end; /* commenting out for now on external request */
+        line-height: map-get($grid-header-height, 'comfortable') / $grid-head-fs;
+        opacity: .7;
+        transition: opacity 250ms ease-in-out, color 250ms ease-in-out;
+    }
+
+    %grid-cell-header-title--cosy {
+        line-height: map-get($grid-header-height, 'cosy') / $grid-head-fs;
+    }
+
+    %grid-cell-header-title--compact {
+        line-height: map-get($grid-header-height, 'compact') / $grid-head-fs;
+    }
+
+    %grid-cell-header-icons {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        user-select: none;
+        min-width: 30px; /* sort-icon + filter icon width */
+        height: map-get($grid-header-height, 'comfortable');
+        align-self: flex-end;
+
+        &:empty {
+            min-width: 0;
+        }
+
+        .sort-icon {
+            width: rem(15px);
+            height: rem(15px);
+            min-width: rem(15px); /* yeah IE, it really needs to be 15px wide... */
+            font-size: rem(15px);
+        }
+    }
+
+    %igx-grid__th--sortable {
+        &:hover {
+            cursor: pointer;
+
+            %grid-cell-header-title {
+                cursor: pointer;
+                opacity: 1;
+            }
+
+            .sort-icon {
+                opacity: .7;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    %igx-grid__th--sorted {
+        %grid-cell-header-title {
+            opacity: 1;
+        }
+
+        &:hover{
+            .sort-icon {
+                opacity: 1;
+            }
+        }
+
+        .sort-icon {
+            opacity: 1;
+            color: --var($theme, 'sorted-header-icon-color');
+
+            &:hover {
+                color: --var($theme, 'sortable-header-icon-hover-color');
+            }
+        }
+    }
+
+    %igx-grid__th--filtrable {
+        %grid-cell-header-title {
+            opacity: .7;
+        }
+    }
+
+    %igx-grid__th--filtrable-sortable {
+        .sort-icon {
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .sort-icon {
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+    }
+
+    %grid-cell-header-icons--cosy {
+        height: map-get($grid-header-height, 'cosy');
+    }
+
+    %grid-cell-header-icons--compact {
+        height: map-get($grid-header-height, 'compact');
+    }
+
+    %grid-cell-number {
+        text-align: $grid-cell-align-num;
+        justify-content: flex-end;
+
+        %grid-cell-header-icons {
+            justify-content: flex-start;
+            order: -1;
+
+            .sort-icon {
+                order: 1;
+            }
+        }
+    }
+
+    %grid__cbx-selection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: map-get($grid-header-padding, 'comfortable');
+        border-right: --var($theme, 'header-border-width')
+            --var($theme, 'header-border-style')
+            --var($theme, 'header-border-color');
+        background: inherit;
+        z-index: 4;
+    }
+
+    %grid__cbx-selection--cosy {
+        padding: map-get($grid-header-padding, 'cosy');
+    }
+
+    %grid__cbx-selection--compact {
+        padding: map-get($grid-header-padding, 'compact');
+    }
+
+    %grid__resize-handle {
+        position: absolute;
+        width: 4px;
+        top: 0;
+        right: -2px;
+        height: 100%;
+        z-index: 2;
+    }
+
+    %grid__resize-line {
+        position: absolute;
+        cursor: col-resize;
+        width: 4px;
+        background: --var($theme, 'resize-line-color');
+        z-index: 2;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 96px;
+        }
+
+        &::before {
+            right: 100%;
+        }
+
+        &::after {
+            left: 100%;
+        }
+    }
+
+    %grid-summaries {
+        display: flex;
+        overflow: hidden;
+        background: --var($theme, 'root-summaries-background');
+
+        %igx-grid-summary__result {
+            color: --var($theme, 'root-summaries-text-color');
+        }
+    }
+
+    %grid-summaries--body {
+        background: --var($theme, 'body-summaries-background');
+        border-bottom: 1px dashed --var($theme, 'row-border-color');
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
+        // %igx-grid-summary__label,
+        %igx-grid-summary__result {
+            color: --var($theme, 'body-summaries-text-color');
+        }
+    }
+
+    %grid-summaries-patch {
+        background: inherit;
+        position: relative;
+        z-index: 1;
+        border-right: 1px solid --var($theme, 'header-border-color');
+    }
+
+    // Column moving
+    %igx-grid__th-drop-indicator-left,
+    %igx-grid__th-drop-indicator-right {
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        z-index: 1;
+    }
+
+    %igx-grid__th-drop-indicator-left {
+        left: -1px;
+    }
+
+    %igx-grid__th-drop-indicator-right {
+        right: -1px;
+    }
+
+    %igx-grid__th-drop-indicator--active {
+        &%igx-grid__th-drop-indicator-left,
+        &%igx-grid__th-drop-indicator-right {
+            border-right: 1px solid --var($theme, 'drop-indicator-color');
+        }
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            left: -3px;
+        }
+
+        &::before {
+            bottom: 0;
+            border-width: 0 4px 4px;
+            border-color: transparent transparent --var($theme, 'drop-indicator-color');
+        }
+
+        &::after {
+            top: 0;
+            border-width: 4px 4px 0;
+            border-color: --var($theme, 'drop-indicator-color') transparent transparent;
+        }
+    }
+
+    %grid__scroll-on-drag-left,
+    %grid__scroll-on-drag-right {
+        position: absolute;
+        width: 15px;
+        top: 0;
+        height: 100%;
+        z-index: 25;
+    }
+
+    %grid__scroll-on-drag-left {
+        left: 0;
+    }
+
+    %grid__scroll-on-drag-right {
+        right: 0;
+    }
+
+    %grid__scroll-on-drag-pinned {
+        position: absolute;
+        width: 15px;
+        height: 100%;
+        top: 0;
+        z-index: 25;
+    }
+
+    %grid__drag-ghost-image {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        background: --var($theme, 'ghost-header-background');
+        color: --var($theme, 'ghost-header-text-color');
+        min-width: 168px;
+        max-width: 320px;
+        height: map-get($grid-header-height, 'comfortable');
+        min-height: map-get($grid-header-height, 'comfortable');
+        top: -99999px;
+        left: -99999px;
+        border: none;
+        box-shadow: --var($theme, 'drag-shadow');
+        overflow: hidden;
+        z-index: 20;
+
+        %grid-cell-header-title {
+            @include ellipsis();
+            flex: 1 0 0;
+            text-align: right;
+        }
+
+        %grid-cell-header-icons {
+            display: none;
+        }
+
+        %grid-thead-title {
+            border: none;
+        }
+    }
+
+    %grid__drag-ghost-image--cosy {
+        height: map-get($grid-header-height, 'cosy');
+        min-height: map-get($grid-header-height, 'cosy');
+    }
+
+    %grid__drag-ghost-image--compact {
+        height: map-get($grid-header-height, 'compact');
+        min-height: map-get($grid-header-height, 'compact');
+    }
+
+    %grid__drag-ghost-image-icon {
+        color: --var($theme, 'ghost-header-icon-color');
+        margin-right: rem(12px);
+    }
+
+    %grid__drag-ghost-image-icon-group {
+        color: --var($theme, 'ghost-header-icon-color');
+        padding: --var($grid-header-padding, 'comfortable');
+        padding-right: 0;
+        margin-right: rem(8);
+    }
+
+    %igx-grid__drag-col-header {
+        background: --var($theme, 'header-background');
+
+        %grid-cell-header {
+            opacity: .4;
+        }
+    }
+
+    // Group by section
+    %igx-grid__group-row {
+        background: --var($theme, 'group-row-background');
+        display: flex;
+        outline-style: none;
+        border-bottom: 1px solid --var($theme, 'row-border-color');
+        min-height: map-get($grid-header-height, 'comfortable');
+    }
+
+    %igx-grid__group-row--active {
+        background: --var($theme, 'group-row-selected-background');
+
+        %igx-grid__grouping-indicator {
+            color: --var($theme, 'expand-icon-color');
+        }
+
+        &:hover {
+            background: --var($theme, 'group-row-selected-background');
+        }
+    }
+
+    %igx-grid__group-row--cosy {
+        min-height: map-get($grid-header-height, 'cosy');
+    }
+
+    %igx-grid__group-row--compact {
+        min-height: map-get($grid-header-height, 'compact');
+    }
+
+    %igx-group-label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        line-height: rem(16px);
+
+        > * {
+            margin-right: rem(4px);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    %igx-group-label__icon {
+        user-select: none;
+
+        &%igx-icon-display {
+            color: --var($theme, 'group-label-icon');
+            width: rem(16px);
+            height: rem(16px);
+            font-size: rem(16px);
+        }
+    }
+
+    %igx-group-label__column-name {
+        color: --var($theme, 'group-label-column-name-text');
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    %igx-group-label__count-badge {
+        > div {
+            background: --var($theme, 'group-count-background');
+            color: --var($theme, 'group-count-text-color');
+            font-size: $grid-head-fs;
+        }
+    }
+
+    %igx-group-label__text {
+        font-size: rem(13px);
+        color: --var($theme, 'group-label-text')
+    }
+
+    [dir='rtl'] {
+        %igx-grid__group-content {
+            padding-left: map-get($grid-grouping-indicator-padding, 'comfortable');
+        }
+
+        %igx-grid__group-content--cosy {
+            padding-left: map-get($grid-grouping-indicator-padding, 'cosy');
+        }
+
+        %igx-grid__group-content--compact{
+            padding-left: map-get($grid-grouping-indicator-padding, 'compact');
+        }
+
+        %igx-group-label {
+            > * {
+                margin-left: rem(4px);
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    %igx-grid__group-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1 1 auto;
+        padding-left: map-get($grid-grouping-indicator-padding, 'comfortable');
+        min-height: map-get($grid-header-height, 'comfortable');
+
+        &:focus {
+            outline: transparent;
+        }
+    }
+
+    %igx-grid__group-content--cosy {
+        padding-left: map-get($grid-grouping-indicator-padding, 'cosy');
+        min-height: map-get($grid-header-height, 'cosy');
+    }
+
+    %igx-grid__group-content--compact{
+        padding-left: map-get($grid-grouping-indicator-padding, 'compact');
+        min-height: map-get($grid-header-height, 'compact');
+    }
+
+    %igx-grid__row-indentation {
+        background: transparent;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding-left: map-get($grid-grouping-indicator-padding, 'comfortable');
+        padding-right: map-get($grid-grouping-indicator-padding, 'comfortable');
+        border-right: 1px solid transparent;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: rem(1px);
+            bottom: -1px;
+            left: 0;
+            background: transparent;
+        }
+
+        %igx-button--icon {
+            width: rem(28px);
+            height: rem(28px);
+            color: --var($theme, 'expand-all-icon-color');
+        }
+
+        &:focus,
+        &:hover {
+            %igx-button--icon {
+                color: --var($theme, 'expand-all-icon-hover-color');
+            }
+        }
+    }
+
+    %igx-grid__row-indentation--cosy {
+        padding-left: map-get($grid-grouping-indicator-padding, 'cosy');
+        padding-right: map-get($grid-grouping-indicator-padding, 'cosy')
+    }
+
+    %igx-grid__row-indentation--compact {
+        padding-left: map-get($grid-grouping-indicator-padding, 'compact');
+        padding-right: map-get($grid-grouping-indicator-padding, 'compact')
+    }
+
+    %igx-grid__grouparea {
+        grid-row: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        border-bottom: $grid-header-border;
+        background: --var($theme, 'grouparea-background');
+        min-height: map-get($grouparea-min-height, 'comfortable');
+        padding: map-get($grouparea-padding, 'comfortable');
+        z-index: 2;
+        height: 100%;
+
+        &:focus {
+            outline-style: none;
+        }
+    }
+
+    %igx-grid__grouparea-connector {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 rem(4px);
+
+        igx-icon {
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+        }
+    }
+
+    %igx-grid__grouparea--cosy {
+        min-height: map-get($grouparea-min-height, 'cosy');
+        padding: map-get($grouparea-padding, 'cosy');
+    }
+
+    %igx-grid__grouparea--compact {
+        min-height: map-get($grouparea-min-height, 'compact');
+        padding: map-get($grouparea-padding, 'compact');
+    }
+
+    %igx-drop-area {
+        min-width: rem(80px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: map-get($drop-area-height, 'comfortable');
+        border-radius: --var($theme, 'drop-area-border-radius');
+        padding: map-get($grid-cell-padding, 'comfortable');
+        flex: 1 0 0%;
+        background: --var($theme, 'drop-area-background');
+
+        %igx-drop-area__icon {
+            color: --var($theme, 'drop-area-icon-color');
+            width: rem(16px);
+            height: rem(16px);
+            font-size: rem(16px);
+            margin-right: rem(8px);
+        }
+    }
+
+    %igx-drop-area--hover {
+        background: --var($theme, 'drop-area-on-drop-background');
+    }
+
+    %igx-drop-area--cosy {
+        height: map-get($drop-area-height, 'cosy');
+        border-radius: --var($theme, 'drop-area-border-radius');
+        padding: map-get($grid-cell-padding, 'cosy');
+    }
+
+    %igx-drop-area--compact {
+        height: map-get($drop-area-height, 'compact');
+        border-radius: --var($theme, 'drop-area-border-radius');
+        padding: map-get($grid-cell-padding, 'compact');
+    }
+
+    %igx-drop-area__text {
+        @include ellipsis();
+        color: --var($theme, 'drop-area-text-color');
+        font-size: rem(13px);
+    }
+
+    %igx-grid__grouping-indicator {
+        position: relative;
+        display: flex;
+        user-select: none;
+        justify-content: center;
+        align-items: center;
+        background: inherit;
+        z-index: 1;
+        cursor: pointer;
+        padding-left: map-get($grid-grouping-indicator-padding, 'comfortable');
+        padding-right: $grouping-padding-right;
+        min-height: map-get($grid-header-height, 'comfortable');
+
+        igx-icon {
+            color: --var($theme, 'expand-icon-color');
+            width: $indicator-icon-width;
+        }
+
+        &:hover,
+        &:focus {
+            outline-style: none;
+
+            igx-icon {
+                color: --var($theme, 'expand-icon-hover-color');
+            }
+        }
+    }
+
+    %igx-grid__grouping-indicator--cosy {
+        padding-left: map-get($grid-grouping-indicator-padding, 'cosy');
+        min-height: map-get($grid-header-height, 'cosy');
+    }
+
+    %igx-grid__grouping-indicator--compact {
+        padding-left: map-get($grid-grouping-indicator-padding, 'compact');
+        min-height: map-get($grid-header-height, 'compact');
+    }
+
+    %igx-grid__header-indentation {
+        position: relative;
+        padding-right: map-get($grid-grouping-indicator-padding, 'comfortable');
+        border-right: 1px solid --var($theme, 'header-border-color');
+        background: --var($theme, 'header-background');
+        z-index: 4;
+    }
+
+    %igx-grid__header-indentation--cosy {
+        padding-right: map-get($grid-grouping-indicator-padding, 'cosy');
+    }
+
+    %igx-grid__header-indentation--compact {
+        padding-right: map-get($grid-grouping-indicator-padding, 'compact');
+    }
+
+    %igx-grid__group-expand-btn {
+        position: absolute;
+        cursor: pointer;
+        user-select: none;
+        top: calc(50% - 12px);
+        left: map-get($grid-grouping-indicator-padding, 'comfortable');
+
+        &:hover {
+            color: --var($theme, 'expand-icon-hover-color');
+        }
+
+        &%igx-grid__group-expand-btn--push {
+            top: (map-get($grid-header-height, 'comfortable') - rem(24px)) / 2;
+        }
+    }
+
+    %igx-grid__group-expand-btn--cosy {
+        left: map-get($grid-grouping-indicator-padding, 'cosy');
+
+        &%igx-grid__group-expand-btn--push {
+            top: (map-get($grid-header-height, 'cosy') - rem(24px)) / 2;
+        }
+    }
+
+    %igx-grid__group-expand-btn--compact {
+        left: map-get($grid-grouping-indicator-padding, 'compact');
+
+        &%igx-grid__group-expand-btn--push {
+            top: (map-get($grid-header-height, 'compact') - rem(24px)) / 2;
+        }
+    }
+
+    @for $i from 1 through 10 {
+        // COMFORTABLE
+        %igx-grid__row-indentation--level-#{$i} {
+            background: inherit;
+            padding-left: calc(#{$i*map-get($grid-grouping-indicator-padding, 'comfortable')} + #{$indicator-icon-width});
+        }
+
+        %igx-grid__group-row--padding-level-#{$i} {
+            padding-left: #{$i*map-get($grid-grouping-indicator-padding, 'comfortable')};
+        }
+
+        %igx-grid__tree-cell--padding-level-#{$i} {
+            padding-left: #{$i*map-get($grid-grouping-indicator-padding, 'comfortable')};
+        }
+
+        // COSY
+        %igx-grid__row-indentation-cosy--level-#{$i} {
+            padding-left: calc(#{$i*map-get($grid-grouping-indicator-padding, 'cosy')} + #{$indicator-icon-width});
+        }
+
+        %igx-grid__group-row-cosy--padding-level-#{$i} {
+            padding-left: #{$i*map-get($grid-grouping-indicator-padding, 'cosy')};
+        }
+
+        %igx-grid__tree-cell-cosy--padding-level-#{$i} {
+            padding-left: #{$i*map-get($grid-grouping-indicator-padding, 'cosy')};
+        }
+
+        // COMPACT
+        %igx-grid__row-indentation-compact--level-#{$i} {
+            padding-left: calc(#{$i*map-get($grid-grouping-indicator-padding, 'compact')} + #{$indicator-icon-width});
+        }
+
+        %igx-grid__group-row-compact--padding-level-#{$i} {
+            padding-left: #{$i*map-get($grid-grouping-indicator-padding, 'compact')};
+        }
+
+        %igx-grid__tree-cell-compact--padding-level-#{$i} {
+            padding-left: #{$i*map-get($grid-grouping-indicator-padding, 'compact')};
+        }
+    }
+
+    %igx-grid__outlet {
+        z-index: 10002;
+        position: fixed;
+    }
+
+    %igx-grid__row-editing-outlet {
+        z-index: 10000;
+        position: absolute;
+
+        %overlay-wrapper {
+            /* Change wrapper position from 'fixed' to 'absolute' so that it is hidden when scrolled below the parent grid body content. */
+            position: absolute;
+        }
+    }
+
+    %igx-grid__filtering-cell {
+        display: flex;
+        align-items: center;
+        border-right: $grid-header-border;
+        border-top: $grid-header-border;
+        height: map-get($grid-header-height, 'comfortable');
+        padding: map-get($grid-header-padding, 'comfortable');
+        overflow: hidden;
+
+        igx-chips-area {
+            transition: transform .25s $ease-out-back;
+            flex-wrap: nowrap;
+
+            .igx-filtering-chips__connector {
+                font-size: rem(12px);
+                text-transform: uppercase;
+                font-weight: 600;
+                margin: 0 rem(8px);
+            }
+        }
+    }
+
+    %igx-grid__filtering-cell-indicator {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 8px;
+        margin-left: 8px;
+        cursor: pointer;
+        visibility: visible;
+
+        igx-icon {
+            width: 18px;
+            height: 18px;
+            font-size: 18px;
+        }
+
+        %igx-badge-display {
+            /* start of IE vertical alignment fix */
+            top: 50%;
+            transform: translateY(-50%);
+            /* end of IE vertical alignment fix */
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            min-width: 14px;
+            font-size: 12px;
+            text-align: center;
+            right: 0;
+        }
+    }
+
+    %igx-grid__filtering-cell-indicator--hidden {
+        visibility: hidden;
+    }
+
+    %igx-grid__filtering-cell--cosy {
+        height: map-get($grid-header-height, 'cosy');
+        padding: map-get($grid-header-padding, 'comfortable');
+    }
+
+    %igx-grid__filtering-cell--compact {
+        height: map-get($grid-header-height, 'compact');
+        padding: map-get($grid-header-padding, 'comfortable');
+    }
+
+    %igx-grid__filtering-row {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        height: map-get($grid-header-height, 'comfortable');
+        padding: map-get($grid-cell-padding, 'cosy');
+        align-items: center;
+        justify-content: space-between;
+        background: --var($theme, 'filtering-row-background');
+        color: --var($theme, 'filtering-row-text-color');
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+
+        &::after {
+            display: block;
+            position: absolute;
+            content: '';
+            background: inherit;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            box-shadow: 0 1px 0 --var($theme, 'filtering-row-background'),
+                0 4px 10px rgba(0, 0, 0, .12);
+            z-index: -1;
+        }
+
+        igx-input-group {
+            flex: 0 0 200px;
+        }
+
+        igx-prefix:focus {
+            color: igx-color(map-get($theme, 'palette'), 'secondary');
+        }
+
+        igx-suffix  {
+            igx-icon {
+                outline-style: none;
+
+                &:focus {
+                    color: igx-color($palette, 'secondary');
+                }
+
+                + igx-icon {
+                    margin-left: rem(4px);
+                }
+            }
+        }
+    }
+
+    %igx-grid__filtering-row--cosy {
+        height: map-get($grid-header-height, 'cosy');
+    }
+
+    %igx-grid__filtering-row--compact {
+        height: map-get($grid-header-height, 'compact');
+    }
+
+    %igx-grid__filtering-row-main {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+        max-width: calc(100% - 176px);
+
+        igx-chips-area {
+            transition: transform .25s $ease-out-back;
+            flex-wrap: nowrap;
+            margin: 0 rem(8px);
+        }
+
+        igx-chip {
+            margin: 0 rem(4px);
+        }
+
+        [igxButton] {
+            igx-icon {
+                position: absolute;
+                left: rem(12px);
+                /* IE fix for vertical alignment*/
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            span {
+                margin-left: rem(16px);
+            }
+        }
+    }
+
+    %filtering-scroll-mask {
+        display: block;
+        position: absolute;
+        content: '';
+        top: -2px;
+        bottom: -2px;
+        width: 10px;
+    }
+
+    %igx-grid__filtering-scroll-start {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        overflow: visible;
+        margin: 0 8px;
+        z-index: 1;
+
+        &::after {
+            @extend %filtering-scroll-mask;
+            left: calc(100% + 6px);
+            background: linear-gradient(to right, --var($theme, 'filtering-row-background'), transparent);
+        }
+    }
+
+    %igx-grid__filtering-scroll-end {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        overflow: visible;
+        margin: 0 8px;
+        z-index: 1;
+
+        &::before {
+            @extend %filtering-scroll-mask;
+            right: calc(100% + 6px);
+            background: linear-gradient(to left, --var($theme, 'filtering-row-background'), transparent);
+        }
+    }
+
+    %igx-grid__tr--highlighted {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: --var($theme, 'row-highlight');
+            z-index: 3;
+        }
+
+        %igx-grid__tr--edited {
+            &::before {
+                left: 4px;
+            }
+        }
+
+        &::before {
+            left: 4px;
+        }
+    }
+
+    %igx-grid__tr-container {
+        border-bottom: 1px solid --var($theme, 'row-border-color');
+    }
+
+    %igx-grid__hierarchical-expander {
+        user-select: none;
+        background: inherit;
+        padding-left: map-get($hierarchical-grid-indent, 'comfortable');
+        padding-right: map-get($hierarchical-grid-indent, 'comfortable');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 3;
+        color: --var($theme, 'expand-icon-color');
+        border-right: 1px solid transparent;
+
+        &:focus {
+            outline: none;
+
+            igx-icon {
+                color: --var($theme, 'expand-icon-hover-color');
+            }
+        }
+
+        &:hover {
+            igx-icon {
+                color: --var($theme, 'expand-icon-hover-color');
+            }
+        }
+
+        igx-icon {
+            color: --var($theme, 'expand-icon-color');
+            max-width: $hierarchical-action-icon;
+            min-width: $hierarchical-action-icon;
+        }
+    }
+
+    %igx-grid__hierarchical-expander--cosy {
+        padding-left: map-get($hierarchical-grid-indent, 'cosy');
+        padding-right: map-get($hierarchical-grid-indent, 'cosy');
+    }
+
+    %igx-grid__hierarchical-expander--compact {
+        padding-left: map-get($hierarchical-grid-indent, 'compact');
+        padding-right: map-get($hierarchical-grid-indent, 'compact');
+    }
+
+    %igx-grid__hierarchical-expander--header {
+        background: inherit;
+        border-right: 1px solid --var($theme, 'header-border-color');
+        z-index: 3;
+
+        igx-icon {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    %igx-grid__hierarchical-expander--push {
+        align-items: flex-start;
+
+        igx-icon {
+            min-height: map-get($grid-header-height, 'comfortable');
+            max-height: map-get($grid-header-height, 'comfortable');
+        }
+    }
+
+    %igx-grid__hierarchical-expander--push--cosy {
+        igx-icon {
+            min-height: map-get($grid-header-height, 'cosy');
+        }
+    }
+
+    %igx-grid__hierarchical-expander--push--compact {
+        igx-icon {
+            min-height: map-get($grid-header-height, 'compact');
+        }
+    }
+
+    %igx-grid__hierarchical-expander--no-border,
+    %igx-grid__header-indentation--no-border {
+        border-right: 1px solid transparent;
+    }
+
+    %igx-grid__hierarchical-indent {
+        margin-left: calc(2 * #{map-get($hierarchical-grid-indent, 'comfortable')} + #{$hierarchical-action-icon});
+        margin-top: map-get($hierarchical-grid-indent, 'comfortable');
+        margin-right: map-get($hierarchical-grid-indent, 'comfortable');
+        margin-bottom: map-get($hierarchical-grid-indent, 'comfortable');
+
+        &--scroll {
+            margin-right: calc(#{map-get($hierarchical-grid-indent, 'comfortable')} + 18px);
+        }
+    }
+
+    %igx-grid__hierarchical-indent--cosy {
+        margin-left: calc(2 * #{map-get($hierarchical-grid-indent, 'cosy')} + #{$hierarchical-action-icon});
+        margin-top: map-get($hierarchical-grid-indent, 'cosy');
+        margin-right: map-get($hierarchical-grid-indent, 'cosy');
+        margin-bottom: map-get($hierarchical-grid-indent, 'cosy');
+
+        &--scroll {
+            margin-right: calc(#{map-get($hierarchical-grid-indent, 'cosy')} + 18px);
+        }
+    }
+
+    %igx-grid__hierarchical-indent--compact {
+        margin-left: calc(2 * #{map-get($hierarchical-grid-indent, 'compact')} + #{$hierarchical-action-icon});
+        margin-top: map-get($hierarchical-grid-indent, 'compact');
+        margin-right: map-get($hierarchical-grid-indent, 'compact');
+        margin-bottom: map-get($hierarchical-grid-indent, 'compact');
+
+        &--scroll {
+            margin-right: calc(#{map-get($hierarchical-grid-indent, 'compact')} + 18px);
+        }
+    }
+
+    @include _excel-filtering($theme, $palette);
+}

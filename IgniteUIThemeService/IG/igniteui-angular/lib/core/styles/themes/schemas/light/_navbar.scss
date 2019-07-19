@@ -1,0 +1,38 @@
+@import '../shape/navbar';
+
+////
+/// @group schemas
+/// @access private
+/// @author <a href="https://github.com/desig9stein" target="_blank">Marin Popov</a>
+////
+
+/// Generates a light navbar schema.
+/// @type {Map}
+///
+/// @prop {map} $background [igx-color: ('primary', 500)] - The navbar background color.
+/// @prop {map} $text-color [igx-contrast-color: ('primary', 500)] - The navbar text color.
+/// @prop {map} $idle-icon-color [igx-contrast-color: ('primary', 500)] - The navbar idle icon color.
+/// @prop {map} $hover-icon-color [igx-contrast-color: ('primary', 500)] - The navbar hover icon color.
+/// @prop {Number} $elevation [4] - The navbar elevation shadow level.
+///
+/// @see $default-palette
+
+$_light-navbar: extend((
+    background: (
+        igx-color: ('primary', 500)
+    ),
+
+    text-color: (
+        igx-contrast-color: ('primary', 500)
+    ),
+
+    idle-icon-color: (
+        igx-contrast-color: ('primary', 500)
+    ),
+
+    hover-icon-color: (
+        igx-contrast-color: ('primary', 500)
+    ),
+
+    elevation: 4
+), $_default-shape-navbar);

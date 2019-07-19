@@ -1,0 +1,15 @@
+@import '../light/navdrawer';
+
+////
+/// @group schemas
+/// @access private
+/// @author <a href="https://github.com/desig9stein" target="_blank">Marin Popov</a>
+////
+
+/// Generates a dark navdrawer schema.
+/// @type {Map}
+/// @requires {function} extend
+/// @requires $_light-navdrawer
+/// @see $default-palette
+
+$_dark-navdrawer: extend($_light-navdrawer, ());

@@ -1,0 +1,34 @@
+@import '../shape/badge';
+
+////
+/// @group schemas
+/// @access private
+/// @author <a href="https://github.com/simeonoff" target="_blank">Simeon Simeonoff</a>
+////
+
+/// Generates a light badge schema.
+/// @type {Map}
+/// @prop {Map} icon-color [igx-contrast-color: ('primary', 500)] - The icon color used.
+/// @prop {Map} text-color [igx-contrast-color: ('primary', 500)] - The text color used.
+/// @prop {Color} border-color [#fff] - The border color used.
+/// @prop {Map} background-color [igx-color: ('primary', 500)] - The background color used.
+/// @prop {Number} elevation [1] - The elevation level, between 0-24, to be used for the badge shadow.
+/// @prop {Number} border-radius [1] - The border radius fraction, between 0-1 to be used for badge component.
+/// @see $default-palette
+$_light-badge: extend((
+    icon-color: (
+        igx-contrast-color: ('primary', 500)
+    ),
+
+    text-color: (
+        igx-contrast-color: ('primary', 500)
+    ),
+
+    border-color: #fff,
+
+    background-color: (
+        igx-color: ('primary', 500)
+    ),
+
+    elevation: 1
+), $_default-shape-badge);

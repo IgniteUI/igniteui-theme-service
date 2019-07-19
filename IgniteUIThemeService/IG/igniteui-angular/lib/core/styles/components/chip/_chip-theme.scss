@@ -1,0 +1,544 @@
+////
+/// @group themes
+/// @access public
+/// @author <a href="https://github.com/desig9stein" target="_blank">Marin Popov</a>
+////
+
+/// Chip Theme
+/// @param {Map} $palette [$default-palette] - The palette used as basis for styling the component.
+/// @param {Color} $border-radius [null] - The chip border-radius.
+///
+/// @param {Color} $text-color [null] - The chip text color.
+/// @param {Color} $background [null] - The chip background color.
+/// @param {Color} $border-color [null] - The chip border color.
+///
+/// @param {Color} $hover-text-color [null] - The chip text hover color.
+/// @param {Color} $hover-background [null] - The chip hover background color.
+/// @param {Color} $hover-border-color [null] - The chip hover border color.
+///
+/// @param {color} $selected-text-color [null] - The selected chip text color.
+/// @param {color} $selected-background [null] - The selected chip background color.
+/// @param {color} $selected-border-color [null] The selected chip border color.
+///
+/// @param {color} $hover-selected-text-color [null] - The selected chip hover text color.
+/// @param {color} $hover-selected-background [null] - The selected chip hover background color.
+/// @param {color} $hover-selected-border-color [null] - The selected chip hover border color.
+///
+/// @param {color} $focus-selected-text-color [null] - The selected chip text focus color.
+/// @param {color} $focus-selected-background [null] - The selected chip focus background color.
+/// @param {color} $focus-selected-border-color [null] - The selected chip focus border color.
+///
+/// @requires $default-palette
+/// @requires $light-schema
+/// @requires apply-palette
+/// @requires extend
+/// @requires text-contrast
+/// @requires luminance
+///
+/// @example scss Change the background color
+///   $my-chip-theme: igx-chip-theme($background: black);
+///   // Pass the theme to the igx-chip component mixin
+///   @include igx-chip($my-chip-theme);
+@function igx-chip-theme(
+    $palette: $default-palette,
+    $schema: $light-schema,
+    $border-radius: null,
+
+    $text-color: null,
+    $background: null,
+    $border-color: null,
+    $ghost-background: null,
+
+    $hover-text-color: null,
+    $hover-background: null,
+    $hover-border-color: null,
+
+    $focus-text-color: null,
+    $focus-background: null,
+    $focus-border-color: null,
+
+    $selected-text-color: null,
+    $selected-background: null,
+    $selected-border-color: null,
+
+    $hover-selected-text-color: null,
+    $hover-selected-background: null,
+    $hover-selected-border-color: null,
+
+    $focus-selected-text-color: null,
+    $focus-selected-background: null,
+    $focus-selected-border-color: null
+) {
+    $name: 'igx-chip';
+    $chip-schema: map-get($schema, $name);
+    $theme: apply-palette($chip-schema, $palette);
+
+    $border-radius: round-borders(
+        if($border-radius, $border-radius, map-get($chip-schema, 'border-radius')), 0, 16px
+    );
+
+    @if not($text-color) and $background {
+        $text-color: text-contrast($background);
+    }
+
+    @if not($hover-background) and $background {
+        $luminance: luminance($background);
+
+        @if type-of($luminance) == 'color' and $luminance + .05 < .5 {
+            $hover-background: lighten-color($background, 14%);
+        } @else {
+            $hover-background: darken-color($background, 4%);
+        }
+    }
+
+    @if not($hover-text-color) and $hover-background {
+        $hover-text-color: text-contrast(hexrgba($hover-background));
+    }
+
+    @if not($focus-background) and $background {
+        $luminance: luminance($background);
+
+        @if type-of($luminance) == 'color' and $luminance + .05 < .5 {
+            $focus-background: lighten-color($background, 22%);
+        } @else {
+            $focus-background: darken-color($background, 8%);
+        }
+    }
+
+    @if not($focus-text-color) and $focus-background {
+        $focus-text-color: text-contrast(hexrgba($focus-background));
+    }
+
+    @if not($selected-background) and $background {
+        $luminance: luminance($background);
+
+        @if type-of($luminance) == 'color' and $luminance + .05 < .5 {
+            $selected-background: lighten-color($background, 22%);
+        } @else {
+            $selected-background: darken-color($background, 8%);
+        }
+    }
+
+    @if not($selected-text-color) and $selected-background {
+        $selected-text-color: text-contrast(hexrgba($selected-background));
+    }
+
+    @if not($hover-selected-background) and $hover-background {
+        $hover-selected-background: $hover-background;
+    }
+
+    @if not($hover-selected-text-color) and $hover-selected-background {
+        $hover-selected-text-color: text-contrast(hexrgba($hover-selected-background));
+    }
+
+    @if not($focus-selected-background) and $selected-background {
+        $luminance: luminance($selected-background);
+
+        @if type-of($luminance) == 'color' and $luminance + .05 < .5 {
+            $focus-selected-background: lighten-color($background, 32%);
+        } @else {
+            $focus-selected-background: darken-color($background, 16%);
+        }
+    }
+
+    @if not($focus-selected-text-color) and $focus-selected-background {
+        $focus-selected-text-color: text-contrast(hexrgba($focus-selected-background));
+    }
+
+    @if not($hover-border-color) and $border-color {
+        $hover-border-color: $border-color;
+    }
+
+    @if not($focus-border-color) and $border-color {
+        $focus-border-color: $border-color;
+    }
+
+    @if not($selected-border-color) and $border-color {
+        $selected-border-color: $border-color;
+    }
+
+    @if not($hover-selected-border-color) and $border-color {
+        $hover-selected-border-color: $border-color;
+    }
+
+    @if not($focus-selected-border-color) and $border-color {
+        $focus-selected-border-color: $border-color;
+    }
+
+    @return extend($theme, (
+        name: $name,
+        palette: $palette,
+        border-radius: $border-radius,
+
+        text-color: $text-color,
+        background: $background,
+        border-color: $border-color,
+        ghost-background: $ghost-background,
+
+        hover-text-color: $hover-text-color,
+        hover-background: $hover-background,
+        hover-border-color: $hover-border-color,
+
+        focus-text-color: $focus-text-color,
+        focus-background: $focus-background,
+        focus-border-color: $focus-border-color,
+
+        selected-text-color: $selected-text-color,
+        selected-background: $selected-background,
+        selected-border-color: $selected-border-color,
+
+        hover-selected-text-color: $hover-selected-text-color,
+        hover-selected-background: $hover-selected-background,
+        hover-selected-border-color: $hover-selected-border-color,
+
+        focus-selected-text-color: $focus-selected-text-color,
+        focus-selected-background: $focus-selected-background,
+        focus-selected-border-color: $focus-selected-border-color
+    ));
+}
+
+/// @param {Map} $theme - The theme used to style the component.
+/// @requires {mixin} igx-root-css-vars
+/// @requires rem
+/// @requires --var
+@mixin igx-chip($theme) {
+    @include igx-root-css-vars($theme);
+
+    $transition: all 120ms $ease-in-out-quad;
+    $chip-max-width: 24ch;
+
+    $chip-height: (
+        comfortable: rem(32px),
+        cosy: rem(24px),
+        compact: rem(18px)
+    );
+
+    $chip-padding: (
+        comfortable: 0 rem(8px),
+        cosy: 0 rem(4px),
+        compact: 0 rem(2px)
+    );
+
+    $chip-icon-size: (
+        comfortable: rem(18px),
+        cosy: rem(18px),
+        compact: rem(16px)
+    );
+
+    %igx-chip-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    %igx-chip {
+        @extend  %igx-chip-custom-icon;
+
+        position: relative;
+        display: inline-flex;
+        flex-shrink: 0;
+        transition: $transition;
+        transition-property: top, left;
+        touch-action: none;
+
+        &:focus {
+            outline-style: none;
+        }
+
+        // We target the tag selector directly to
+        // avoid having to set custom classes on the prefix
+        // and suffix based on the host element.
+        igx-prefix,
+        [igxPrefix] {
+            @extend %igx-chip__prefix;
+        }
+
+        igx-suffix,
+        [igxSuffix] {
+            @extend %igx-chip__suffix;
+        }
+    }
+
+    %igx-chip--cosy {
+        @extend  %igx-chip-custom-icon--cosy;
+    }
+
+    %igx-chip--compact {
+        @extend  %igx-chip-custom-icon--compact;
+    }
+
+    %igx-chip--disabled {
+        %igx-chip__item {
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+
+    %igx-chip-custom-icon {
+        igx-icon {
+            width: map-get($chip-icon-size, 'comfortable');
+            height: map-get($chip-icon-size, 'comfortable');
+            font-size: map-get($chip-icon-size, 'comfortable');
+            outline-style: none;
+        }
+    }
+
+    %igx-chip-custom-icon--cosy {
+        igx-icon {
+            width: map-get($chip-icon-size, 'cosy');
+            height: map-get($chip-icon-size, 'cosy');
+            font-size: map-get($chip-icon-size, 'cosy');
+            outline-style: none;
+        }
+    }
+
+    %igx-chip-custom-icon--compact {
+        igx-icon {
+            width: map-get($chip-icon-size, 'compact');
+            height: map-get($chip-icon-size, 'compact');
+            font-size: map-get($chip-icon-size, 'compact');
+            outline-style: none;
+        }
+    }
+
+    %igx-chip__prefix,
+    %igx-chip__suffix {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    %igx-chip__suffix {
+        + igx-suffix,
+        + [igxSuffix],
+        + %igx-chip__remove {
+            margin-left: rem(4px);
+
+            [dir='rtl'] & {
+                margin-left: 0;
+                margin-right: rem(4px);
+            }
+        }
+    }
+
+    %igx-chip__prefix {
+        + igx-prefix,
+        + [igxPrefix] {
+            margin-left: rem(4px);
+
+            [dir='rtl'] & {
+                margin-left: 0;
+                margin-right: rem(4px);
+            }
+        }
+    }
+
+    %igx-chip__content {
+        @include ellipsis();
+        padding: map-get($chip-padding, 'comfortable');
+        max-width: $chip-max-width;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    %igx-chip__content--cosy {
+        padding: map-get($chip-padding, 'cosy');
+    }
+
+    %igx-chip__content--compact {
+        padding: map-get($chip-padding, 'compact');
+    }
+
+    %igx-chip__remove {
+        display: inline-flex;
+        color: currentColor;
+        margin-right: rem(4px);
+
+        &:empty {
+            display: none;
+        }
+
+        &:focus-within {
+            outline-style: none;
+            color: igx-color(map-get($theme, 'palette'), error);
+        }
+
+        [dir='rtl'] & {
+            margin-right: 0;
+            margin-left: rem(4px) !important;
+        }
+    }
+
+    %igx-chip__select {
+        display: inline-flex;
+        align-items: center;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity 120ms $ease-in-out-quad;
+
+        > * {
+            width: 18px !important;
+            transition: width 120ms $ease-in-out-quad;
+        }
+
+        + igx-prefix,
+        + [igxPrefix] {
+            margin-left: rem(4px);
+
+            [dir='rtl'] & {
+                margin-left: 0;
+                margin-right: rem(4px);
+            }
+        }
+    }
+
+    %igx-chip__select--hidden {
+        opacity: 0;
+        z-index: -1;
+
+        > * {
+            width: 0 !important;
+        }
+
+        + igx-prefix,
+        + [igxPrefix] {
+            margin-left: 0;
+
+            [dir='rtl'] & {
+                margin-right: 0;
+            }
+        }
+    }
+
+    %igx-chip__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 auto;
+        height: map-get($chip-height, 'comfortable');
+        padding: 0 rem(4px);
+        color: --var($theme, 'text-color');
+        background: --var($theme, 'background');
+        border-width: 1px;
+        border-style: solid;
+        border-color: --var($theme, 'border-color');
+        border-radius: --var($theme, 'border-radius');
+        user-select: none;
+        overflow: hidden;
+        cursor: pointer;
+        //hacking overflow hidden with border radius
+        // not playing nicely together
+        filter: opacity(1);
+    }
+
+    %igx-chip__item--hover {
+        color: --var($theme, 'hover-text-color');
+        background: --var($theme, 'hover-background');
+        border-color: --var($theme, 'hover-border-color');
+        transition: all 120ms ease-in;
+    }
+
+    %igx-chip__item--focus {
+        color: --var($theme, 'focus-text-color');
+        background: --var($theme, 'focus-background');
+        border-color: --var($theme, 'focus-border-color');
+        outline-style: none;
+    }
+
+    %igx-chip__item--selected {
+        color: --var($theme, 'selected-text-color');
+        background: --var($theme, 'selected-background');
+        border-color: --var($theme, 'selected-border-color');
+    }
+
+    %igx-chip__item--hover-selected {
+        color: --var($theme, 'hover-selected-text-color');
+        background: --var($theme, 'hover-selected-background');
+        border-color: --var($theme, 'hover-selected-border-color');
+        transition: $transition;
+    }
+
+    %igx-chip__item--focus-selected {
+        color: --var($theme, 'focus-selected-text-color');
+        background: --var($theme, 'focus-selected-background');
+        border-color: --var($theme, 'focus-selected-border-color');
+        transition: $transition;
+    }
+
+    %igx-chip__item--cosy {
+        height: map-get($chip-height, 'cosy');
+        padding: map-get($chip-padding, 'cosy');
+    }
+
+    %igx-chip__item--compact {
+        height: map-get($chip-height, 'compact');
+        padding: map-get($chip-padding, 'compact');
+    }
+
+    %igx-chip__ghost {
+        position: absolute;
+        z-index: 10;
+        box-shadow: igx-elevation($elevations, 8);
+        overflow: hidden;
+        background: --var($theme, 'ghost-background');
+
+        &:hover,
+        &:focus {
+            background: --var($theme, 'ghost-background');
+        }
+    }
+
+    %igx-chip__ghost--cosy {
+        height: map-get($chip-height, 'cosy');
+
+        %igx-chip__content {
+            padding: map-get($chip-padding, 'cosy');
+        }
+    }
+
+    %igx-chip__ghost--compact {
+        @extend  %igx-chip-custom-icon--compact;
+        height: map-get($chip-height, 'compact');
+
+        %igx-chip__content {
+            padding: map-get($chip-padding, 'compact');
+        }
+    }
+}
+
+/// Adds typography styles for the igx-chip component.
+/// Uses the 'body-2'
+/// category from the typographic scale.
+/// @group typography
+/// @param {Map} $type-scale - A typographic scale as produced by igx-type-scale.
+/// @param {Map} $categories [(text: 'body-2')] - The categories from the typographic scale used for type styles.
+/// @requires {mixin} igx-type-style
+@mixin igx-chip-typography($type-scale, $categories: (text: 'body-2')) {
+    $text: map-get($categories, 'text');
+
+    @include igx-scope('.igx-typography') {
+        %igx-chip {
+            @include igx-type-style($type-scale, $text) {
+                font-weight: 600;
+            }
+        }
+
+        %igx-chip--compact,
+        %igx-chip__ghost--compact {
+            %igx-chip__content {
+                @include igx-type-style($type-scale, $text) {
+                    font-size: rem(12px);
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

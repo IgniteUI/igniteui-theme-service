@@ -1,0 +1,909 @@
+////
+/// @group themes
+/// @access public
+/// @author <a href="https://github.com/simeonoff" target="_blank">Simeon Simeonoff</a>
+////
+
+/// @param {Map} $palette [$default-palette] - The palette used as basis for styling the component.
+/// @param {Map} $schema [$light-schema] - The schema used as basis for styling the component.
+/// @param {Map} $elevations [$elevations] - The elevations (shadows) map to be used.
+///
+/// @param {Color} $idle-text-color [null] - The input text color in the idle state.
+/// @param {Color} $filled-text-color [null] - The input text color in the filled state.
+/// @param {Color} $focused-text-color [null] - The input text color in the focused state.
+/// @param {Color} $disabled-text-color [null] - The input text color in the disabled state.
+///
+/// @param {Color} $idle-secondary-color [null] - The label color in the idle state.
+/// @param {Color} $filled-secondary-color [null] - The label color in the filled state.
+/// @param {Color} $focused-secondary-color [null] - The label color in the focused state.
+///
+/// @param {Color} $idle-bottom-line-color [null] - The bottom line and border colors in the idle state.
+/// @param {Color} $hover-bottom-line-color [null] - The bottom line and border colors in the hover state.
+/// @param {Color} $focused-bottom-line-color [null] - The bottom line and border colors in the focused state.
+/// @param {Color} $interim-bottom-line-color [null] - The bottom line and border colors during the to-focused transition.
+/// @param {Color} $disabled-bottom-line-color [null] - The bottom line and border colors in the disabled state.
+/// @param {Color} $disabled-border-color [null] - The disabled border color for input groups of type border.
+///
+/// @param {Color} $box-background [null] - The background color of an input group of type box.
+/// @param {Color} $box-disabled-background [null] - The background color of an input group of type box in the disabled state.
+///
+/// @param {Color} $border-background [null] - The background color of an input group of type border.
+/// @param {Color} $border-disabled-background [null] - The background color of an input group of type border in the disabled state.
+///
+/// @param {Color} $search-background [null] - The background color of an input group of type search.
+/// @param {Color} $search-disabled-background [null] - The background color of an input group of type search in the disabled state.
+///
+/// @param {box-shadow} $search-resting-shadow [null] - The shadow color of an input group of type search in its resting state.
+/// @param {box-shadow} $search-hover-shadow [null] - The shadow color of an input group of type search in its hover state.
+/// @param {box-shadow} $search-disabled-shadow [null] - The shadow color of an input group of type search in its disabled state.
+///
+/// @param {Color} $success-secondary-color [null] - The success color used in the valid state.
+/// @param {Color} $warning-secondary-color [null] - The warning color used in the warning state.
+/// @param {Color} $error-secondary-color [null] - The error color used in the error state.
+///
+/// @param {border-radius} $box-border-radius [null] - The border radius used for box input.
+/// @param {border-radius} $border-border-radius [null] - The border radius used for border input.
+/// @param {border-radius} $search-border-radius [null] - The border radius used for search input.
+///
+/// @requires $default-palette
+/// @requires $light-schema
+/// @requires apply-palette
+/// @requires extend
+/// @requires text-contrast
+/// @requires igx-elevation
+/// @requires $elevations
+/// @requires round-borders
+///
+/// @example scss Change the focused border and label colors
+///   $my-input-group-theme: igx-input-group-theme($focused-secondary-color: pink, $focused-bottom-line-color: pink);
+///   // Pass the theme to the igx-input-group component mixin
+///   @include igx-input-group($my-input-group-theme);
+@function igx-input-group-theme(
+    $palette: $default-palette,
+    $schema: $light-schema,
+    $elevations: $elevations,
+
+    $box-border-radius: null,
+    $border-border-radius: null,
+    $search-border-radius: null,
+
+    $idle-text-color: null,
+    $filled-text-color: null,
+    $focused-text-color: null,
+    $disabled-text-color: null,
+
+    $idle-secondary-color: null,
+    $filled-secondary-color: null,
+    $focused-secondary-color: null,
+
+    $idle-bottom-line-color: null,
+    $hover-bottom-line-color: null,
+    $focused-bottom-line-color: null,
+    $interim-bottom-line-color: null,
+    $disabled-bottom-line-color: null,
+    $disabled-border-color: null,
+
+    $box-background: null,
+    $box-disabled-background: null,
+    $border-background: null,
+    $border-disabled-background: null,
+
+    $search-background: null,
+    $search-disabled-background: null,
+
+    $search-resting-shadow: null,
+    $search-hover-shadow: null,
+    $search-disabled-shadow: null,
+
+    $success-secondary-color: null,
+    $warning-secondary-color: null,
+    $error-secondary-color: null,
+
+    $placeholder-color: null,
+    $disabled-placeholder-color: null
+) {
+    $name: 'igx-input-group';
+    $input-group-schema: map-get($schema, $name);
+    $theme: apply-palette($input-group-schema, $palette);
+
+    $box-border-radius: round-borders(
+        if($box-border-radius, $box-border-radius, map-get($input-group-schema, 'box-border-radius')), 0, 20px
+    );
+    $border-border-radius: round-borders(
+        if($border-border-radius, $border-border-radius, map-get($input-group-schema, 'border-border-radius')), 0, 20px
+    );
+    $search-border-radius: round-borders(
+        if($search-border-radius, $search-border-radius, map-get($input-group-schema, 'search-border-radius')), 0, 20px
+    );
+
+    $search-resting-elevation: map-get($input-group-schema, 'search-resting-elevation');
+    $search-hover-elevation: map-get($input-group-schema, 'search-hover-elevation');
+    $search-disabled-elevation: map-get($input-group-schema, 'search-disabled-elevation');
+
+    @if not($placeholder-color) and $box-background {
+        $placeholder-color: text-contrast($box-background);
+    }
+
+    @if not($placeholder-color) and $search-background {
+        $placeholder-color: text-contrast($search-background);
+    }
+
+    @if not($search-resting-shadow) {
+        $search-resting-shadow: igx-elevation($elevations, $search-resting-elevation);
+    }
+
+    @if not($search-hover-shadow) {
+        $search-hover-shadow: igx-elevation($elevations, $search-hover-elevation);
+    }
+
+    @if not($search-disabled-shadow) {
+        $search-disabled-shadow: igx-elevation($elevations, $search-disabled-elevation);
+    }
+
+    @return extend($theme, (
+        palette: $palette,
+        name: $name,
+
+        idle-text-color: $idle-text-color,
+        filled-text-color: $filled-text-color,
+        focused-text-color: $focused-text-color,
+        disabled-text-color: $disabled-text-color,
+
+        box-border-radius: $box-border-radius,
+        border-border-radius: $border-border-radius,
+        search-border-radius: $search-border-radius,
+
+        idle-secondary-color: $idle-secondary-color,
+        filled-secondary-color: $filled-secondary-color,
+        focused-secondary-color: $focused-secondary-color,
+
+        idle-bottom-line-color: $idle-bottom-line-color,
+        hover-bottom-line-color: $hover-bottom-line-color,
+        focused-bottom-line-color: $focused-bottom-line-color,
+        interim-bottom-line-color: $interim-bottom-line-color,
+        disabled-bottom-line-color: $disabled-bottom-line-color,
+        disabled-border-color: $disabled-border-color,
+
+        box-background: $box-background,
+        box-disabled-background: $box-disabled-background,
+
+        border-background: $border-background,
+        border-disabled-background: $border-disabled-background,
+
+        search-background: $search-background,
+        search-disabled-background: $search-disabled-background,
+
+        search-resting-shadow: $search-resting-shadow,
+        search-hover-shadow: $search-hover-shadow,
+        search-disabled-shadow: $search-disabled-shadow,
+
+        success-secondary-color: $success-secondary-color,
+        warning-secondary-color: $warning-secondary-color,
+        error-secondary-color: $error-secondary-color,
+        placeholder-color: $placeholder-color,
+        disabled-placeholder-color: $disabled-placeholder-color,
+    ));
+}
+
+
+
+/// @param {Map} $theme - The theme used to style the component.
+/// @requires {mixin} igx-root-css-vars
+/// @requires rem
+/// @requires {mixin} ellipsis
+/// @requires --var
+@mixin igx-input-group($theme) {
+    @include igx-root-css-vars($theme);
+
+    $palette: map-get($theme, 'palette');
+
+    $transition-timing: .25s $ease-out-cubic;
+
+    $required-symbol: '*';
+    $required-symbol-margin: 2px;
+
+    // This creates an inverse relationship
+    // between the value of the base scale size and
+    // the sizing of all inner elements.
+    // i.e. the bigger the scale size,
+    // the smaller the padding of the inner items.
+    $base-scale-size: (
+        'comfortable': 16px,
+        'cosy': 19px,
+        'compact': 22px
+    );
+
+    $hint-padding-top: rem(6px, map-get($base-scale-size, 'comfortable'));
+    $hint--box-margin: rem(12px, map-get($base-scale-size, 'comfortable'));
+
+    %form-group-display {
+        position: relative;
+        display: block;
+        color: --var($theme, 'idle-text-color');
+
+        igx-prefix,
+        [igxPrefix] {
+            @extend %form-group-prefix;
+            outline-style: none;
+        }
+
+        igx-suffix,
+        [igxSuffix] {
+            @extend %form-group-suffix;
+            outline-style: none;
+        }
+
+        input,
+        textarea {
+            font: inherit;
+            margin: 0;
+        }
+
+        textarea {
+            overflow: auto;
+        }
+
+        // Don't show the number spinner
+        input[type='number']::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            height: auto;
+        }
+
+        input[type='search']::-webkit-search-cancel-button,
+        input[type='search']::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+    }
+
+    %form-group-display--cosy {
+        igx-prefix,
+        [igxPrefix] {
+            @extend %form-group-prefix--cosy;
+        }
+
+        igx-suffix,
+        [igxSuffix] {
+            @extend %form-group-suffix--cosy;
+        }
+    }
+
+    %form-group-display--compact {
+        igx-prefix,
+        [igxPrefix] {
+            @extend %form-group-prefix--compact;
+        }
+
+        igx-suffix,
+        [igxSuffix] {
+            @extend %form-group-suffix--compact;
+        }
+    }
+
+    %form-group-display--no-margin {
+        margin-top: 0;
+
+        igx-prefix,
+        [igxPrefix] {
+            @extend %form-group-prefix--box;
+        }
+
+        igx-suffix,
+        [igxSuffix] {
+            @extend %form-group-suffix--box;
+        }
+    }
+
+    %form-group-display--no-margin-cosy {
+        igx-prefix,
+        [igxPrefix] {
+            @extend %form-group-prefix--box-cosy;
+        }
+    }
+
+    %form-group-display--no-margin-compact {
+        igx-prefix,
+        [igxPrefix] {
+            @extend %form-group-prefix--box-compact;
+        }
+    }
+
+    %form-group-display--error {
+        igx-prefix,
+        [igxPrefix] {
+            @extend %form-group-prefix--error;
+        }
+
+        igx-suffix,
+        [igxSuffix] {
+            @extend %form-group-suffix--error;
+        }
+    }
+
+    %form-group-box-wrapper {
+        border-radius: --var($theme, 'box-border-radius');
+        overflow: hidden;
+    }
+
+    %form-group-display--hover {
+        cursor: pointer;
+    }
+
+    %form-group-display--disabled {
+        pointer-events: none;
+        user-select: none;
+        color: --var($theme, 'disabled-text-color');
+    }
+
+    %form-group-bundle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-flow: row nowrap;
+        padding-top: rem(18px, map-get($base-scale-size, 'comfortable'));
+        box-shadow: inset 0 -1px 0 0 --var($theme, 'idle-bottom-line-color');
+        transition: box-shadow $transition-timing, color $transition-timing;
+    }
+
+    %form-group-bundle--cosy {
+        padding-top: rem(18px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-bundle--compact {
+        padding-top: rem(18px, map-get($base-scale-size, 'compact'));
+    }
+
+    %form-group-bundle--box {
+        padding: 0 rem(16px, map-get($base-scale-size, 'comfortable'));
+        background: --var($theme, 'box-background');
+        box-shadow: inset 0 -2px 0 0 --var($theme, 'idle-bottom-line-color');
+
+        %form-group-label--box + %form-group-input--box {
+            transform: translateY(0);
+        }
+    }
+
+    %form-group-bundle--box-cosy {
+        padding: 0 rem(16px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-bundle--box-compact {
+        padding: 0 rem(16px, map-get($base-scale-size, 'compact'));
+    }
+
+    %form-group-bundle--hover {
+        cursor: pointer;
+        box-shadow: inset 0 -2px 0 0 --var($theme, 'hover-bottom-line-color');
+    }
+
+    %form-group-bundle--focus {
+        caret-color: --var($theme, 'focused-secondary-color');
+        box-shadow: inset 0 -2px 0 0 --var($theme, 'interim-bottom-line-color');
+    }
+
+    %form-group-bundle--success {
+        caret-color: --var($theme, 'success-secondary-color');
+        box-shadow: inset 0 -1px 0 0 --var($theme, 'success-secondary-color');
+    }
+
+    %form-group-bundle--error {
+        caret-color: --var($theme, 'error-secondary-color');
+        box-shadow: inset 0 -1px 0 0 --var($theme, 'error-secondary-color');
+    }
+
+    %form-group-bundle--disabled {
+        box-shadow: none;
+        background-image: linear-gradient(to right, --var($theme, 'disabled-bottom-line-color') 40%, transparent 10%);
+        background-position: bottom;
+        background-size: 4px 1px;
+        background-repeat: repeat-x;
+    }
+
+    %form-group-bundle--box-disabled {
+        background: --var($theme, 'box-disabled-background');
+    }
+
+    %form-group-bundle--border {
+        padding: 0 rem(16px, map-get($base-scale-size, 'comfortable'));
+        box-shadow: inset 0 0 0 1px --var($theme, 'idle-bottom-line-color');
+        border-radius: --var($theme, 'border-border-radius');
+        background: --var($theme, 'border-background');
+
+        %form-group-label--box + %form-group-input--box {
+            transform: translateY(0);
+        }
+    }
+
+    %form-group-bundle--border-cosy {
+        padding: 0 rem(16px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-bundle--border-compact {
+        padding: 0 rem(16px, map-get($base-scale-size, 'compact'));
+    }
+
+    %form-group-bundle-border--hover {
+        box-shadow: inset 0 0 0 2px --var($theme, 'idle-text-color');
+    }
+
+    %form-group-bundle-border--focus {
+        box-shadow: inset 0 0 0 2px --var($theme, 'focused-bottom-line-color');
+    }
+
+    %form-group-bundle-border--error {
+        box-shadow: inset 0 0 0 2px --var($theme, 'error-secondary-color');
+    }
+
+    %form-group-bundle-border--success {
+        box-shadow: inset 0 0 0 2px --var($theme, 'success-secondary-color');
+    }
+
+    %form-group-bundle-border--disabled {
+        background: --var($theme, 'border-disabled-background');
+        box-shadow: inset 0 0 0 1px --var($theme, 'disabled-border-color');
+    }
+
+    %form-group-bundle--search {
+        padding: 0 rem(16px, map-get($base-scale-size, 'comfortable'));
+        border-radius: --var($theme, 'search-border-radius');
+        border-bottom: none;
+        background: --var($theme, 'search-background');
+        box-shadow: --var($theme, 'search-resting-shadow');
+
+        %form-group-label--box + %form-group-input--box {
+            transform: translateY(0);
+        }
+    }
+
+    %form-group-bundle--search-cosy {
+        padding: 0 rem(16px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-bundle--search-compact {
+        padding: 0 rem(16px, map-get($base-scale-size, 'compact'));
+    }
+
+    %form-group-bundle-search--hover {
+        box-shadow: --var($theme, 'search-hover-shadow');
+    }
+
+    %form-group-bundle-search--focus {
+        box-shadow: --var($theme, 'search-hover-shadow');
+    }
+
+    %form-group-bundle-search--error {
+        box-shadow: --var($theme, 'search-hover-shadow');
+    }
+
+    %form-group-bundle-search--success {
+        box-shadow: --var($theme, 'search-hover-shadow');
+    }
+
+    %form-group-bundle-search--disabled {
+        background: --var($theme, 'search-disabled-background');
+        box-shadow: --var($theme, 'search-disabled-shadow');
+    }
+
+    %form-group-bundle-main {
+        position: relative;
+        flex-grow: 1;
+    }
+
+    %form-group-bundle-main--box {
+        padding-top: rem(18px, map-get($base-scale-size, 'comfortable'));
+    }
+
+    %form-group-bundle-main--box-cosy {
+        padding-top: rem(18px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-bundle-main--box-compact {
+        padding-top: rem(18px, map-get($base-scale-size, 'compact'));
+    }
+
+    %form-group-label {
+        @include ellipsis();
+        position: absolute;
+        width: 100%;
+        transform: translateY(50%); /* 8px, base is 16px */
+        line-height: 1 !important;
+        height: rem(18px);
+        backface-visibility: hidden;
+        will-change: transform;
+        transform-origin: top left;
+        transition: transform $transition-timing, color $transition-timing, margin $transition-timing;
+
+        [dir='rtl'] & {
+            transform-origin: top right;
+        }
+    }
+
+    %form-group-label--cosy {
+        margin-top: rem(-2px);
+    }
+
+    %form-group-label--compact {
+        margin-top: rem(-4px);
+    }
+
+    %form-group-label--box {
+        transform: translateY(0);
+    }
+
+    %form-group-label--float {
+        overflow: visible;
+        transform: translateY(-50%) scale(.75);
+        margin-top: auto;
+    }
+
+    %form-group-label--fixed {
+        transition: color $transition-timing;
+    }
+
+    %form-group-label--focus {
+        color: --var($theme, 'focused-secondary-color');
+    }
+
+    %form-group-label--success {
+        color: --var($theme, 'success-secondary-color');
+    }
+
+    %form-group-label--error {
+        color: --var($theme, 'error-secondary-color');
+    }
+
+    %form-group-label--required {
+        &::after {
+            content: '#{$required-symbol}';
+            font-size: inherit;
+            vertical-align: top;
+            margin-left: $required-symbol-margin; /* 2px base is 16px */
+        }
+    }
+
+    %form-group-input {
+        position: relative;
+        display: block;
+        border: none;
+        height: rem(32px, map-get($base-scale-size, 'comfortable'));
+        line-height: 0 !important; /* resets typography styles */
+        width: 100%;
+        min-width: 0;
+        overflow: visible;
+        background: transparent;
+        color: --var($theme, 'filled-text-color');
+        outline-style: none;
+        box-shadow: none;
+        border-top: rem(3px) solid transparent;
+        padding-bottom: rem(3px);
+
+        &::-webkit-input-placeholder {
+            line-height: normal;
+        }
+
+        &::placeholder {
+            color: --var($theme, 'placeholder-color');
+            opacity: 1;
+        }
+    }
+
+    %form-group-input--cosy {
+        height: rem(32px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-input--compact {
+        font-size: rem(map-get($base-scale-size, 'compact') - 1px, map-get($base-scale-size, 'compact'));
+        height: rem(32px, map-get($base-scale-size, 'compact'));
+    }
+
+    %chrome-autofill-fix {
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active { -webkit-transition-delay: 99999s; }
+    }
+
+    %edge-clear-icon-fix {
+        &::-ms-clear {
+            display: none;
+        }
+    }
+
+    %form-group-input--box {
+        transform: translateY(-25%);
+    }
+
+    %form-group-input--hover {
+        cursor: pointer;
+    }
+
+    %form-group-input--focus {
+        cursor: text;
+        color: --var($theme, 'focused-text-color');
+    }
+
+    %form-group-input--disabled {
+        color: --var($theme, 'disabled-text-color');
+
+        &::placeholder {
+            color: --var($theme, 'disabled-placeholder-color');
+        }
+    }
+
+    %form-group-textarea {
+        min-height: rem(82px, map-get($base-scale-size, 'comfortable')); /* 3 lines * 22px + 8px bottom padding + 8px top padding */
+        margin-right: -#{rem(16px, map-get($base-scale-size, 'comfortable'))}; /* this fixes resizing in chrome !?!? */
+        line-height: normal !important; /* resets typography styles */
+        height: auto;
+        resize: vertical;
+        overflow: hidden;
+
+        [dir='rtl'] & {
+            margin-right: initial;
+            margin-left: -#{rem(16px, map-get($base-scale-size, 'comfortable'))};
+        }
+    }
+
+    %form-group-textarea--cosy {
+        min-height: rem(82px, map-get($base-scale-size, 'cosy'));
+        margin-right: -#{rem(16px, map-get($base-scale-size, 'cosy'))};
+
+        [dir='rtl'] & {
+            margin-left: -#{rem(16px, map-get($base-scale-size, 'cosy'))};
+        }
+    }
+
+    %form-group-textarea--compact {
+        min-height: rem(82px, map-get($base-scale-size, 'compact'));
+        margin-right: -#{rem(16px, map-get($base-scale-size, 'compact'))};
+
+        [dir='rtl'] & {
+            margin-left: -#{rem(16px, map-get($base-scale-size, 'compact'))};
+        }
+    }
+
+    %form-group-textarea--box {
+        width: calc(100% + #{rem(16px, map-get($base-scale-size, 'comfortable')) * 2}); /* add the padding to the width */
+        margin: 0 -#{rem(16px, map-get($base-scale-size, 'comfortable'))};
+        padding-left: rem(16px, map-get($base-scale-size, 'comfortable'));
+        padding-right: rem(16px, map-get($base-scale-size, 'comfortable'));
+    }
+
+    %form-group-textarea--box-cosy {
+        width: calc(100% + #{rem(16px, map-get($base-scale-size, 'cosy')) * 2}); /* add the padding to the width */
+        margin: 0 -#{rem(16px, map-get($base-scale-size, 'cosy'))};
+        padding-left: rem(16px, map-get($base-scale-size, 'cosy'));
+        padding-right: rem(16px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-textarea--box-compact {
+        width: calc(100% + #{rem(16px, map-get($base-scale-size, 'compact')) * 2}); /* add the padding to the width */
+        margin: 0 -#{rem(16px, map-get($base-scale-size, 'compact'))};
+        padding-left: rem(16px, map-get($base-scale-size, 'compact'));
+        padding-right: rem(16px, map-get($base-scale-size, 'compact'));
+    }
+
+    %form-group-prefix,
+    %form-group-suffix {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        height: rem(32px, map-get($base-scale-size, 'comfortable'));
+        transition: color $transition-timing;
+    }
+
+    %form-group-prefix {
+        padding: rem(8px, map-get($base-scale-size, 'comfortable'))
+            rem(8px, map-get($base-scale-size, 'comfortable'))
+            rem(8px, map-get($base-scale-size, 'comfortable'))
+            0;
+
+        [dir='rtl'] & {
+            padding: rem(8px, map-get($base-scale-size, 'comfortable'))
+                0
+                rem(8px, map-get($base-scale-size, 'comfortable'))
+                rem(8px, map-get($base-scale-size, 'comfortable'));
+        }
+    }
+
+    %form-group-suffix {
+        padding: rem(8px, map-get($base-scale-size, 'comfortable')) 0;
+    }
+
+    %form-group-prefix--cosy,
+    %form-group-suffix--cosy {
+        height: rem(32px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-prefix--compact,
+    %form-group-suffix--compact {
+        font-size: rem(map-get($base-scale-size, 'compact') - 1px, map-get($base-scale-size, 'compact'));
+        height: rem(32px, map-get($base-scale-size, 'compact'));
+    }
+
+    %form-group-prefix--cosy {
+        padding: rem(8px, map-get($base-scale-size, 'cosy'))
+            rem(8px, map-get($base-scale-size, 'cosy'))
+            rem(8px, map-get($base-scale-size, 'cosy'))
+            0;
+
+        [dir='rtl'] & {
+            padding: rem(8px, map-get($base-scale-size, 'cosy'))
+                0
+                rem(8px, map-get($base-scale-size, 'cosy'))
+                rem(8px, map-get($base-scale-size, 'cosy'));
+        }
+    }
+
+    %form-group-prefix--compact {
+        padding: rem(8px, map-get($base-scale-size, 'compact'))
+            rem(8px, map-get($base-scale-size, 'compact'))
+            rem(8px, map-get($base-scale-size, 'compact'))
+            0;
+
+        [dir='rtl'] & {
+            padding: rem(8px, map-get($base-scale-size, 'compact'))
+                0
+                rem(8px, map-get($base-scale-size, 'compact'))
+                rem(8px, map-get($base-scale-size, 'compact'));
+        }
+    }
+
+    %form-group-suffix--cosy {
+        padding: rem(8px, map-get($base-scale-size, 'cosy')) 0;
+    }
+
+    %form-group-suffix--compact {
+        padding: rem(8px, map-get($base-scale-size, 'compact')) 0;
+    }
+
+    %form-group-prefix--box,
+    %form-group-suffix--box {
+        height: 100%;
+    }
+
+    %form-group-prefix--box {
+        padding: 0 rem(8px, map-get($base-scale-size, 'comfortable')) 0 0;
+
+        [dir='rtl'] & {
+            padding: 0 0 0 rem(8px, map-get($base-scale-size, 'comfortable')); /* 8px, base is 16px */
+        }
+    }
+
+    %form-group-prefix--box-cosy {
+        padding: 0 rem(8px, map-get($base-scale-size, 'cosy')) 0 0;
+
+        [dir='rtl'] & {
+            padding: 0 0 0 rem(8px, map-get($base-scale-size, 'cosy')); /* 8px, base is 16px */
+        }
+    }
+
+    %form-group-prefix--box-compact {
+        padding: 0 rem(8px, map-get($base-scale-size, 'compact')) 0 0;
+
+        [dir='rtl'] & {
+            padding: 0 0 0 rem(8px, map-get($base-scale-size, 'compact')); /* 8px, base is 16px */
+        }
+    }
+
+    %form-group-suffix--box {
+        padding: 0;
+    }
+
+    %form-group-prefix--error,
+    %form-group-suffix--error {
+        color: --var($theme, 'error-secondary-color');
+    }
+
+    %form-group-border {
+        height: 2px; /* 2px, when base is 16px */
+        margin-top: -2px; /* 2px, when base is 16px */
+        transform: scaleX(0);
+        transform-origin: center;
+        background: --var($theme, 'focused-secondary-color');
+    }
+
+    %form-group-border--focus {
+        transform: scaleX(1);
+        transition: transform $transition-timing;
+    }
+
+    %form-group-border--success {
+        background: --var($theme, 'success-secondary-color');
+    }
+
+    %form-group-border--warning {
+        background: --var($theme, 'warning-secondary-color');
+    }
+
+    %form-group-border--error {
+        background: --var($theme, 'error-secondary-color');
+    }
+
+    %form-group-border--hidden {
+        display: none;
+    }
+
+    %form-group-helper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding-top: rem(6px, map-get($base-scale-size, 'comfortable'));
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    %form-group-help--cosy {
+        padding-top: rem(6px, map-get($base-scale-size, 'cosy'));
+    }
+
+    %form-group-help--compact {
+        padding-top: rem(6px, map-get($base-scale-size, 'compact'));
+    }
+
+    %form-group-helper--box {
+        margin-left: $hint--box-margin; /* 16px, base is 12px */
+        margin-right: $hint--box-margin; /* 16px, base is 12px */
+    }
+
+    %form-group-helper--success {
+        color: --var($theme, 'success-secondary-color');
+    }
+
+    %form-group-helper--error {
+        color: --var($theme, 'error-secondary-color');
+    }
+
+    %form-group-helper-item {
+        @include ellipsis();
+        position: relative;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    %form-group-helper-item--start {
+        order: 0;
+    }
+
+    %form-group-helper-item--end {
+        order: 1;
+    }
+}
+
+/// Adds typography styles for the igx-input-group component.
+/// Uses the 'body-1', 'caption'
+/// category from the typographic scale.
+/// @group typography
+/// @param {Map} $type-scale - A typographic scale as produced by igx-type-scale.
+/// @param {Map} $categories [(helper-text: 'caption', input-text: 'subtitle-1')] - The categories from the typographic scale used for type styles.
+/// @requires {mixin} igx-type-style
+@mixin igx-input-group-typography($type-scale, $categories: (
+    helper-text: 'caption',
+    input-text: 'subtitle-1')
+) {
+    $helper-text: map-get($categories, 'helper-text');
+    $input-text: map-get($categories, 'input-text');
+    $input-text-props: igx-type-scale-category($type-scale, $input-text);
+
+    @include igx-scope('.igx-typography') {
+        %form-group-input {
+            @include igx-type-style($type-scale, $input-text) {
+                margin: 0;
+            }
+        }
+
+        %form-group-helper {
+            @include igx-type-style($type-scale, $helper-text) {
+                margin: 0;
+            }
+        }
+
+        %form-group-prefix,
+        %form-group-suffix {
+            @include igx-type-style($type-scale, $input-text) {
+                margin: 0;
+            }
+        }
+    }
+}

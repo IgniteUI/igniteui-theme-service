@@ -1,0 +1,390 @@
+////
+/// @group themes
+/// @access public
+/// @author <a href="https://github.com/desig9stein" target="_blank">Marin Popov</a>
+/// @author <a href="https://github.com/simeonoff" target="_blank">Simeon Simeonoff</a>
+////
+
+/// Generates a drop-down theme.
+/// @param {Map} $palette [$default-palette] - The palette used as basis for styling the component.
+/// @param {Map} $schema [$light-schema] - The schema used as basis for styling the component.
+/// @param {Map} $elevations [$elevations] - The elevations (shadows) map to be used.
+/// @param {Color} $background-color [null] - The drop-down background color.
+/// @param {Color} $header-text-color [null] - The drop-down header text color.
+///
+/// @param {Color} $item-text-color [null] - The drop-down text color.
+/// @param {Color} $hover-item-text-color [null] - The drop-down hover text color.
+///
+/// @param {Color} $hover-item-background [null] - The drop-down hover item background color.
+///
+/// @param {Color} $focused-item-background [null] - The drop-down focused item background color.
+/// @param {Color} $focused-item-text-color [null] - The drop-down focused item text color.
+///
+/// @param {Color} $selected-item-background [null] - The drop-down selected item background color.
+/// @param {Color} $selected-item-text-color [null] - The drop-down selected item text color.
+///
+/// @param {Color} $selected-hover-item-background [null] - The drop-down selected item hover background color.
+/// @param {Color} $selected-hover-item-text-color [null] - The drop-down selected item hover text color.
+///
+/// @param {Color} $selected-focus-item-background [null] - The drop-down selected item focus background color.
+/// @param {Color} selected-focus-item-text-color [null] - The drop-down selected item focus text color.
+///
+/// @param {Color} $disabled-item-background [null] - The drop-down disabled item background color.
+/// @param {Color} $disabled-item-text-color [null] - The drop-down disabled item text color.
+/// @param {box-shadow} $shadow [null] - Sets a shadow to be used for the drop-down.
+///
+/// @param {border-radius} $border-radius [null] - The border radius used for drop-down component.
+///
+/// @requires $default-palette
+/// @requires $light-schema
+/// @requires apply-palette
+/// @requires extend
+/// @requires text-contrast
+/// @requires igx-elevation
+/// @requires $elevations
+/// @requires round-borders
+@function igx-drop-down-theme(
+    $palette: $default-palette,
+    $schema: $light-schema,
+    $elevations: $elevations,
+
+    $border-radius: null,
+
+    $background-color: null,
+    $header-text-color: null,
+
+    $item-text-color: null,
+    $hover-item-text-color: null,
+
+    $hover-item-background: null,
+
+    $focused-item-background: null,
+    $focused-item-text-color: null,
+
+    $selected-item-background: null,
+    $selected-item-text-color: null,
+
+    $selected-hover-item-background: null,
+    $selected-hover-item-text-color: null,
+
+    $selected-focus-item-background: null,
+    $selected-focus-item-text-color: null,
+
+    $disabled-item-background: null,
+    $disabled-item-text-color: null,
+    $shadow: null
+) {
+    $name: 'igx-drop-down';
+    $drop-down-schema: map-get($schema, 'igx-drop-down');
+    $theme: apply-palette($drop-down-schema, $palette);
+
+    $border-radius: round-borders(
+        if($border-radius, $border-radius, map-get($drop-down-schema, 'border-radius')), 0, 20px
+    );
+
+    @if not($item-text-color) and $background-color {
+        $item-text-color: text-contrast($background-color);
+    }
+
+    @if not($hover-item-background) and $background-color {
+        $hover-item-text-color: text-contrast($background-color);
+
+        @if type-of($background-color) == 'color' {
+            $hover-item-background: rgba(text-contrast($background-color), .12);
+        }
+    }
+
+    @if not($hover-item-text-color) and $background-color {
+        $hover-item-text-color: text-contrast($background-color);
+    }
+
+    @if not($focused-item-background) and $background-color {
+        $focused-item-text-color: text-contrast($background-color);
+
+        @if type-of($background-color) == 'color' {
+            $focused-item-background: rgba(text-contrast($background-color), .12);
+        }
+    }
+
+    @if not($focused-item-text-color) and $focused-item-background {
+        $focused-item-text-color: text-contrast($focused-item-background);
+    }
+
+    @if not($selected-item-text-color) and $selected-item-background {
+        $selected-item-text-color: text-contrast($selected-item-background);
+    }
+
+    @if not($selected-hover-item-text-color) and $selected-hover-item-background {
+        $selected-hover-item-text-color: text-contrast($selected-hover-item-background);
+    }
+
+
+    @if not($selected-focus-item-text-color) and $selected-focus-item-background {
+        $selected-focus-item-text-color: text-contrast($selected-focus-item-background);
+    }
+
+    @if not($selected-focus-item-text-color) and $selected-focus-item-background {
+        $selected-focus-item-text-color: text-contrast($selected-focus-item-background);
+    }
+
+
+    @if not($disabled-item-text-color) and $background-color {
+        @if type-of($background-color) == 'color' {
+            $disabled-item-text-color: rgba(text-contrast($background-color), .36);
+        }
+    }
+
+    @if not($disabled-item-text-color) and $disabled-item-background {
+        @if type-of($disabled-item-background) == 'color' {
+            $disabled-item-text-color: rgba(text-contrast($disabled-item-background), .36);
+        }
+    }
+
+    @if not($header-text-color) and $background-color {
+        @if type-of($background-color) == 'color' {
+            $header-text-color: rgba(text-contrast($background-color), .7);
+        }
+    }
+
+    @if not($shadow) {
+        $elevation: map-get($drop-down-schema, 'elevation');
+        $shadow: igx-elevation($elevations, $elevation);
+    }
+
+    @return extend($theme, (
+        name: $name,
+        palette: $palette,
+        background-color: $background-color,
+        border-radius: $border-radius,
+        header-text-color: $header-text-color,
+        item-text-color: $item-text-color,
+        hover-item-text-color: $hover-item-text-color,
+        hover-item-background: $hover-item-background,
+        focused-item-background: $focused-item-background,
+        focused-item-text-color: $focused-item-text-color,
+        selected-item-background: $selected-item-background,
+        selected-item-text-color: $selected-item-text-color,
+        selected-hover-item-background: $selected-hover-item-background,
+        selected-hover-item-text-color: $selected-hover-item-text-color,
+        selected-focus-item-background: $selected-focus-item-background,
+        selected-focus-item-text-color: $selected-focus-item-text-color,
+        disabled-item-background: $disabled-item-background,
+        disabled-item-text-color: $disabled-item-text-color,
+        shadow: $shadow,
+    ));
+}
+
+/// @param {Map} $theme - The theme used to style the component.
+/// @requires {mixin} igx-root-css-vars
+/// @requires rem
+/// @requires --var
+@mixin igx-drop-down($theme) {
+    @include igx-root-css-vars($theme);
+
+    $item-height: (
+        comfortable: rem(40px),
+        cosy: rem(32px),
+        compact: rem(28px)
+    );
+
+    $item-padding-comfortable: rem(24px);
+    $item-padding-cosy: rem(20px);
+    $item-padding-compact: rem(16px);
+
+    $item-padding: (
+        comfortable: 0 $item-padding-comfortable,
+        cosy: 0 $item-padding-cosy,
+        compact: 0 $item-padding-compact
+    );
+
+    $header-item-padding: (
+        comfortable: 0 rem(16px),
+        cosy: 0 rem(12px),
+        compact: 0 rem(8px)
+    );
+
+    %igx-drop-down {
+        max-height: 100%;
+        position: absolute;
+        border-radius: --var($theme, 'border-radius');
+        overflow: hidden;
+    }
+
+    %igx-drop-down__list {
+        overflow-y: auto;
+        z-index: 1;
+        box-shadow: --var($theme, 'shadow');
+        background: --var($theme, 'background-color');
+        min-width: rem(128px);
+
+        &:empty {
+            box-shadow: none;
+        }
+
+        igx-input-group {
+            margin-top: -16px !important;
+        }
+    }
+
+    %igx-drop-down__header,
+    %igx-drop-down__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        white-space: nowrap;
+        height: map-get($item-height, 'comfortable');
+    }
+
+    %igx-drop-down__item {
+        color: --var($theme, 'item-text-color');
+        cursor: pointer;
+        padding: map-get($item-padding, 'comfortable');
+
+        //&%igx-drop-down__list--select {
+        //    max-width: calc(100% + #{$item-padding-comfortable} * 2);
+        //}
+
+        &:focus {
+            outline: 0;
+            outline-color: transparent;
+            background: --var($theme, 'focused-item-background');
+            color: --var($theme, 'focused-item-text-color');
+        }
+
+        &:hover {
+            background: --var($theme, 'hover-item-background');
+            color: --var($theme, 'hover-item-text-color');
+        }
+    }
+
+    %igx-drop-down__item--cosy {
+        height: map-get($item-height, 'cosy');
+        padding: map-get($item-padding, 'cosy');
+        //
+        //&%igx-drop-down__list--select {
+        //    max-width: calc(100% + #{$item-padding-cosy} * 2);
+        //}
+    }
+
+    %igx-drop-down__item--compact {
+        height: map-get($item-height, 'compact');
+        padding: map-get($item-padding, 'compact');
+        //
+        //&%igx-drop-down__list--select {
+        //    max-width: calc(100% + #{$item-padding-compact} * 2);
+        //}
+    }
+
+    [dir='rtl'] {
+        %igx-drop-down__item {
+            justify-content: flex-end;
+            text-align: right;
+        }
+    }
+
+    %igx-drop-down__header {
+        color: --var($theme, 'header-text-color');
+        pointer-events: none;
+        padding: map-get($header-item-padding, 'comfortable');
+    }
+
+    %igx-drop-down__header--cosy {
+        height: map-get($item-height, 'cosy');
+        padding: map-get($header-item-padding, 'cosy');
+    }
+
+    %igx-drop-down__header--compact {
+        height: map-get($item-height, 'compact');
+        padding: map-get($header-item-padding, 'compact');
+    }
+
+    %igx-drop-down__group {
+        pointer-events: auto;
+
+        label {
+            @extend %igx-drop-down__header;
+        }
+
+        %igx-drop-down__item {
+            text-indent: map-get($item-padding, 'comfortable');
+        }
+    }
+
+    %igx-drop-down__item--focused {
+        background: --var($theme, 'focused-item-background');
+        color: --var($theme, 'focused-item-text-color');
+
+        &:hover {
+            background: --var($theme, 'focused-item-background');
+        }
+    }
+
+    %igx-drop-down__item--selected {
+        background: --var($theme, 'selected-item-background');
+        color: --var($theme, 'selected-item-text-color');
+
+        &:hover {
+            background: --var($theme, 'selected-hover-item-background');
+            color: --var($theme, 'selected-hover-item-text-color');
+        }
+    }
+
+    %igx-drop-down__item--selected--focused {
+        background: --var($theme, 'selected-focus-item-background');
+        color: --var($theme, 'selected-focus-item-text-color');
+    }
+
+    %igx-drop-down__item--disabled {
+        background: --var($theme, 'disabled-item-background');
+        color: --var($theme, 'disabled-item-text-color');
+        cursor: default;
+        pointer-events: none;
+
+        &:hover {
+            background: --var($theme, 'disabled-item-background');
+        }
+    }
+}
+
+/// Adds typography styles for the igx-list component.
+/// Uses the 'caption' and 'subtitle-2'
+/// categories from the typographic scale.
+/// @group typography
+/// @param {Map} $type-scale - A typographic scale as produced by igx-type-scale.
+/// @param {Map} $categories [(header: 'overline', item: 'body-2')] - The categories from the typographic scale used for type styles.
+/// @requires {mixin} igx-type-style
+@mixin igx-drop-down-typography(
+    $type-scale,
+    $categories: (
+        header: 'overline',
+        item: 'body-2',
+        select-item: 'subtitle-1'
+    )
+) {
+    $header: map-get($categories, 'header');
+    $item: map-get($categories, 'item');
+    $select-item: map-get($categories, 'select-item');
+
+    @include igx-scope('.igx-typography') {
+        %igx-drop-down__header,
+        %igx-drop-down__group > label {
+            @include igx-type-style($type-scale, $header) {
+                margin: 0;
+            }
+        }
+
+        %igx-drop-down__item {
+            @include igx-type-style($type-scale, $item) {
+                margin: 0;
+            }
+        }
+
+        %igx-drop-down__list--select {
+            %igx-drop-down__item {
+                @include igx-type-style($type-scale, $select-item);
+                @include ellipsis()
+            }
+        }
+    }
+}

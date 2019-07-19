@@ -1,0 +1,28 @@
+@import '../shape/bottom-nav';
+////
+/// @group schemas
+/// @access private
+/// @author <a href="https://github.com/simeonoff" target="_blank">Simeon Simeonoff</a>
+////
+
+/// Generates a light bottom navigation scheme.
+/// @type {Map}
+/// @prop {Color} background [#fff] - The background color used for the toast.
+/// @prop {Color} idle-item-color [igx-color: ('grays', 700)] - The text-color used for the idle color.
+/// @prop {Color} active-item-color [igx-color: ('primary', 500)] - The text-color used for the active color.
+/// @prop {number} elevation [8] - The elevation level of the bar.
+/// @see $default-palette
+
+$_light-bottom-nav: extend((
+    background: #fff,
+
+    idle-item-color: (
+        igx-color: ('grays', 700)
+    ),
+
+    active-item-color: (
+        igx-color: ('primary', 500)
+    ),
+
+    elevation: 8
+), $_default-shape-bottom-nav);

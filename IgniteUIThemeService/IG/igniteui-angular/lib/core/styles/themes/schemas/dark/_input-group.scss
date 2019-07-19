@@ -1,0 +1,18 @@
+@import '../light/input-group';
+
+////
+/// @group schemas
+/// @access private
+/// @author <a href="https://github.com/desig9stein" target="_blank">Marin Popov</a>
+////
+
+/// Generates a light input-group schema.
+/// @type {Map}
+/// @prop {Color} search-background [#222] - The background color of an input group of type search.
+/// @requires {function} extend
+/// @requires $_light-input-group
+/// @see $default-palette
+
+$_dark-input-group: extend($_light-input-group, (
+    search-background: #222
+));

@@ -1,0 +1,230 @@
+////
+/// @group themes
+/// @access public
+/// @author <a href="https://github.com/desig9stein" target="_blank">Marin Popov</a>
+////
+
+/// Expansion panel Theme
+/// @param {Map} $palette [$default-palette] - The palette used as basis for styling the component.
+/// @param {Map} $schema [$light-schema] - The schema used as basis for styling the component.
+/// @param {Color} $header-background [null] - The panel header background color.
+/// @param {Color} $header-focus-background [null] - The panel header focus background color.
+/// @param {Color} $header-title-color [null] - The panel header title text color.
+/// @param {Color} $header-description-color [null] - The panel header description text color.
+/// @param {Color} $header-icon-color [null] - The panel header icon color.
+/// @param {Color} $body-color [null] - The panel body text color.
+/// @param {Color} $body-background [null] - The panel body background color.
+/// @param {Color} $disabled-color [null] - The panel body disabled text color.
+///
+/// @param {border-radius} $border-radius [null] - The border radius used for expansion-panel component.
+///
+/// @requires $default-palette
+/// @requires $light-schema
+/// @requires apply-palette
+/// @requires extend
+/// @requires text-contrast
+/// @requires round-borders
+///
+/// @example scss Change the background color
+///   $my-expansion-panel-theme: igx-expansion-panel($header-background: black);
+///   // Pass the theme to the igx-expansion-panel component mixin
+///   @include igx-expansion-panel($my-igx-expansion-panel-theme);
+@function igx-expansion-panel-theme(
+    $palette: $default-palette,
+    $schema: $light-schema,
+
+    $border-radius:null,
+    $header-background: null,
+    $header-focus-background: null,
+    $header-title-color: null,
+    $header-description-color: null,
+    $header-icon-color: null,
+    $body-color: null,
+    $body-background: null,
+    $disabled-color: null
+) {
+    $name: 'igx-expansion-panel';
+    $expansion-panel-schema: map-get($schema, $name);
+    $theme: apply-palette($expansion-panel-schema, $palette);
+
+    $border-radius: round-borders(
+        if($border-radius, $border-radius, map-get($expansion-panel-schema, 'border-radius')), 0, 16px
+    );
+
+
+    @if not($header-title-color) and $header-background {
+        $header-title-color: text-contrast($header-background);
+    }
+
+    @if not($header-description-color) and $header-background {
+        @if type-of($header-background) == 'color' {
+            $header-description-color: rgba(text-contrast($header-background), .8);
+        }
+    }
+
+    @if not($header-icon-color) and $header-background {
+        $header-icon-color: text-contrast($header-background);
+    }
+
+    @if not($body-color) and $body-background {
+        $body-color: text-contrast($body-background);
+    }
+
+    @return extend($theme, (
+        name: $name,
+        palette: $palette,
+        header-background: $header-background,
+        border-radius: $border-radius,
+        header-focus-background: $header-focus-background,
+        header-title-color: $header-title-color,
+        header-description-color: $header-description-color,
+        header-icon-color: $header-icon-color,
+        body-color: $body-color,
+        body-background: $body-background,
+        disabled-color: $disabled-color,
+    ));
+}
+
+
+/// @param {Map} $theme - The theme used to style the component.
+/// @requires {mixin} igx-root-css-vars
+/// @requires rem
+/// @requires --var
+@mixin igx-expansion-panel($theme) {
+    @include igx-root-css-vars($theme);
+
+    $panel-padding: em(16px, 16px);
+    $panel-compact-padding: em(16px, 16px);
+    $panel-cosy-padding: em(8px, 16px);
+
+    %igx-expansion-panel {
+        display: flex;
+        flex-direction: column;
+        border-radius: --var($theme, 'border-radius');
+        overflow: hidden;
+    }
+
+    %igx-expansion-panel__header-title {
+        color: --var($theme, 'header-title-color');
+        margin-right: rem(16px, 16px);
+    }
+
+    %igx-expansion-panel__header-description {
+        color: --var($theme, 'header-description-color');
+    }
+
+    %igx-expansion-panel__header-title,
+    %igx-expansion-panel__header-description {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    %igx-expansion-panel__header-inner {
+        display: flex;
+        align-items: center;
+        padding: $panel-padding;
+        cursor: pointer;
+        background: --var($theme, 'header-background');
+
+        &:focus,
+        &:active
+        {
+            background: --var($theme, 'header-focus-background');
+            outline: transparent;
+        }
+    }
+
+    %igx-expansion-panel__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 0 0%;
+        overflow: hidden;
+    }
+
+    %igx-expansion-panel__header-icon--end {
+        order: 1;
+        margin-left: rem(16px, 16px);
+    }
+
+    %igx-expansion-panel__header-icon--start {
+        order: -1;
+        margin-right: rem(16px, 16px);
+    }
+
+    %igx-expansion-panel__header-icon--none {
+        display: none;
+    }
+
+    %igx-expansion-panel__header-icon--end,
+    %igx-expansion-panel__header-icon--start {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        user-select: none;
+
+        color: --var($theme, 'header-icon-color');
+
+        igx-icon {
+            color: --var($theme, 'header-icon-color');
+        }
+    }
+
+    %igx-expansion-panel__body {
+        color: --var($theme, 'body-color');
+        background: --var($theme, 'body-background');
+        overflow: hidden;
+    }
+
+    %igx-expansion-panel--disabled {
+        %igx-expansion-panel__header-title,
+        %igx-expansion-panel__header-description {
+            color: --var($theme, 'disabled-color')
+        }
+
+        %igx-expansion-panel__header-icon--start,
+        %igx-expansion-panel__header-icon--end {
+            igx-icon {
+                color: --var($theme, 'disabled-color');
+            }
+        }
+    }
+}
+
+/// Adds typography styles for the igx-expansion-panel component.
+/// Uses the 'body-2'
+/// category from the typographic scale.
+/// @group typography
+/// @param {Map} $type-scale - A typographic scale as produced by igx-type-scale.
+/// @param {Map} $categories [(title: 'h5', description: 'subtitle-2', body: 'subtitle-2')] - The categories from the typographic scale used for type styles.
+/// @requires {mixin} igx-type-style
+@mixin igx-expansion-panel-typography($type-scale, $categories: (
+    title: 'h5',
+    description: 'subtitle-2',
+    body: 'body-2')
+) {
+    $title: map-get($categories, 'title');
+    $description: map-get($categories, 'description');
+    $body: map-get($categories, '$body');
+
+    @include igx-scope('.igx-typography') {
+        %igx-expansion-panel__header-title {
+            @include igx-type-style($type-scale, $title) {
+                margin: 0;
+            }
+        }
+
+        %igx-expansion-panel__header-description {
+            @include igx-type-style($type-scale, $description) {
+                margin: 0;
+            }
+        }
+
+        %igx-expansion-panel__body {
+            @include igx-type-style($type-scale, $body) {
+                margin: 0;
+            }
+        }
+    }
+}
