@@ -49,7 +49,9 @@ namespace IgniteUIThemeService.Controllers
 "@import \"" + IGPath.Replace('\\', '/') + "/igniteui-angular/lib/core/styles/themes/index\";" +
 "@include igx-core();" +
 "@include igx-theme(" + cp.palette + ");" +
-"@include igx-typography($font-family: \"" + typeface + "\");";
+"@include igx-typography($font-family: \"" + typeface + "\");" +
+"@include igx-button(igx-button-theme($flat-border-radius: " + roundness + ", $raised-border-radius: " + roundness + "));" +
+"@include igx-card(igx-card-theme($resting-shadow: igx-elevation($elevations, " + elevation + ")));";
 
                 result = SassCompiler.Compile(content, inputFilePath, outputFilePath,
                     sourceMapFilePath, options);

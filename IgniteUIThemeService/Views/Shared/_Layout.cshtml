@@ -101,6 +101,8 @@
             var warningColor = $("#color-picker-warning").igColorPicker("selectedColor");
             var infoColor = $("#color-picker-info").igColorPicker("selectedColor");
             var font = $("#font").val();
+            var roundness = $("#roundness").val();
+            var elevation = $("#elevation").val();
             if ($("#loading").data("igLoading")) {
                 $("#loading").igLoading("show");
             } else {
@@ -116,7 +118,9 @@
                     "', warning: '" + warningColor +
                     "', info: '" + infoColor +
                     "'}",
-                    typeface: font
+                    typeface: font,
+                    roundness: roundness,
+                    elevation: elevation
                 },
                 function () { $("#loading").igLoading("hide"); }
             );
