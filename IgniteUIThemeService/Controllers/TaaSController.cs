@@ -9,6 +9,7 @@ using LibSassHost;
 using LibSassHost.Helpers;
 using IgniteUIThemeService.Models;
 using Newtonsoft.Json;
+using IgniteUIThemeService.Util;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,6 +20,7 @@ namespace IgniteUIThemeService.Controllers
     {
 
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly ThemeModel _themeModel;
         public TaaSController(IHostingEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
@@ -28,6 +30,7 @@ namespace IgniteUIThemeService.Controllers
         [HttpGet]
         public string Get(string isDarkTheme, string colors, string typeface, string roundness, string elevation)
         {
+            
             Colors deserializedColors = JsonConvert.DeserializeObject<Colors>(colors);
             string IGPath = _hostingEnvironment.ContentRootPath + "/IG";
             string basePath = IGPath + "/igniteui-angular/lib/core/styles/themes/presets/";
@@ -36,6 +39,18 @@ namespace IgniteUIThemeService.Controllers
             string sourceMapFilePath = Path.Combine(_hostingEnvironment.ContentRootPath + "/wwwroot/IG", "igniteui-angular-custom.css.map");
 
             ColorPalette cp = new ColorPalette(deserializedColors);
+
+            ThemeGenerator generator = new ThemeGenerator(new ThemeModel()
+            {
+                colorPalette = cp,
+                isDarkTheme = isDarkTheme == "true",
+                typeface = typeface,
+                roundness = roundness,
+                elevation = elevation
+            }, _hostingEnvironment.ContentRootPath );
+
+            
+
             CompilationResult result = new CompilationResult();
             try
             {
@@ -43,15 +58,11 @@ namespace IgniteUIThemeService.Controllers
                 //CompilationResult result = SassCompiler.CompileFile(inputFilePath, outputFilePath,
                 //    sourceMapFilePath, options);
 
-                
 
-                string content =
-"@import \"" + IGPath.Replace('\\', '/') + "/igniteui-angular/lib/core/styles/themes/index\";" +
-"@include igx-core();" +
-(isDarkTheme == "true" ? "@include igx-dark-theme(" + cp.palette + ");" : "@include igx-theme(" + cp.palette + ");") +
-"@include igx-typography($font-family: \"" + typeface + "\");" +
-"@include igx-button(igx-button-theme($flat-border-radius: " + roundness + ", $raised-border-radius: " + roundness + "));" +
-"@include igx-card(igx-card-theme($resting-shadow: igx-elevation($elevations, " + elevation + ")));";
+
+
+
+                string content = generator.GenerateCustomTheme();
 
                 result = SassCompiler.Compile(content, inputFilePath, outputFilePath,
                     sourceMapFilePath, options);
