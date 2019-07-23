@@ -26,7 +26,7 @@ namespace IgniteUIThemeService.Controllers
 
         // GET: api/values
         [HttpGet]
-        public string Get(string colors, string typeface, string roundness, string elevation)
+        public string Get(string isDarkTheme, string colors, string typeface, string roundness, string elevation)
         {
             Colors deserializedColors = JsonConvert.DeserializeObject<Colors>(colors);
             string IGPath = _hostingEnvironment.ContentRootPath + "/IG";
@@ -48,7 +48,7 @@ namespace IgniteUIThemeService.Controllers
                 string content =
 "@import \"" + IGPath.Replace('\\', '/') + "/igniteui-angular/lib/core/styles/themes/index\";" +
 "@include igx-core();" +
-"@include igx-theme(" + cp.palette + ");" +
+(isDarkTheme == "true" ? "@include igx-dark-theme(" + cp.palette + ");" : "@include igx-theme(" + cp.palette + ");") +
 "@include igx-typography($font-family: \"" + typeface + "\");" +
 "@include igx-button(igx-button-theme($flat-border-radius: " + roundness + ", $raised-border-radius: " + roundness + "));" +
 "@include igx-card(igx-card-theme($resting-shadow: igx-elevation($elevations, " + elevation + ")));";

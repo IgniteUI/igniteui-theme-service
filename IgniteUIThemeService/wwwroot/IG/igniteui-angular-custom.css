@@ -902,14 +902,14 @@
     display: none !important; } }
 
 :root {
-  --igx-ripple-color: rgba(0, 0, 0, 0.74); }
+  --igx-ripple-color: rgba(255, 255, 255, 0.74); }
 
 
 .igx-ripple__inner {
   display: block;
   position: absolute;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.74);
+  background: rgba(255, 255, 255, 0.74);
   pointer-events: none;
   transform-origin: center;
   transform: translate3d(0, 0, 0) scale(0);
@@ -920,10 +920,10 @@
   overflow: hidden; }
 
 :root {
-  --igx-avatar-icon-background: rgba(0, 0, 0, 0.26);
-  --igx-avatar-icon-color: rgba(0, 0, 0, 0.74);
-  --igx-avatar-initials-background: rgba(0, 0, 0, 0.26);
-  --igx-avatar-initials-color: rgba(0, 0, 0, 0.74);
+  --igx-avatar-icon-background: rgba(255, 255, 255, 0.26);
+  --igx-avatar-icon-color: rgba(255, 255, 255, 0.74);
+  --igx-avatar-initials-background: rgba(255, 255, 255, 0.26);
+  --igx-avatar-initials-color: rgba(255, 255, 255, 0.74);
   --igx-avatar-image-background: transparent; }
 
 .igx-avatar, .igx-avatar--rounded {
@@ -932,8 +932,8 @@
   justify-content: center;
   align-items: center;
   user-select: none;
-  color: rgba(0, 0, 0, 0.74);
-  background: rgba(0, 0, 0, 0.26);
+  color: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.26);
   vertical-align: middle; }
 
 .igx-avatar--rounded {
@@ -960,8 +960,8 @@
   border-radius: inherit; }
 
 .igx-avatar--icon {
-  color: rgba(0, 0, 0, 0.74);
-  background: rgba(0, 0, 0, 0.26); }
+  color: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.26); }
 
 .igx-avatar__image {
   background-color: transparent;
@@ -971,8 +971,8 @@
 
 .igx-avatar--initials {
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.74);
-  background-color: rgba(0, 0, 0, 0.26); }
+  color: rgba(255, 255, 255, 0.74);
+  background-color: rgba(255, 255, 255, 0.26); }
 
 .igx-avatar--initials {
   font-size: 1.25rem;
@@ -1047,8 +1047,8 @@
   visibility: hidden; }
 
 :root {
-  --igx-bottom-nav-background: #fff;
-  --igx-bottom-nav-idle-item-color: rgba(0, 0, 0, 0.62);
+  --igx-bottom-nav-background: #222;
+  --igx-bottom-nav-idle-item-color: rgba(255, 255, 255, 0.62);
   --igx-bottom-nav-active-item-color: #17365d;
   --igx-bottom-nav-elevation: 8;
   --igx-bottom-nav-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08); }
@@ -1067,7 +1067,7 @@
   left: 0;
   right: 0;
   height: 56px;
-  background: #fff;
+  background: #222;
   overflow: hidden;
   z-index: 8; }
 
@@ -1091,7 +1091,7 @@
   min-width: 80px;
   max-width: 168px;
   height: 100%;
-  color: rgba(0, 0, 0, 0.62);
+  color: rgba(255, 255, 255, 0.62);
   cursor: pointer;
   user-select: none;
   overflow: hidden;
@@ -1141,13 +1141,13 @@
 :root {
   --igx-button-flat-background: transparent;
   --igx-button-flat-text-color: #e36c09;
-  --igx-button-flat-hover-background: rgba(227, 108, 9, 0.05);
+  --igx-button-flat-hover-background: rgba(227, 108, 9, 0.12);
   --igx-button-flat-hover-text-color: #e36c09;
-  --igx-button-flat-focus-background: rgba(237, 118, 20, 0.12);
+  --igx-button-flat-focus-background: rgba(237, 118, 20, 0.24);
   --igx-button-flat-focus-text-color: #e36c09;
   --igx-button-outlined-background: transparent;
-  --igx-button-outlined-outline-color: rgba(0, 0, 0, 0.12);
-  --igx-button-outlined-disabled-outline-color: rgba(0, 0, 0, 0.12);
+  --igx-button-outlined-outline-color: rgba(255, 255, 255, 0.12);
+  --igx-button-outlined-disabled-outline-color: rgba(255, 255, 255, 0.12);
   --igx-button-outlined-text-color: #e36c09;
   --igx-button-outlined-hover-background: rgba(227, 108, 9, 0.05);
   --igx-button-outlined-hover-text-color: #e36c09;
@@ -1165,14 +1165,14 @@
   --igx-button-fab-hover-text-color: black;
   --igx-button-fab-focus-background: #e88533;
   --igx-button-fab-focus-text-color: black;
-  --igx-button-icon-color: rgba(0, 0, 0, 0.74);
+  --igx-button-icon-color: rgba(255, 255, 255, 0.74);
   --igx-button-icon-background: transparent;
-  --igx-button-icon-hover-background: rgba(0, 0, 0, 0.04);
-  --igx-button-icon-hover-color: rgba(0, 0, 0, 0.74);
-  --igx-button-icon-focus-background: rgba(0, 0, 0, 0.26);
-  --igx-button-icon-focus-color: rgba(0, 0, 0, 0.74);
-  --igx-button-disabled-color: rgba(0, 0, 0, 0.26);
-  --igx-button-disabled-background: rgba(0, 0, 0, 0.04);
+  --igx-button-icon-hover-background: rgba(255, 255, 255, 0.12);
+  --igx-button-icon-hover-color: rgba(255, 255, 255, 0.74);
+  --igx-button-icon-focus-background: rgba(255, 255, 255, 0.26);
+  --igx-button-icon-focus-color: rgba(255, 255, 255, 0.74);
+  --igx-button-disabled-color: rgba(255, 255, 255, 0.26);
+  --igx-button-disabled-background: rgba(255, 255, 255, 0.08);
   --igx-button-raised-resting-elevation: 2;
   --igx-button-raised-hover-elevation: 4;
   --igx-button-raised-focus-elevation: 8;
@@ -1228,15 +1228,15 @@
   color: #e36c09;
   border-radius: 4px; }
   .igx-button--flat:hover {
-    background: rgba(227, 108, 9, 0.05);
+    background: rgba(227, 108, 9, 0.12);
     color: #e36c09; }
   .igx-button--flat:focus, .igx-button--flat:active {
-    background: rgba(237, 118, 20, 0.12);
+    background: rgba(237, 118, 20, 0.24);
     color: #e36c09; }
 
 .igx-button--outlined {
   border: 1px solid transparent;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.12);
   background: transparent;
   color: #e36c09;
   border-radius: 4px; }
@@ -1314,45 +1314,45 @@
   height: 2.25rem;
   font-size: 1rem;
   padding: 0;
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(255, 255, 255, 0.74);
   background: transparent;
   border-radius: 20px; }
   .igx-button--icon:hover {
     transition: background 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), border 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
-    color: rgba(0, 0, 0, 0.74);
-    background: rgba(0, 0, 0, 0.04); }
+    color: rgba(255, 255, 255, 0.74);
+    background: rgba(255, 255, 255, 0.12); }
   .igx-button--icon:focus, .igx-button--icon:active {
-    color: rgba(0, 0, 0, 0.74);
-    background: rgba(0, 0, 0, 0.26); }
+    color: rgba(255, 255, 255, 0.74);
+    background: rgba(255, 255, 255, 0.26); }
 
 
 .igx-button--disabled {
   pointer-events: none;
   box-shadow: none; }
   .igx-button--flat.igx-button--disabled, .igx-button--outlined.igx-button--disabled, .igx-button--raised.igx-button--disabled, .igx-button--fab.igx-button--disabled, .igx-button--icon.igx-button--disabled {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(255, 255, 255, 0.26); }
   .igx-button--raised.igx-button--disabled, .igx-button--fab.igx-button--disabled {
-    background: rgba(0, 0, 0, 0.04); }
+    background: rgba(255, 255, 255, 0.08); }
   .igx-button--flat.igx-button--disabled, .igx-button--outlined.igx-button--disabled {
     background: transparent; }
   .igx-button--outlined.igx-button--disabled {
-    border-color: rgba(0, 0, 0, 0.12); }
+    border-color: rgba(255, 255, 255, 0.12); }
   .igx-button--disabled:focus {
     box-shadow: none; }
 
 :root {
-  --igx-button-group-item-background: #fff;
-  --igx-button-group-item-border-color: rgba(0, 0, 0, 0.12);
-  --igx-button-group-item-disabled-border: rgba(0, 0, 0, 0.12);
-  --igx-button-group-item-text-color: rgba(0, 0, 0, 0.62);
-  --igx-button-group-item-hover-text-color: rgba(0, 0, 0, 0.74);
-  --igx-button-group-item-hover-background: rgba(0, 0, 0, 0.26);
-  --igx-button-group-item-selected-text-color: rgba(0, 0, 0, 0.74);
-  --igx-button-group-item-selected-background: rgba(0, 0, 0, 0.26);
-  --igx-button-group-item-selected-hover-background: rgba(0, 0, 0, 0.38);
-  --igx-button-group-item-selected-border-color: rgba(0, 0, 0, 0.12);
-  --igx-button-group-disabled-text-color: rgba(0, 0, 0, 0.26);
-  --igx-button-group-disabled-background-color: rgba(0, 0, 0, 0.02);
+  --igx-button-group-item-background: #222;
+  --igx-button-group-item-border-color: rgba(255, 255, 255, 0.12);
+  --igx-button-group-item-disabled-border: rgba(255, 255, 255, 0.12);
+  --igx-button-group-item-text-color: rgba(255, 255, 255, 0.62);
+  --igx-button-group-item-hover-text-color: rgba(255, 255, 255, 0.74);
+  --igx-button-group-item-hover-background: rgba(255, 255, 255, 0.26);
+  --igx-button-group-item-selected-text-color: rgba(255, 255, 255, 0.74);
+  --igx-button-group-item-selected-background: rgba(255, 255, 255, 0.26);
+  --igx-button-group-item-selected-hover-background: rgba(255, 255, 255, 0.38);
+  --igx-button-group-item-selected-border-color: rgba(255, 255, 255, 0.12);
+  --igx-button-group-disabled-text-color: rgba(255, 255, 255, 0.26);
+  --igx-button-group-disabled-background-color: rgba(255, 255, 255, 0.02);
   --igx-button-group-elevation: 2;
   --igx-button-group-border-radius: 4px;
   --igx-button-group-border: none;
@@ -1367,9 +1367,9 @@
   border-radius: 4px; }
 
 .igx-button-group__item, .igx-button-group__item--selected, .igx-button-group--vertical .igx-button-group__item, .igx-button-group--vertical .igx-button-group__item--selected {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.62);
-  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.62);
+  background: #222;
   min-width: 24px;
   display: flex;
   flex: 1 0 0%;
@@ -1392,12 +1392,12 @@
   .igx-button-group__item:last-of-type, .igx-button-group__item--selected:last-of-type {
     border-radius: 0 4px 4px 0; }
   .igx-button--disabled.igx-button-group__item, .igx-button--disabled.igx-button-group__item--selected {
-    color: rgba(0, 0, 0, 0.26) !important;
-    background: rgba(0, 0, 0, 0.02) !important;
-    border-color: rgba(0, 0, 0, 0.12); }
+    color: rgba(255, 255, 255, 0.26) !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-color: rgba(255, 255, 255, 0.12); }
   .igx-button-group__item:hover, .igx-button-group__item--selected:hover, .igx-button-group__item:focus, .igx-button-group__item--selected:focus {
-    color: rgba(0, 0, 0, 0.74);
-    background: rgba(0, 0, 0, 0.26);
+    color: rgba(255, 255, 255, 0.74);
+    background: rgba(255, 255, 255, 0.26);
     z-index: 1; }
 
 .igx-button-group--vertical .igx-button-group__item:not(:nth-child(0)) {
@@ -1411,14 +1411,14 @@
   border-radius: 0 0 4px 4px; }
 
 .igx-button-group__item--selected, .igx-button-group--vertical .igx-button-group__item--selected {
-  color: rgba(0, 0, 0, 0.74);
-  background: rgba(0, 0, 0, 0.26);
-  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.12);
   position: relative;
   z-index: 1; }
   .igx-button-group__item--selected:hover, .igx-button-group__item--selected:focus {
-    color: rgba(0, 0, 0, 0.74);
-    background: rgba(0, 0, 0, 0.38); }
+    color: rgba(255, 255, 255, 0.74);
+    background: rgba(255, 255, 255, 0.38); }
 
 .igx-button-group--vertical {
   flex-flow: column; }
@@ -1433,10 +1433,10 @@
     margin-left: 0.625rem; }
 
 :root {
-  --igx-banner-banner-background: #fff;
-  --igx-banner-banner-message-color: rgba(0, 0, 0, 0.87);
-  --igx-banner-banner-border-color: rgba(0, 0, 0, 0.26);
-  --igx-banner-banner-illustration-color: rgba(0, 0, 0, 0.87); }
+  --igx-banner-banner-background: #222;
+  --igx-banner-banner-message-color: rgba(255, 255, 255, 0.87);
+  --igx-banner-banner-border-color: rgba(255, 255, 255, 0.26);
+  --igx-banner-banner-illustration-color: rgba(255, 255, 255, 0.87); }
 
 .igx-banner, .igx-banner--cosy, .igx-banner--compact,
 .igx-banner__illustration,
@@ -1446,7 +1446,7 @@
 
 .igx-banner, .igx-banner--cosy, .igx-banner--compact {
   padding: 0.5rem 0.5rem 0.5rem 0;
-  background: #fff;
+  background: #222;
   align-items: center;
   position: relative;
   flex-wrap: wrap;
@@ -1459,18 +1459,18 @@
   min-width: 2.5rem;
   height: 2.5rem;
   margin-left: 1rem;
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(255, 255, 255, 0.87); }
 
 .igx-banner__border-top {
-  border-top: 1px solid rgba(0, 0, 0, 0.26);
+  border-top: 1px solid rgba(255, 255, 255, 0.26);
   top: -1px; }
 
 .igx-banner__border-bottom {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.26);
   top: 0; }
 
 .igx-banner__text {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   flex: 1 0 0%;
   margin-left: 1.5rem; }
 
@@ -1497,28 +1497,28 @@
   min-height: 2.5rem; }
 
 :root {
-  --igx-calendar-content-background: #fff;
-  --igx-calendar-content-text-color: rgba(0, 0, 0, 0.87);
+  --igx-calendar-content-background: #222;
+  --igx-calendar-content-text-color: rgba(255, 255, 255, 0.87);
   --igx-calendar-header-background: #e36c09;
   --igx-calendar-header-text-color: black;
-  --igx-calendar-picker-arrow-color: rgba(0, 0, 0, 0.74);
+  --igx-calendar-picker-arrow-color: rgba(255, 255, 255, 0.74);
   --igx-calendar-picker-arrow-hover-color: #e36c09;
-  --igx-calendar-picker-text-color: rgba(0, 0, 0, 0.74);
+  --igx-calendar-picker-text-color: rgba(255, 255, 255, 0.74);
   --igx-calendar-picker-text-hover-color: #e36c09;
-  --igx-calendar-inactive-text-color: rgba(0, 0, 0, 0.26);
-  --igx-calendar-weekend-text-color: rgba(0, 0, 0, 0.38);
+  --igx-calendar-inactive-text-color: rgba(255, 255, 255, 0.26);
+  --igx-calendar-weekend-text-color: rgba(255, 255, 255, 0.38);
   --igx-calendar-year-current-text-color: #e36c09;
   --igx-calendar-month-current-text-color: #e36c09;
   --igx-calendar-year-hover-text-color: #e36c09;
-  --igx-calendar-month-hover-background: rgba(0, 0, 0, 0.08);
-  --igx-calendar-month-hover-text-color: black;
+  --igx-calendar-month-hover-background: rgba(255, 255, 255, 0.08);
+  --igx-calendar-month-hover-text-color: white;
   --igx-calendar-date-selected-background: #e36c09;
   --igx-calendar-date-selected-text-color: black;
   --igx-calendar-date-current-text-color: #e36c09;
-  --igx-calendar-date-hover-background: rgba(0, 0, 0, 0.08);
-  --igx-calendar-date-special-background: rgba(0, 0, 0, 0.04);
-  --igx-calendar-date-special-text-color: rgba(0, 0, 0, 0.87);
-  --igx-calendar-date-disabled-text-color: rgba(158, 158, 158, 0.6);
+  --igx-calendar-date-hover-background: rgba(255, 255, 255, 0.08);
+  --igx-calendar-date-special-background: rgba(255, 255, 255, 0.04);
+  --igx-calendar-date-special-text-color: rgba(255, 255, 255, 0.87);
+  --igx-calendar-date-disabled-text-color: rgba(255, 255, 255, 0.6);
   --igx-calendar-border-radius: 4px;
   --igx-calendar-date-border-radius: 20px;
   --igx-calendar-month-border-radius: 20px; }
@@ -1527,7 +1527,7 @@
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  background: #fff;
+  background: #222;
   overflow: hidden;
   outline: none;
   border-radius: 4px; }
@@ -1569,7 +1569,7 @@
 
 .igx-calendar-picker__prev, .igx-calendar-picker__next {
   display: inline-flex;
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(255, 255, 255, 0.74);
   user-select: none;
   outline: none;
   cursor: pointer; }
@@ -1579,7 +1579,7 @@
     transform: scaleX(-1); }
 
 .igx-calendar-picker__date {
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(255, 255, 255, 0.74);
   text-align: center;
   outline: none; }
   .igx-calendar-picker__date:hover, .igx-calendar-picker__date:focus {
@@ -1616,27 +1616,27 @@
   min-width: 2ch;
   margin: 0.125em;
   border-radius: 20px;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   outline: none;
   transition: background .15s ease-out; }
 
 .igx-calendar__label {
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(255, 255, 255, 0.26);
   cursor: default;
   border-radius: 0; }
 
 .igx-calendar__date--weekend {
-  color: rgba(0, 0, 0, 0.38); }
+  color: rgba(255, 255, 255, 0.38); }
 
 .igx-calendar__date--special {
-  color: rgba(0, 0, 0, 0.87);
-  background: rgba(0, 0, 0, 0.04);
+  color: rgba(255, 255, 255, 0.87);
+  background: rgba(255, 255, 255, 0.04);
   font-weight: 600; }
 
 .igx-calendar__date--disabled, .igx-calendar__date--disabled.igx-calendar__date--inactive {
   pointer-events: none;
-  color: rgba(158, 158, 158, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   cursor: not-allowed; }
 
 .igx-calendar__year, .igx-calendar__year--current {
@@ -1654,9 +1654,9 @@
   color: #e36c09; }
 
 .igx-calendar__month:hover, .igx-calendar__month:focus, .igx-calendar__month--current:hover, .igx-calendar__month--current:focus {
-  color: black; }
+  color: white; }
   .igx-calendar__month:hover::after, .igx-calendar__month:focus::after, .igx-calendar__month--current:hover::after, .igx-calendar__month--current:focus::after {
-    background: rgba(0, 0, 0, 0.08); }
+    background: rgba(255, 255, 255, 0.08); }
 
 .igx-calendar__month, .igx-calendar__month--current {
   position: relative;
@@ -1685,7 +1685,7 @@
 
 .igx-calendar__date--inactive {
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.26); }
+  color: rgba(255, 255, 255, 0.26); }
 
 .igx-calendar__date--selected {
   position: relative;
@@ -1698,17 +1698,17 @@
   font-weight: 600 !important; }
 
 .igx-calendar__date:hover, .igx-calendar__date:focus, .igx-calendar__date--inactive:hover, .igx-calendar__date--inactive:focus, .igx-calendar__date--current:hover, .igx-calendar__date--current:focus, .igx-calendar__date--weekend:hover, .igx-calendar__date--weekend:focus {
-  background: rgba(0, 0, 0, 0.08); }
+  background: rgba(255, 255, 255, 0.08); }
 
 :root {
-  --igx-card-background: #fff;
-  --igx-card-header-text-color: rgba(0, 0, 0, 0.87);
-  --igx-card-subtitle-text-color: rgba(0, 0, 0, 0.6);
-  --igx-card-content-text-color: rgba(0, 0, 0, 0.6);
-  --igx-card-actions-text-color: rgba(0, 0, 0, 0.6);
+  --igx-card-background: #222;
+  --igx-card-header-text-color: rgba(255, 255, 255, 0.87);
+  --igx-card-subtitle-text-color: rgba(255, 255, 255, 0.6);
+  --igx-card-content-text-color: rgba(255, 255, 255, 0.6);
+  --igx-card-actions-text-color: rgba(255, 255, 255, 0.6);
   --igx-card-resting-elevation: 2;
   --igx-card-hover-elevation: 8;
-  --igx-card-outline-color: rgba(0, 0, 0, 0.26);
+  --igx-card-outline-color: rgba(255, 255, 255, 0.26);
   --igx-card-border-radius: 4px;
   --igx-card-resting-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
   --igx-card-hover-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08); }
@@ -1719,7 +1719,7 @@
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   border-radius: 4px;
-  background: #fff;
+  background: #222;
   transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   backface-visibility: hidden; }
   .igx-card:hover {
@@ -1727,7 +1727,7 @@
 
 .igx-card--outlined {
   box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.26); }
+  border: 1px solid rgba(255, 255, 255, 0.26); }
   .igx-card--outlined:hover {
     box-shadow: none; }
 
@@ -1741,7 +1741,7 @@
   align-content: flex-start;
   width: 100%;
   padding: 1em;
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(255, 255, 255, 0.87); }
   .igx-card-header:empty {
     display: none; }
 
@@ -1779,7 +1779,7 @@
 
 .igx-card-header__subtitle {
   margin: 0;
-  color: rgba(0, 0, 0, 0.6); }
+  color: rgba(255, 255, 255, 0.6); }
 
 .igx-card__tgroup {
   margin: 0 1em; }
@@ -1788,7 +1788,7 @@
   width: 100%;
   flex: 1 1 auto;
   padding: 1em;
-  color: rgba(0, 0, 0, 0.6); }
+  color: rgba(255, 255, 255, 0.6); }
 
 .igx-card-content__text {
   margin: 0; }
@@ -1823,7 +1823,7 @@
   display: flex;
   align-items: center;
   order: 1;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   margin-left: auto; }
   .igx-card-actions__icons:empty {
     display: none; }
@@ -1881,7 +1881,7 @@
   display: flex;
   flex-flow: row nowrap; }
   .igx-card-actions__igroup .igx-button--icon, .igx-card-actions__igroup--start .igx-button--icon, .igx-card-actions__igroup--end .igx-button--icon {
-    color: rgba(0, 0, 0, 0.6); }
+    color: rgba(255, 255, 255, 0.6); }
 
 .igx-card-actions__igroup--start {
   margin-right: auto; }
@@ -1890,10 +1890,10 @@
   margin-left: auto; }
 
 :root {
-  --igx-carousel-button-background: #fff;
-  --igx-carousel-button-hover-background: #fff;
-  --igx-carousel-button-arrow-color: rgba(0, 0, 0, 0.62);
-  --igx-carousel-button-hover-arrow-color: rgba(0, 0, 0, 0.87);
+  --igx-carousel-button-background: #222;
+  --igx-carousel-button-hover-background: #222;
+  --igx-carousel-button-arrow-color: rgba(255, 255, 255, 0.62);
+  --igx-carousel-button-hover-arrow-color: rgba(255, 255, 255, 0.87);
   --igx-carousel-indicator-dot-color: #fff;
   --igx-carousel-indicator-border-color: #fff;
   --igx-carousel-indicator-active-border-color: #fff;
@@ -1951,16 +1951,16 @@
   border-radius: 50%;
   outline-style: none;
   transition: all .15s ease-in-out;
-  color: rgba(0, 0, 0, 0.62);
-  background: #fff;
+  color: rgba(255, 255, 255, 0.62);
+  background: #222;
   box-shadow: none; }
   .igx-carousel__arrow span, .igx-carousel__arrow--prev span, .igx-carousel__arrow--next span {
     display: flex;
     align-items: center; }
 
 .igx-carousel__arrow--prev:hover, .igx-carousel__arrow--next:hover {
-  color: rgba(0, 0, 0, 0.87);
-  background: #fff; }
+  color: rgba(255, 255, 255, 0.87);
+  background: #222; }
 
 .igx-carousel__arrow--next {
   right: 0; }
@@ -2029,11 +2029,11 @@
   transform: scale(1.1); }
 
 :root {
-  --igx-checkbox-tick-color: #fff;
-  --igx-checkbox-label-color: rgba(0, 0, 0, 0.87);
-  --igx-checkbox-empty-color: rgba(0, 0, 0, 0.54);
+  --igx-checkbox-tick-color: #222;
+  --igx-checkbox-label-color: rgba(255, 255, 255, 0.87);
+  --igx-checkbox-empty-color: rgba(255, 255, 255, 0.54);
   --igx-checkbox-fill-color: #e36c09;
-  --igx-checkbox-disabled-color: rgba(0, 0, 0, 0.26);
+  --igx-checkbox-disabled-color: rgba(255, 255, 255, 0.26);
   --igx-checkbox-border-radius: 2px;
   --igx-checkbox-border-radius-ripple: 24px; }
 
@@ -2083,7 +2083,7 @@
   min-width: 1.25em;
   border-width: 2px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.54);
+  border-color: rgba(255, 255, 255, 0.54);
   border-radius: 2px;
   -webkit-tap-highlight-color: transparent;
   transition: border-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2104,13 +2104,13 @@
     background: #e36c09; }
 
 .igx-checkbox--disabled .igx-checkbox__composite {
-  border-color: rgba(0, 0, 0, 0.26);
+  border-color: rgba(255, 255, 255, 0.26);
   background: transparent; }
 
 .igx-checkbox--indeterminate.igx-checkbox--disabled .igx-checkbox__composite, .igx-checkbox--checked.igx-checkbox--disabled .igx-checkbox__composite {
-  background: rgba(0, 0, 0, 0.26); }
+  background: rgba(255, 255, 255, 0.26); }
   .igx-checkbox--indeterminate.igx-checkbox--disabled .igx-checkbox__composite::after, .igx-checkbox--checked.igx-checkbox--disabled .igx-checkbox__composite::after {
-    background: rgba(0, 0, 0, 0.26); }
+    background: rgba(255, 255, 255, 0.26); }
 
 .igx-checkbox__composite-mark {
   position: absolute;
@@ -2118,7 +2118,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  stroke: #fff;
+  stroke: #222;
   stroke-linecap: square;
   stroke-width: 3;
   stroke-dasharray: 24;
@@ -2141,7 +2141,7 @@
 
 .igx-checkbox__label, .igx-checkbox__label--before {
   display: inline-block;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   user-select: none;
   word-wrap: break-all; }
@@ -2166,7 +2166,7 @@
       margin: 0; }
 
 .igx-checkbox--disabled .igx-checkbox__label, .igx-checkbox--disabled .igx-checkbox__label--before {
-  color: rgba(0, 0, 0, 0.26); }
+  color: rgba(255, 255, 255, 0.26); }
 
 .igx-checkbox__ripple {
   position: absolute;
@@ -2197,7 +2197,7 @@
 
 .igx-checkbox--focused .igx-checkbox__ripple, .igx-checkbox--focused.igx-checkbox--checked .igx-checkbox__ripple, .igx-checkbox--focused.igx-checkbox--indeterminate .igx-checkbox__ripple {
   animation: "scale-in-out" 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-  background: rgba(0, 0, 0, 0.54);
+  background: rgba(255, 255, 255, 0.54);
   transition: background 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: .12; }
 
@@ -2214,7 +2214,7 @@
   right: 0; }
 
 .igx-checkbox:hover .igx-checkbox__ripple::after, .igx-checkbox:active .igx-checkbox__ripple::after {
-  background: rgba(0, 0, 0, 0.54); }
+  background: rgba(255, 255, 255, 0.54); }
 
 .igx-checkbox--indeterminate:hover .igx-checkbox__ripple::after, .igx-checkbox--indeterminate:active .igx-checkbox__ripple::after, .igx-checkbox--checked:hover .igx-checkbox__ripple::after, .igx-checkbox--checked:active .igx-checkbox__ripple::after {
   background: #e36c09; }
@@ -2230,24 +2230,24 @@
   transition: none; }
 
 :root {
-  --igx-chip-text-color: rgba(0, 0, 0, 0.62);
-  --igx-chip-background: rgba(0, 0, 0, 0.08);
+  --igx-chip-text-color: rgba(255, 255, 255, 0.62);
+  --igx-chip-background: rgba(255, 255, 255, 0.08);
   --igx-chip-border-color: transparent;
-  --igx-chip-ghost-background: #bcbcbc;
-  --igx-chip-hover-text-color: rgba(0, 0, 0, 0.62);
-  --igx-chip-hover-background: rgba(0, 0, 0, 0.12);
+  --igx-chip-ghost-background: #424242;
+  --igx-chip-hover-text-color: rgba(255, 255, 255, 0.62);
+  --igx-chip-hover-background: rgba(255, 255, 255, 0.12);
   --igx-chip-hover-border-color: transparent;
-  --igx-chip-focus-text-color: rgba(0, 0, 0, 0.62);
-  --igx-chip-focus-background: rgba(0, 0, 0, 0.26);
+  --igx-chip-focus-text-color: rgba(255, 255, 255, 0.62);
+  --igx-chip-focus-background: rgba(255, 255, 255, 0.26);
   --igx-chip-focus-border-color: transparent;
-  --igx-chip-selected-text-color: rgba(0, 0, 0, 0.62);
-  --igx-chip-selected-background: rgba(0, 0, 0, 0.12);
+  --igx-chip-selected-text-color: rgba(255, 255, 255, 0.62);
+  --igx-chip-selected-background: rgba(255, 255, 255, 0.12);
   --igx-chip-selected-border-color: transparent;
-  --igx-chip-hover-selected-text-color: rgba(0, 0, 0, 0.62);
-  --igx-chip-hover-selected-background: rgba(0, 0, 0, 0.26);
+  --igx-chip-hover-selected-text-color: rgba(255, 255, 255, 0.62);
+  --igx-chip-hover-selected-background: rgba(255, 255, 255, 0.26);
   --igx-chip-hover-selected-border-color: transparent;
-  --igx-chip-focus-selected-text-color: rgba(0, 0, 0, 0.62);
-  --igx-chip-focus-selected-background: rgba(0, 0, 0, 0.26);
+  --igx-chip-focus-selected-text-color: rgba(255, 255, 255, 0.62);
+  --igx-chip-focus-selected-background: rgba(255, 255, 255, 0.26);
   --igx-chip-focus-selected-border-color: transparent;
   --igx-chip-border-radius: 16px; }
 
@@ -2426,8 +2426,8 @@
   flex: 1 1 auto;
   height: 2rem;
   padding: 0 0.25rem;
-  color: rgba(0, 0, 0, 0.62);
-  background: rgba(0, 0, 0, 0.08);
+  color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.08);
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
@@ -2438,31 +2438,31 @@
   filter: opacity(1); }
 
 .igx-chip__item:hover {
-  color: rgba(0, 0, 0, 0.62);
-  background: rgba(0, 0, 0, 0.12);
+  color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.12);
   border-color: transparent;
   transition: all 120ms ease-in; }
 
 .igx-chip__item:focus, .igx-chip__item:focus-within {
-  color: rgba(0, 0, 0, 0.62);
-  background: rgba(0, 0, 0, 0.26);
+  color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.26);
   border-color: transparent;
   outline-style: none; }
 
 .igx-chip__item--selected {
-  color: rgba(0, 0, 0, 0.62);
-  background: rgba(0, 0, 0, 0.12);
+  color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.12);
   border-color: transparent; }
 
 .igx-chip__item--selected:hover {
-  color: rgba(0, 0, 0, 0.62);
-  background: rgba(0, 0, 0, 0.26);
+  color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.26);
   border-color: transparent;
   transition: all 120ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
 .igx-chip__item--selected:focus {
-  color: rgba(0, 0, 0, 0.62);
-  background: rgba(0, 0, 0, 0.26);
+  color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.26);
   border-color: transparent;
   transition: all 120ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
@@ -2479,9 +2479,9 @@
   z-index: 10;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  background: #bcbcbc; }
+  background: #424242; }
   .igx-chip__ghost:hover, .igx-chip__ghost--cosy:hover, .igx-chip__ghost--compact:hover, .igx-chip__ghost:focus, .igx-chip__ghost--cosy:focus, .igx-chip__ghost--compact:focus {
-    background: #bcbcbc; }
+    background: #424242; }
 
 .igx-chip__ghost--cosy {
   height: 1.5rem; }
@@ -2530,9 +2530,9 @@
   padding: 0.5rem 1rem; }
 
 :root {
-  --igx-combo-empty-list-background: #fff;
-  --igx-combo-search-separator-border-color: rgba(0, 0, 0, 0.12);
-  --igx-combo-empty-list-placeholder-color: rgba(0, 0, 0, 0.26); }
+  --igx-combo-empty-list-background: #222;
+  --igx-combo-search-separator-border-color: rgba(255, 255, 255, 0.12);
+  --igx-combo-empty-list-placeholder-color: rgba(255, 255, 255, 0.26); }
 
 .igx-combo {
   position: relative;
@@ -2558,7 +2558,7 @@
   padding: 0.5rem 1rem;
   margin: 0 !important;
   z-index: 26;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.12); }
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12); }
 
 .igx-combo__content {
   position: relative;
@@ -2573,14 +2573,14 @@
   align-items: center;
   position: relative;
   padding: 1rem;
-  background: #fff; }
+  background: #222; }
 
 .igx-combo__empty {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(255, 255, 255, 0.26);
   padding: 0 1.5rem;
   font-size: 0.8125rem; }
 
@@ -2598,49 +2598,49 @@
   max-width: 340px;
   box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.26), 0 24px 38px 3px rgba(0, 0, 0, 0.12), 0 9px 46px 8px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
-  background: #fff;
+  background: #222;
   overflow: hidden; }
   .igx-date-picker .igx-calendar, .igx-date-picker .igx-calendar--vertical {
-    background: #fff; }
+    background: #222; }
   .igx-date-picker .igx-calendar__header {
     background: #e36c09;
     color: black; }
   .igx-date-picker .igx-calendar-picker__prev, .igx-date-picker .igx-calendar-picker__next {
-    color: rgba(0, 0, 0, 0.74); }
+    color: rgba(255, 255, 255, 0.74); }
     .igx-date-picker .igx-calendar-picker__prev:hover, .igx-date-picker .igx-calendar-picker__next:hover {
       color: #e36c09; }
   .igx-date-picker .igx-calendar-picker__date {
-    color: rgba(0, 0, 0, 0.74); }
+    color: rgba(255, 255, 255, 0.74); }
     .igx-date-picker .igx-calendar-picker__date:hover, .igx-date-picker .igx-calendar-picker__date:focus {
       color: #e36c09; }
   .igx-date-picker .igx-calendar__label, .igx-date-picker .igx-calendar__date, .igx-date-picker .igx-calendar__date--inactive, .igx-date-picker .igx-calendar__date--selected, .igx-date-picker .igx-calendar__date--current, .igx-date-picker .igx-calendar__date--weekend, .igx-date-picker .igx-calendar__date--special, .igx-date-picker .igx-calendar__date--disabled, .igx-date-picker .igx-calendar__year, .igx-date-picker .igx-calendar__year--current, .igx-date-picker .igx-calendar__month, .igx-date-picker .igx-calendar__month--current {
-    color: rgba(0, 0, 0, 0.87); }
+    color: rgba(255, 255, 255, 0.87); }
   .igx-date-picker .igx-calendar__label {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(255, 255, 255, 0.26); }
   .igx-date-picker .igx-calendar__date--weekend {
-    color: rgba(0, 0, 0, 0.38); }
+    color: rgba(255, 255, 255, 0.38); }
   .igx-date-picker .igx-calendar__date--special {
-    color: rgba(0, 0, 0, 0.87);
-    background: rgba(0, 0, 0, 0.04); }
+    color: rgba(255, 255, 255, 0.87);
+    background: rgba(255, 255, 255, 0.04); }
   .igx-date-picker .igx-calendar__date--disabled {
-    color: rgba(158, 158, 158, 0.6); }
+    color: rgba(255, 255, 255, 0.6); }
   .igx-date-picker .igx-calendar__year--current {
     color: #e36c09; }
   .igx-date-picker .igx-calendar__year:hover, .igx-date-picker .igx-calendar__year:focus {
     color: #e36c09; }
   .igx-date-picker .igx-calendar__month:hover, .igx-date-picker .igx-calendar__month:focus, .igx-date-picker .igx-calendar__month--current:hover, .igx-date-picker .igx-calendar__month--current:focus {
-    color: black; }
+    color: white; }
   .igx-date-picker .igx-calendar__month--current {
     color: #e36c09; }
   .igx-date-picker .igx-calendar__date--inactive {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(255, 255, 255, 0.26); }
   .igx-date-picker .igx-calendar__date--selected {
     color: black;
     background: #e36c09 !important; }
   .igx-date-picker .igx-calendar__date--current {
     color: #e36c09; }
   .igx-date-picker .igx-calendar__date:hover, .igx-date-picker .igx-calendar__date:focus, .igx-date-picker .igx-calendar__date--inactive:hover, .igx-date-picker .igx-calendar__date--inactive:focus, .igx-date-picker .igx-calendar__date--current:hover, .igx-date-picker .igx-calendar__date--current:focus, .igx-date-picker .igx-calendar__date--weekend:hover, .igx-date-picker .igx-calendar__date--weekend:focus {
-    background: rgba(0, 0, 0, 0.08); }
+    background: rgba(255, 255, 255, 0.08); }
 
 .igx-date-picker--vertical {
   min-width: 368px;
@@ -2659,9 +2659,9 @@
   padding: 0.5rem; }
 
 :root {
-  --igx-dialog-background: #fff;
-  --igx-dialog-title-color: rgba(0, 0, 0, 0.87);
-  --igx-dialog-message-color: rgba(0, 0, 0, 0.6);
+  --igx-dialog-background: #222;
+  --igx-dialog-title-color: rgba(255, 255, 255, 0.87);
+  --igx-dialog-message-color: rgba(255, 255, 255, 0.6);
   --igx-dialog-elevation: 24;
   --igx-dialog-border-radius: 4px;
   --igx-dialog-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.26), 0 24px 38px 3px rgba(0, 0, 0, 0.12), 0 9px 46px 8px rgba(0, 0, 0, 0.08); }
@@ -2676,7 +2676,7 @@
   position: relative;
   min-width: 17.5rem;
   border-radius: 4px;
-  background: #fff;
+  background: #222;
   box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.26), 0 24px 38px 3px rgba(0, 0, 0, 0.12), 0 9px 46px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden; }
   .igx-dialog__window .igx-calendar {
@@ -2685,11 +2685,11 @@
     width: 31rem; }
 
 .igx-dialog__window-title {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   padding: 1.5rem 1.5rem 0.75rem 1.5rem; }
 
 .igx-dialog__window-content {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   max-width: 40ch;
   padding: 0.75rem 1.5rem; }
 
@@ -2702,15 +2702,15 @@
     margin-left: 0.5rem; }
 
 :root {
-  --igx-divider-color: rgba(0, 0, 0, 0.12); }
+  --igx-divider-color: rgba(255, 255, 255, 0.12); }
 
 .igx-divider {
   display: block;
   height: 1px;
-  background: rgba(0, 0, 0, 0.12); }
+  background: rgba(255, 255, 255, 0.12); }
 
 .igx-divider--dashed {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.12) 50%, transparent 50%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.12) 50%, transparent 50%);
   background-size: 10px 1px;
   /* dash size */ }
 
@@ -2721,18 +2721,18 @@
   height: auto; }
 
 .igx-divider--vertical.igx-divider--dashed {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 50%, transparent 50%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 50%, transparent 50%);
   background-size: 1px 10px;
   /* dash size */ }
 
 :root {
-  --igx-drop-down-background-color: #fff;
+  --igx-drop-down-background-color: #222;
   --igx-drop-down-header-text-color: #e36c09;
-  --igx-drop-down-item-text-color: rgba(0, 0, 0, 0.74);
-  --igx-drop-down-hover-item-text-color: rgba(0, 0, 0, 0.74);
-  --igx-drop-down-hover-item-background: rgba(0, 0, 0, 0.04);
-  --igx-drop-down-focused-item-background: rgba(0, 0, 0, 0.04);
-  --igx-drop-down-focused-item-text-color: rgba(0, 0, 0, 0.74);
+  --igx-drop-down-item-text-color: rgba(255, 255, 255, 0.74);
+  --igx-drop-down-hover-item-text-color: rgba(255, 255, 255, 0.74);
+  --igx-drop-down-hover-item-background: rgba(255, 255, 255, 0.04);
+  --igx-drop-down-focused-item-background: rgba(255, 255, 255, 0.04);
+  --igx-drop-down-focused-item-text-color: rgba(255, 255, 255, 0.74);
   --igx-drop-down-selected-item-background: #e36c09;
   --igx-drop-down-selected-item-text-color: black;
   --igx-drop-down-selected-hover-item-background: #e88533;
@@ -2740,7 +2740,7 @@
   --igx-drop-down-selected-focus-item-background: #e88533;
   --igx-drop-down-selected-focus-item-text-color: black;
   --igx-drop-down-disabled-item-background: transparent;
-  --igx-drop-down-disabled-item-text-color: rgba(0, 0, 0, 0.38);
+  --igx-drop-down-disabled-item-text-color: rgba(255, 255, 255, 0.38);
   --igx-drop-down-elevation: 8;
   --igx-drop-down-border-radius: 4px;
   --igx-drop-down-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08); }
@@ -2755,7 +2755,7 @@
   overflow-y: auto;
   z-index: 1;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08);
-  background: #fff;
+  background: #222;
   min-width: 8rem; }
   .igx-drop-down__list:empty, .igx-drop-down__list--select:empty {
     box-shadow: none; }
@@ -2773,17 +2773,17 @@
 
 
 .igx-drop-down__item {
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(255, 255, 255, 0.74);
   cursor: pointer;
   padding: 0 1.5rem; }
   .igx-drop-down__item:focus {
     outline: 0;
     outline-color: transparent;
-    background: rgba(0, 0, 0, 0.04);
-    color: rgba(0, 0, 0, 0.74); }
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.74); }
   .igx-drop-down__item:hover {
-    background: rgba(0, 0, 0, 0.04);
-    color: rgba(0, 0, 0, 0.74); }
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.74); }
 
 .igx-drop-down__item--cosy {
   height: 2rem;
@@ -2816,10 +2816,10 @@
     text-indent: 0 1.5rem; }
 
 .igx-drop-down__item--focused {
-  background: rgba(0, 0, 0, 0.04);
-  color: rgba(0, 0, 0, 0.74); }
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.74); }
   .igx-drop-down__item--focused:hover {
-    background: rgba(0, 0, 0, 0.04); }
+    background: rgba(255, 255, 255, 0.04); }
 
 .igx-drop-down__item--selected {
   background: #e36c09;
@@ -2834,21 +2834,21 @@
 
 .igx-drop-down__item--disabled, .igx-drop-down__group--disabled {
   background: transparent;
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(255, 255, 255, 0.38);
   cursor: default;
   pointer-events: none; }
   .igx-drop-down__item--disabled:hover, .igx-drop-down__group--disabled:hover {
     background: transparent; }
 
 :root {
-  --igx-expansion-panel-header-background: #fff;
-  --igx-expansion-panel-body-background: #fff;
-  --igx-expansion-panel-header-focus-background: rgba(0, 0, 0, 0.04);
-  --igx-expansion-panel-header-title-color: rgba(0, 0, 0, 0.74);
-  --igx-expansion-panel-header-description-color: rgba(0, 0, 0, 0.54);
-  --igx-expansion-panel-header-icon-color: rgba(0, 0, 0, 0.74);
-  --igx-expansion-panel-body-color: rgba(0, 0, 0, 0.74);
-  --igx-expansion-panel-disabled-color: rgba(0, 0, 0, 0.38);
+  --igx-expansion-panel-header-background: #222;
+  --igx-expansion-panel-body-background: #222;
+  --igx-expansion-panel-header-focus-background: rgba(255, 255, 255, 0.04);
+  --igx-expansion-panel-header-title-color: rgba(255, 255, 255, 0.74);
+  --igx-expansion-panel-header-description-color: rgba(255, 255, 255, 0.54);
+  --igx-expansion-panel-header-icon-color: rgba(255, 255, 255, 0.74);
+  --igx-expansion-panel-body-color: rgba(255, 255, 255, 0.74);
+  --igx-expansion-panel-disabled-color: rgba(255, 255, 255, 0.38);
   --igx-expansion-panel-border-radius: 0px; }
 
 .igx-expansion-panel {
@@ -2858,11 +2858,11 @@
   overflow: hidden; }
 
 .igx-expansion-panel__header-title {
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(255, 255, 255, 0.74);
   margin-right: 1rem; }
 
 .igx-expansion-panel__header-description {
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(255, 255, 255, 0.54); }
 
 .igx-expansion-panel__header-title, .igx-expansion-panel__header-description {
   text-overflow: ellipsis;
@@ -2874,9 +2874,9 @@
   align-items: center;
   padding: 1em;
   cursor: pointer;
-  background: #fff; }
+  background: #222; }
   .igx-expansion-panel__header-inner:focus, .igx-expansion-panel__header-inner:active {
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.04);
     outline: transparent; }
 
 .igx-expansion-panel__title-wrapper {
@@ -2902,97 +2902,97 @@
   align-content: center;
   justify-content: center;
   user-select: none;
-  color: rgba(0, 0, 0, 0.74); }
+  color: rgba(255, 255, 255, 0.74); }
   .igx-expansion-panel__header-icon--end igx-icon,
   .igx-expansion-panel__header-icon--start igx-icon {
-    color: rgba(0, 0, 0, 0.74); }
+    color: rgba(255, 255, 255, 0.74); }
 
 .igx-expansion-panel__body {
-  color: rgba(0, 0, 0, 0.74);
-  background: #fff;
+  color: rgba(255, 255, 255, 0.74);
+  background: #222;
   overflow: hidden; }
 
 .igx-expansion-panel--disabled .igx-expansion-panel__header-title,
 .igx-expansion-panel--disabled .igx-expansion-panel__header-description {
-  color: rgba(0, 0, 0, 0.38); }
+  color: rgba(255, 255, 255, 0.38); }
 
 .igx-expansion-panel--disabled .igx-expansion-panel__header-icon--start igx-icon,
 .igx-expansion-panel--disabled .igx-expansion-panel__header-icon--end igx-icon {
-  color: rgba(0, 0, 0, 0.38); }
+  color: rgba(255, 255, 255, 0.38); }
 
 :root {
-  --igx-grid-header-background: #f4f4f4;
-  --igx-grid-header-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-sortable-header-hover-color: rgba(0, 0, 0, 0.87);
-  --igx-grid-sortable-header-hover-icon-color: rgba(0, 0, 0, 0.38);
+  --igx-grid-header-background: #2a2a2a;
+  --igx-grid-header-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-sortable-header-hover-color: rgba(255, 255, 255, 0.87);
+  --igx-grid-sortable-header-hover-icon-color: rgba(255, 255, 255, 0.38);
   --igx-grid-sortable-header-icon-hover-color: #e36c09;
-  --igx-grid-sorted-header-color: rgba(0, 0, 0, 0.87);
+  --igx-grid-sorted-header-color: rgba(255, 255, 255, 0.87);
   --igx-grid-sorted-header-icon-color: #e36c09;
   --igx-grid-header-border-width: 1px;
   --igx-grid-header-border-style: solid;
-  --igx-grid-header-border-color: rgba(0, 0, 0, 0.08);
-  --igx-grid-content-background: #fff;
-  --igx-grid-content-text-color: rgba(0, 0, 0, 0.74);
-  --igx-grid-ghost-header-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-ghost-header-icon-color: rgba(0, 0, 0, 0.38);
-  --igx-grid-ghost-header-background: #fff;
-  --igx-grid-row-odd-background: #fff;
-  --igx-grid-row-even-background: #fff;
+  --igx-grid-header-border-color: rgba(255, 255, 255, 0.08);
+  --igx-grid-content-background: #222;
+  --igx-grid-content-text-color: rgba(255, 255, 255, 0.74);
+  --igx-grid-ghost-header-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-ghost-header-icon-color: rgba(255, 255, 255, 0.38);
+  --igx-grid-ghost-header-background: #222;
+  --igx-grid-row-odd-background: #222;
+  --igx-grid-row-even-background: #222;
   --igx-grid-row-odd-text-color: inherit;
   --igx-grid-row-even-text-color: inherit;
-  --igx-grid-row-selected-background: #ffd2ad;
-  --igx-grid-row-selected-text-color: black;
-  --igx-grid-row-hover-background: #f4f4f4;
-  --igx-grid-row-hover-text-color: black;
-  --igx-grid-row-border-color: rgba(0, 0, 0, 0.12);
+  --igx-grid-row-selected-background: #50331c;
+  --igx-grid-row-selected-text-color: #fff;
+  --igx-grid-row-hover-background: #2a2a2a;
+  --igx-grid-row-hover-text-color: #fff;
+  --igx-grid-row-border-color: rgba(255, 255, 255, 0.12);
   --igx-grid-pinned-border-width: 2px;
   --igx-grid-pinned-border-style: solid;
-  --igx-grid-pinned-border-color: rgba(0, 0, 0, 0.26);
+  --igx-grid-pinned-border-color: rgba(255, 255, 255, 0.26);
   --igx-grid-cell-active-border-color: #e36c09;
-  --igx-grid-cell-selected-background: #eaeaea;
-  --igx-grid-cell-selected-text-color: black;
-  --igx-grid-cell-editing-background: #fff;
+  --igx-grid-cell-selected-background: #333333;
+  --igx-grid-cell-selected-text-color: #fff;
+  --igx-grid-cell-editing-background: #222;
   --igx-grid-edit-mode-color: #e36c09;
-  --igx-grid-edited-row-indicator: rgba(0, 0, 0, 0.26);
-  --igx-grid-cell-edited-value-color: rgba(0, 0, 0, 0.54);
+  --igx-grid-edited-row-indicator: rgba(255, 255, 255, 0.26);
+  --igx-grid-cell-edited-value-color: rgba(255, 255, 255, 0.54);
   --igx-grid-resize-line-color: #e36c09;
   --igx-grid-drop-indicator-color: #e36c09;
-  --igx-grid-grouparea-background: #f4f4f4;
+  --igx-grid-grouparea-background: #2a2a2a;
   --igx-grid-group-label-column-name-text: #17365d;
   --igx-grid-group-label-icon: #17365d;
-  --igx-grid-group-label-text: rgba(0, 0, 0, 0.74);
-  --igx-grid-expand-all-icon-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-expand-all-icon-hover-color: rgba(0, 0, 0, 0.74);
-  --igx-grid-expand-icon-color: rgba(0, 0, 0, 0.54);
+  --igx-grid-group-label-text: rgba(255, 255, 255, 0.74);
+  --igx-grid-expand-all-icon-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-expand-all-icon-hover-color: rgba(255, 255, 255, 0.74);
+  --igx-grid-expand-icon-color: rgba(255, 255, 255, 0.54);
   --igx-grid-expand-icon-hover-color: #17365d;
-  --igx-grid-active-expand-icon-color: rgba(0, 0, 0, 0.38);
+  --igx-grid-active-expand-icon-color: rgba(255, 255, 255, 0.38);
   --igx-grid-active-expand-icon-hover-color: #17365d;
-  --igx-grid-group-count-background: rgba(0, 0, 0, 0.08);
-  --igx-grid-group-count-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-drop-area-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-drop-area-icon-color: #9e9e9e;
-  --igx-grid-drop-area-background: rgba(0, 0, 0, 0.04);
-  --igx-grid-drop-area-on-drop-background: rgba(0, 0, 0, 0.08);
-  --igx-grid-group-row-background: #f4f4f4;
-  --igx-grid-group-row-selected-background: #eaeaea;
-  --igx-grid-filtering-header-background: #fff;
-  --igx-grid-filtering-header-text-color: rgba(0, 0, 0, 0.74);
-  --igx-grid-filtering-row-background: #fff;
-  --igx-grid-filtering-row-text-color: rgba(0, 0, 0, 0.74);
-  --igx-grid-tree-filtered-text-color: rgba(0, 0, 0, 0.38);
-  --igx-grid-body-summaries-background: #f4f4f4;
-  --igx-grid-body-summaries-text-color: black;
-  --igx-grid-root-summaries-background: #e0e0e0;
-  --igx-grid-root-summaries-text-color: black;
+  --igx-grid-group-count-background: rgba(255, 255, 255, 0.08);
+  --igx-grid-group-count-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-drop-area-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-drop-area-icon-color: white;
+  --igx-grid-drop-area-background: rgba(255, 255, 255, 0.04);
+  --igx-grid-drop-area-on-drop-background: rgba(255, 255, 255, 0.08);
+  --igx-grid-group-row-background: #2a2a2a;
+  --igx-grid-group-row-selected-background: #333333;
+  --igx-grid-filtering-header-background: #222;
+  --igx-grid-filtering-header-text-color: rgba(255, 255, 255, 0.74);
+  --igx-grid-filtering-row-background: #222;
+  --igx-grid-filtering-row-text-color: rgba(255, 255, 255, 0.74);
+  --igx-grid-tree-filtered-text-color: rgba(255, 255, 255, 0.38);
+  --igx-grid-body-summaries-background: #2a2a2a;
+  --igx-grid-body-summaries-text-color: white;
+  --igx-grid-root-summaries-background: #3c3c3c;
+  --igx-grid-root-summaries-text-color: white;
   --igx-grid-row-highlight: #e36c09;
   --igx-grid-grid-elevation: 2;
   --igx-grid-drag-elevation: 5;
-  --igx-grid-row-ghost-background: #5392e1;
-  --igx-grid-row-drag-color: rgba(0, 0, 0, 0.08);
+  --igx-grid-row-ghost-background: #030d1a;
+  --igx-grid-row-drag-color: rgba(255, 255, 255, 0.08);
   --igx-grid-drop-area-border-radius: 16px;
-  --igx-grid-tree-selected-filtered-row-text-color: rgba(0, 0, 0, 0.5);
-  --igx-grid-tree-selected-filtered-cell-text-color: rgba(0, 0, 0, 0.5);
-  --igx-grid-row-selected-cell-background: #ffbc84;
+  --igx-grid-tree-selected-filtered-row-text-color: rgba(255, 255, 255, 0.5);
+  --igx-grid-tree-selected-filtered-cell-text-color: rgba(255, 255, 255, 0.5);
+  --igx-grid-row-selected-cell-background: #322011;
   --igx-grid-grid-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
   --igx-grid-drag-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.26), 0 5px 8px 0 rgba(0, 0, 0, 0.12), 0 1px 14px 0 rgba(0, 0, 0, 0.08); }
 
@@ -3023,8 +3023,8 @@
 .igx-grid__tfoot {
   position: relative;
   display: flex;
-  background: #f4f4f4;
-  color: rgba(0, 0, 0, 0.54);
+  background: #2a2a2a;
+  color: rgba(255, 255, 255, 0.54);
   overflow: hidden; }
   .igx-grid__thead-wrapper .igx-grid__tr,
   .igx-grid__tfoot .igx-grid__tr {
@@ -3038,7 +3038,7 @@
       color: inherit; }
 
 .igx-grid__thead-wrapper {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 2; }
   .igx-grid__thead-wrapper .igx-grid__cbx-selection--push {
     align-items: flex-start;
@@ -3055,7 +3055,7 @@
   .igx-grid__thead .igx-grid__tr--mrl .igx-grid__header-indentation,
   .igx-grid__thead .igx-grid__tr--mrl .igx-grid__row-indentation,
   .igx-grid__thead .igx-grid__tr--mrl .igx-grid__cbx-selection {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
 
 .igx-grid--cosy .igx-grid__thead-wrapper .igx-grid__cbx-selection--push {
   align-items: flex-start;
@@ -3068,11 +3068,11 @@
 .igx-grid__thead-title {
   flex-basis: auto !important;
   align-items: center !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   height: 3.125rem; }
 
 .igx-grid__thead-title--pinned-last {
-  border-right: 2px solid rgba(0, 0, 0, 0.26) !important; }
+  border-right: 2px solid rgba(255, 255, 255, 0.26) !important; }
 
 .igx-grid--cosy .igx-grid__thead-title {
   height: 2.5rem;
@@ -3110,7 +3110,7 @@
 
 .igx-grid__tfoot {
   grid-row: 5;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 10001; }
 
 .igx-grid__thead-wrapper igx-display-container {
@@ -3129,10 +3129,10 @@
   .igx-grid__mrl-block .igx-grid__thead-title, .igx-grid__mrl-block .igx-grid__th {
     align-items: center;
     flex-grow: 1;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
   .igx-grid__mrl-block .igx-grid__thead-title, .igx-grid__mrl-block .igx-grid__th, .igx-grid__mrl-block .igx-grid__td {
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
 
 .igx-grid__tr.igx-grid__tr--mrl {
   border-bottom-color: transparent; }
@@ -3140,12 +3140,12 @@
 .igx-grid__tr--mrl .igx-grid__cbx-selection,
 .igx-grid__tr--mrl .igx-grid__row-indentation,
 .igx-grid__tr--mrl .igx-grid__drag-indicator {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
 
 .igx-grid__tbody-content {
   position: relative;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.74);
+  background: #222;
+  color: rgba(255, 255, 255, 0.74);
   overflow: hidden;
   z-index: 1; }
 
@@ -3159,7 +3159,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: rgba(0, 0, 0, 0.74); }
+  color: rgba(255, 255, 255, 0.74); }
 
 .igx-grid__loading {
   display: flex;
@@ -3176,23 +3176,23 @@
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
-  background: #f4f4f4;
+  background: #2a2a2a;
   z-index: 10001; }
 
 .igx-grid__thead-thumb {
-  background: #f4f4f4;
-  border-left: 1px solid rgba(0, 0, 0, 0.12); }
+  background: #2a2a2a;
+  border-left: 1px solid rgba(255, 255, 255, 0.12); }
 
 .igx-grid__tfoot-thumb {
-  background: #f4f4f4;
-  border-left: 1px solid rgba(0, 0, 0, 0.12); }
+  background: #2a2a2a;
+  border-left: 1px solid rgba(255, 255, 255, 0.12); }
 
 
 .igx-grid__tbody-scrollbar {
-  border-left: 1px solid rgba(0, 0, 0, 0.12); }
+  border-left: 1px solid rgba(255, 255, 255, 0.12); }
 
 .igx-grid__scroll-start {
-  background: #f4f4f4; }
+  background: #2a2a2a; }
 
 .igx-grid__scroll-main igx-display-container {
   height: 0; }
@@ -3202,15 +3202,15 @@
 
 .igx-grid__tr {
   display: flex;
-  background: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background: #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   outline-style: none;
   position: relative; }
   .igx-grid__tr:hover {
-    background: #f4f4f4;
-    color: black; }
+    background: #2a2a2a;
+    color: #fff; }
   .igx-grid__tr.igx-grid__tr--ghost {
-    background: #5392e1; }
+    background: #030d1a; }
 
 .igx-grid__drag-indicator {
   display: flex;
@@ -3238,39 +3238,39 @@
   padding-right: 0; }
 
 .igx-grid__drag-indicator--header {
-  border-right: 1px solid rgba(0, 0, 0, 0.08); }
+  border-right: 1px solid rgba(255, 255, 255, 0.08); }
 
 .igx-grid__hierarchical-expander + .igx-grid__drag-indicator {
   padding-left: 0;
   min-width: 1.5rem; }
 
 .igx-grid__drag-indicator--off {
-  color: rgba(0, 0, 0, 0.08); }
+  color: rgba(255, 255, 255, 0.08); }
 
 .igx-grid__tr--drag {
   opacity: .5; }
 
 .igx-grid__tr--odd {
-  background: #fff;
+  background: #222;
   color: inherit; }
 
 .igx-grid__tr--even {
-  background: #fff;
+  background: #222;
   color: inherit; }
 
 .igx-grid__tr--selected {
-  color: black;
-  background: #ffd2ad; }
+  color: #fff;
+  background: #50331c; }
   .igx-grid__tr--selected .igx-grid__td--selected,
   .igx-grid__tr--selected .igx-grid__td--pinned.igx-grid__td--selected {
-    background: #ffbc84; }
+    background: #322011; }
   .igx-grid__tr--selected:hover {
-    background: #ffd2ad;
-    color: black; }
+    background: #50331c;
+    color: #fff; }
   .igx-grid__tr--selected .igx-grid__tree-grouping-indicator {
-    color: black; }
+    color: #fff; }
     .igx-grid__tr--selected .igx-grid__tree-grouping-indicator:hover {
-      color: black; }
+      color: #fff; }
 
 .igx-grid__tr--expanded {
   border-bottom: none; }
@@ -3305,43 +3305,43 @@
   width: 0.125rem;
   height: 100%;
   z-index: 10000;
-  background: rgba(0, 0, 0, 0.26); }
+  background: rgba(255, 255, 255, 0.26); }
 
 .igx-grid__tr--group {
   position: relative;
-  background: #f4f4f4 !important; }
+  background: #2a2a2a !important; }
 
 .igx-grid__tr--filtered .igx-grid__td-text {
-  color: rgba(0, 0, 0, 0.38); }
+  color: rgba(255, 255, 255, 0.38); }
 
 .igx-grid__tr--filtered .igx-grid__tree-grouping-indicator {
-  color: rgba(0, 0, 0, 0.38); }
+  color: rgba(255, 255, 255, 0.38); }
   .igx-grid__tr--filtered .igx-grid__tree-grouping-indicator:hover {
-    color: rgba(0, 0, 0, 0.38); }
+    color: rgba(255, 255, 255, 0.38); }
 
 .igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__td-text {
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgba(255, 255, 255, 0.5); }
 
 .igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__tree-grouping-indicator {
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgba(255, 255, 255, 0.5); }
   .igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__tree-grouping-indicator:hover {
-    color: rgba(0, 0, 0, 0.5); }
+    color: rgba(255, 255, 255, 0.5); }
 
 .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__td-text {
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgba(255, 255, 255, 0.5); }
 
 .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__tree-grouping-indicator {
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgba(255, 255, 255, 0.5); }
   .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__tree-grouping-indicator:hover {
-    color: rgba(0, 0, 0, 0.5); }
+    color: rgba(255, 255, 255, 0.5); }
 
 .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__td-text {
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgba(255, 255, 255, 0.5); }
 
 .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__tree-grouping-indicator {
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgba(255, 255, 255, 0.5); }
   .igx-grid__tr--selected.igx-grid__tr--filtered .igx-grid__td--selected .igx-grid__tree-grouping-indicator:hover {
-    color: rgba(0, 0, 0, 0.5); }
+    color: rgba(255, 255, 255, 0.5); }
 
 .igx-grid__tree-grouping-indicator {
   display: flex;
@@ -3351,7 +3351,7 @@
   outline-style: none;
   margin-right: 0.5rem;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(255, 255, 255, 0.54); }
   .igx-grid__tree-grouping-indicator:hover {
     color: #17365d; }
 
@@ -3360,7 +3360,7 @@
   height: 1.5rem;
   margin-right: 0.5rem; }
   .igx-grid__tree-loading-indicator .igx-circular-bar__outer {
-    stroke: rgba(0, 0, 0, 0.54); }
+    stroke: rgba(255, 255, 255, 0.54); }
   .igx-grid__tree-loading-indicator > .igx-circular-bar {
     width: 1.5rem;
     height: 1.5rem; }
@@ -3399,17 +3399,17 @@
   box-shadow: inset 0 0 0 1px #e36c09; }
 
 .igx-grid__td--selected {
-  color: black;
-  background: #eaeaea;
+  color: #fff;
+  background: #333333;
   border-bottom: 0; }
   .igx-grid__td--selected .igx-grid__tree-grouping-indicator {
-    color: black; }
+    color: #fff; }
     .igx-grid__td--selected .igx-grid__tree-grouping-indicator:hover {
-      color: black; }
+      color: #fff; }
 
 .igx-grid__td--edited .igx-grid__td-text {
   font-style: italic;
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(255, 255, 255, 0.54); }
 
 .igx-grid__tr--deleted .igx-grid__td-text {
   font-style: italic;
@@ -3417,7 +3417,7 @@
   text-decoration: line-through; }
 
 .igx-grid__td--editing {
-  background: #fff !important;
+  background: #222 !important;
   box-shadow: inset 0 0 0 0.125rem #e36c09; }
   .igx-grid__td--editing igx-input-group {
     width: 100%;
@@ -3432,12 +3432,12 @@
   z-index: 9999; }
 
 .igx-grid__td--pinned.igx-grid__td--selected {
-  color: black;
-  background: #eaeaea;
+  color: #fff;
+  background: #333333;
   border-bottom: 0; }
 
 .igx-grid__th--pinned-last, .igx-grid__td--pinned-last {
-  border-right: 2px solid rgba(0, 0, 0, 0.26) !important; }
+  border-right: 2px solid rgba(255, 255, 255, 0.26) !important; }
 
 .igx-grid__thead-title, .igx-grid__th {
   flex-flow: row nowrap;
@@ -3447,14 +3447,14 @@
   font-weight: 600;
   min-width: 0;
   padding: 0 1.5rem;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   outline-style: none;
   overflow: hidden;
   transition: color 250ms ease-in-out; }
 
 .igx-grid__th--filtering {
-  background: #fff;
-  color: rgba(0, 0, 0, 0.74);
+  background: #222;
+  color: rgba(255, 255, 255, 0.74);
   z-index: 3; }
 
 .igx-grid--cosy .igx-grid__th {
@@ -3555,7 +3555,7 @@
   justify-content: center;
   align-items: center;
   padding: 0 1.5rem;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   background: inherit;
   z-index: 4; }
 
@@ -3592,23 +3592,23 @@
 .igx-grid__summaries, .igx-grid__summaries--body {
   display: flex;
   overflow: hidden;
-  background: #e0e0e0; }
+  background: #3c3c3c; }
   .igx-grid__summaries .igx-grid-summary__result, .igx-grid__summaries--body .igx-grid-summary__result {
-    color: black; }
+    color: white; }
 
 .igx-grid__summaries--body {
-  background: #f4f4f4;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.12); }
+  background: #2a2a2a;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12); }
   .igx-grid__summaries--body:last-of-type {
     border-bottom: none; }
   .igx-grid__summaries--body .igx-grid-summary__result {
-    color: black; }
+    color: white; }
 
 .igx-grid__summaries-patch {
   background: inherit;
   position: relative;
   z-index: 1;
-  border-right: 1px solid rgba(0, 0, 0, 0.08); }
+  border-right: 1px solid rgba(255, 255, 255, 0.08); }
 
 .igx-grid__th-drop-indicator-left,
 .igx-grid__th-drop-indicator-right {
@@ -3672,8 +3672,8 @@
   position: absolute;
   display: flex;
   align-items: center;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.54);
+  background: #222;
+  color: rgba(255, 255, 255, 0.54);
   min-width: 168px;
   max-width: 320px;
   height: 3.125rem;
@@ -3704,33 +3704,33 @@
   min-height: 2rem; }
 
 .igx-grid__drag-ghost-image-icon {
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(255, 255, 255, 0.38);
   margin-right: 0.75rem; }
 
 .igx-grid__drag-ghost-image-icon-group {
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(255, 255, 255, 0.38);
   padding: 0 1.5rem;
   padding-right: 0;
   margin-right: 0.5rem; }
 
 .igx-grid__drag-col-header {
-  background: #f4f4f4; }
+  background: #2a2a2a; }
   .igx-grid__drag-col-header .igx-grid__thead-title, .igx-grid__drag-col-header .igx-grid__th {
     opacity: .4; }
 
 .igx-grid__group-row {
-  background: #f4f4f4;
+  background: #2a2a2a;
   display: flex;
   outline-style: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   min-height: 3.125rem; }
 
 .igx-grid__group-row--active {
-  background: #eaeaea; }
+  background: #333333; }
   .igx-grid__group-row--active .igx-grid__grouping-indicator {
-    color: rgba(0, 0, 0, 0.54); }
+    color: rgba(255, 255, 255, 0.54); }
   .igx-grid__group-row--active:hover {
-    background: #eaeaea; }
+    background: #333333; }
 
 .igx-grid--cosy .igx-grid__group-row {
   min-height: 2.5rem; }
@@ -3762,13 +3762,13 @@
   font-size: 12px; }
 
 .igx-group-label__count-badge > div {
-  background: rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.54);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.54);
   font-size: 0.75rem; }
 
 .igx-group-label__text {
   font-size: 0.8125rem;
-  color: rgba(0, 0, 0, 0.74); }
+  color: rgba(255, 255, 255, 0.74); }
 
 [dir='rtl'] .igx-grid__group-content {
   padding-left: 1.5rem; }
@@ -3823,9 +3823,9 @@
   .igx-grid__row-indentation .igx-button--icon {
     width: 1.75rem;
     height: 1.75rem;
-    color: rgba(0, 0, 0, 0.54); }
+    color: rgba(255, 255, 255, 0.54); }
   .igx-grid__row-indentation:focus .igx-button--icon, .igx-grid__row-indentation:hover .igx-button--icon {
-    color: rgba(0, 0, 0, 0.74); }
+    color: rgba(255, 255, 255, 0.74); }
 
 .igx-grid--cosy .igx-grid__row-indentation {
   padding-left: 1rem;
@@ -3841,8 +3841,8 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  background: #f4f4f4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #2a2a2a;
   min-height: 3.5625rem;
   padding: 0.5rem 1.5rem;
   z-index: 2;
@@ -3877,16 +3877,16 @@
   border-radius: 16px;
   padding: 0 1.5rem;
   flex: 1 0 0%;
-  background: rgba(0, 0, 0, 0.04); }
+  background: rgba(255, 255, 255, 0.04); }
   .igx-drop-area .igx-drop-area__icon, .igx-drop-area--compact .igx-drop-area__icon, .igx-drop-area--cosy .igx-drop-area__icon {
-    color: #9e9e9e;
+    color: white;
     width: 1rem;
     height: 1rem;
     font-size: 1rem;
     margin-right: 0.5rem; }
 
 .igx-drop-area--hover {
-  background: rgba(0, 0, 0, 0.08); }
+  background: rgba(255, 255, 255, 0.08); }
 
 .igx-drop-area--compact {
   height: 1.5rem;
@@ -3902,7 +3902,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(255, 255, 255, 0.54);
   font-size: 0.8125rem; }
 
 .igx-grid__grouping-indicator {
@@ -3918,7 +3918,7 @@
   padding-right: 0.75rem;
   min-height: 3.125rem; }
   .igx-grid__grouping-indicator igx-icon {
-    color: rgba(0, 0, 0, 0.54);
+    color: rgba(255, 255, 255, 0.54);
     width: 1.5rem; }
   .igx-grid__grouping-indicator:hover, .igx-grid__grouping-indicator:focus {
     outline-style: none; }
@@ -3936,8 +3936,8 @@
 .igx-grid__header-indentation {
   position: relative;
   padding-right: 1.5rem;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
-  background: #f4f4f4;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: #2a2a2a;
   z-index: 4; }
 
 .igx-grid--cosy .igx-grid__header-indentation {
@@ -4231,8 +4231,8 @@
 .igx-grid__filtering-cell {
   display: flex;
   align-items: center;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   height: 3.125rem;
   padding: 0 1.5rem;
   overflow: hidden; }
@@ -4282,8 +4282,8 @@
   padding: 0 1rem;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.74);
+  background: #222;
+  color: rgba(255, 255, 255, 0.74);
   left: 0;
   bottom: 0;
   z-index: 3; }
@@ -4296,7 +4296,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    box-shadow: 0 1px 0 #fff, 0 4px 10px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 0 #222, 0 4px 10px rgba(0, 0, 0, 0.12);
     z-index: -1; }
   .igx-grid__filtering-row igx-input-group {
     flex: 0 0 200px; }
@@ -4352,7 +4352,7 @@
   z-index: 1; }
   .igx-grid__filtering-row-scroll-start::after {
     left: calc(100% + 6px);
-    background: linear-gradient(to right, #fff, transparent); }
+    background: linear-gradient(to right, #222, transparent); }
 
 .igx-grid__filtering-row-scroll-end {
   width: 24px;
@@ -4363,7 +4363,7 @@
   z-index: 1; }
   .igx-grid__filtering-row-scroll-end::before {
     right: calc(100% + 6px);
-    background: linear-gradient(to left, #fff, transparent); }
+    background: linear-gradient(to left, #222, transparent); }
 
 .igx-grid__tr--highlighted {
   position: relative; }
@@ -4382,7 +4382,7 @@
     left: 4px; }
 
 .igx-grid__tr-container {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
 
 .igx-grid__hierarchical-expander {
   user-select: none;
@@ -4394,7 +4394,7 @@
   justify-content: center;
   cursor: pointer;
   z-index: 3;
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(255, 255, 255, 0.54);
   border-right: 1px solid transparent; }
   .igx-grid__hierarchical-expander:focus {
     outline: none; }
@@ -4403,7 +4403,7 @@
   .igx-grid__hierarchical-expander:hover igx-icon {
     color: #17365d; }
   .igx-grid__hierarchical-expander igx-icon {
-    color: rgba(0, 0, 0, 0.54);
+    color: rgba(255, 255, 255, 0.54);
     max-width: 24px;
     min-width: 24px; }
 
@@ -4417,7 +4417,7 @@
 
 .igx-grid__hierarchical-expander--header {
   background: inherit;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 3; }
   .igx-grid__hierarchical-expander--header igx-icon {
     display: flex;
@@ -4480,22 +4480,22 @@
 .igx-excel-filter__menu {
   width: 320px;
   min-width: 320px;
-  background: #fff;
+  background: #222;
   box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
   border-radius: 4px; }
   .igx-excel-filter__menu {
-    --igx-button-group-item-background: #fff;
+    --igx-button-group-item-background: #222;
     --igx-button-group-item-border-color: transparent;
-    --igx-button-group-item-disabled-border: rgba(0, 0, 0, 0.12);
-    --igx-button-group-item-text-color: rgba(0, 0, 0, 0.62);
-    --igx-button-group-item-hover-text-color: rgba(0, 0, 0, 0.74);
-    --igx-button-group-item-hover-background: rgba(0, 0, 0, 0.04);
+    --igx-button-group-item-disabled-border: rgba(255, 255, 255, 0.12);
+    --igx-button-group-item-text-color: rgba(255, 255, 255, 0.62);
+    --igx-button-group-item-hover-text-color: rgba(255, 255, 255, 0.74);
+    --igx-button-group-item-hover-background: rgba(255, 255, 255, 0.04);
     --igx-button-group-item-selected-text-color: #e36c09;
-    --igx-button-group-item-selected-background: rgba(0, 0, 0, 0.04);
-    --igx-button-group-item-selected-hover-background: rgba(0, 0, 0, 0.38);
+    --igx-button-group-item-selected-background: rgba(255, 255, 255, 0.04);
+    --igx-button-group-item-selected-hover-background: rgba(255, 255, 255, 0.38);
     --igx-button-group-item-selected-border-color: transparent;
-    --igx-button-group-disabled-text-color: rgba(0, 0, 0, 0.26);
-    --igx-button-group-disabled-background-color: rgba(0, 0, 0, 0.02);
+    --igx-button-group-disabled-text-color: rgba(255, 255, 255, 0.26);
+    --igx-button-group-disabled-background-color: rgba(255, 255, 255, 0.02);
     --igx-button-group-elevation: 2;
     --igx-button-group-border-radius: 4px;
     --igx-button-group-border: none;
@@ -4507,8 +4507,8 @@
     border-radius: 4px; }
   .igx-excel-filter__menu .igx-button-group__item, .igx-excel-filter__menu .igx-button-group__item--selected {
     border: 1px solid transparent;
-    color: rgba(0, 0, 0, 0.62);
-    background: #fff;
+    color: rgba(255, 255, 255, 0.62);
+    background: #222;
     min-width: 24px;
     display: flex;
     flex: 1 0 0%;
@@ -4531,12 +4531,12 @@
     .igx-excel-filter__menu .igx-button-group__item:last-of-type, .igx-excel-filter__menu .igx-button-group__item--selected:last-of-type {
       border-radius: 0 4px 4px 0; }
     .igx-excel-filter__menu .igx-button--disabled.igx-button-group__item, .igx-excel-filter__menu .igx-button--disabled.igx-button-group__item--selected {
-      color: rgba(0, 0, 0, 0.26) !important;
-      background: rgba(0, 0, 0, 0.02) !important;
-      border-color: rgba(0, 0, 0, 0.12); }
+      color: rgba(255, 255, 255, 0.26) !important;
+      background: rgba(255, 255, 255, 0.02) !important;
+      border-color: rgba(255, 255, 255, 0.12); }
     .igx-excel-filter__menu .igx-button-group__item:hover, .igx-excel-filter__menu .igx-button-group__item--selected:hover, .igx-excel-filter__menu .igx-button-group__item:focus, .igx-excel-filter__menu .igx-button-group__item--selected:focus {
-      color: rgba(0, 0, 0, 0.74);
-      background: rgba(0, 0, 0, 0.04);
+      color: rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.04);
       z-index: 1; }
   .igx-excel-filter__menu .igx-button-group--vertical .igx-button-group__item:not(:nth-child(0)), .igx-button-group--vertical .igx-excel-filter__menu .igx-button-group__item:not(:nth-child(0)) {
     margin-top: -1px;
@@ -4547,13 +4547,13 @@
     border-radius: 0 0 4px 4px; }
   .igx-excel-filter__menu .igx-button-group__item--selected {
     color: #e36c09;
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.04);
     border-color: transparent;
     position: relative;
     z-index: 1; }
     .igx-excel-filter__menu .igx-button-group__item--selected:hover, .igx-excel-filter__menu .igx-button-group__item--selected:focus {
       color: #e36c09;
-      background: rgba(0, 0, 0, 0.38); }
+      background: rgba(255, 255, 255, 0.38); }
   .igx-excel-filter__menu .igx-button-group--vertical {
     flex-flow: column; }
   .igx-excel-filter__menu .igx-button-group__item-content {
@@ -4569,7 +4569,7 @@
   display: flex;
   align-items: center;
   padding: 1rem;
-  color: rgba(0, 0, 0, 0.62); }
+  color: rgba(255, 255, 255, 0.62); }
 
 .igx-excel-filter__menu-header-actions {
   display: flex;
@@ -4590,7 +4590,7 @@
   display: block;
   padding: 0.5rem 1rem; }
   .igx-excel-filter__sort header {
-    color: rgba(0, 0, 0, 0.62);
+    color: rgba(255, 255, 255, 0.62);
     margin-bottom: 0.25rem; }
   .igx-excel-filter__sort igx-icon {
     font-size: 1.125rem;
@@ -4602,7 +4602,7 @@
   display: flex;
   align-items: center; }
   .igx-excel-filter__menu--compact .igx-excel-filter__sort header, .igx-excel-filter__menu--compact .igx-excel-filter__move header {
-    color: rgba(0, 0, 0, 0.62);
+    color: rgba(255, 255, 255, 0.62);
     margin-right: auto; }
 
 .igx-excel-filter__actions {
@@ -4611,7 +4611,7 @@
 .igx-excel-filter__move {
   margin-bottom: 0.5rem; }
   .igx-excel-filter__move header {
-    color: rgba(0, 0, 0, 0.62);
+    color: rgba(255, 255, 255, 0.62);
     margin-bottom: 0.25rem; }
 
 .igx-excel-filter__move-buttons {
@@ -4635,13 +4635,13 @@
   padding: 0.5rem 1rem;
   margin: 0 -1rem;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.62);
+  color: rgba(255, 255, 255, 0.62);
   outline-style: none; }
   .igx-excel-filter__actions-pin:hover, .igx-excel-filter__actions-unpin:hover, .igx-excel-filter__actions-hide:hover, .igx-excel-filter__actions-filter:hover, .igx-excel-filter__actions-clear:hover, .igx-excel-filter__actions-clear--disabled:hover, .igx-excel-filter__actions-pin:focus, .igx-excel-filter__actions-unpin:focus, .igx-excel-filter__actions-hide:focus, .igx-excel-filter__actions-filter:focus, .igx-excel-filter__actions-clear:focus, .igx-excel-filter__actions-clear--disabled:focus {
-    background: rgba(0, 0, 0, 0.04); }
+    background: rgba(255, 255, 255, 0.04); }
 
 .igx-excel-filter__actions-clear--disabled {
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(255, 255, 255, 0.26);
   pointer-events: none; }
 
 .igx-excel-filter__menu-main {
@@ -4649,8 +4649,8 @@
   padding: 0 1rem; }
   .igx-excel-filter__menu-main igx-list {
     margin: 0.5rem -1rem 0;
-    border-top: 1px dashed rgba(0, 0, 0, 0.12);
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.12); }
+    border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.12); }
 
 .igx-excel-filter__menu--cosy .igx-excel-filter__menu-header, .igx-excel-filter__menu--cosy .igx-excel-filter__secondary-header {
   padding: 0.5rem; }
@@ -4706,7 +4706,7 @@
 .igx-excel-filter__secondary {
   width: 520px;
   min-width: 520px;
-  background: #fff;
+  background: #222;
   box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.26), 0 12px 17px 2px rgba(0, 0, 0, 0.12), 0 5px 22px 4px rgba(0, 0, 0, 0.08);
   border-radius: 0.25rem; }
 
@@ -4735,14 +4735,14 @@
   padding: 0.5rem 0.25rem; }
 
 .igx-excel-filter__secondary-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
 
 .igx-excel-filter__secondary-main {
   height: 232px;
   overflow: auto; }
 
 .igx-excel-filter__secondary-footer {
-  border-top: 1px dashed rgba(0, 0, 0, 0.12); }
+  border-top: 1px dashed rgba(255, 255, 255, 0.12); }
   .igx-excel-filter__secondary-footer [igxButton] {
     flex-grow: 0; }
 
@@ -4773,10 +4773,10 @@
   --igx-grid-summary-background-color: inherit;
   --igx-grid-summary-label-color: #17365d;
   --igx-grid-summary-result-color: currentColor;
-  --igx-grid-summary-border-color: rgba(0, 0, 0, 0.26);
+  --igx-grid-summary-border-color: rgba(255, 255, 255, 0.26);
   --igx-grid-summary-pinned-border-width: 2px;
   --igx-grid-summary-pinned-border-style: solid;
-  --igx-grid-summary-pinned-border-color: rgba(0, 0, 0, 0.26);
+  --igx-grid-summary-pinned-border-color: rgba(255, 255, 255, 0.26);
   --igx-grid-summary-label-hover-color: #052042; }
 
 .igx-grid-summary, .igx-grid-summary--pinned, .igx-grid-summary--empty, .igx-grid-summary--fw, .igx-grid-summary--cosy, .igx-grid-summary--compact {
@@ -4801,7 +4801,7 @@
   flex-grow: 0; }
 
 .igx-grid-summary--pinned-last {
-  border-right: 2px solid rgba(0, 0, 0, 0.26); }
+  border-right: 2px solid rgba(255, 255, 255, 0.26); }
   @media print {
     .igx-grid-summary--pinned-last {
       border-right: 2px solid #999; } }
@@ -4838,20 +4838,20 @@
   overflow: hidden; }
 
 :root {
-  --igx-grid-toolbar-background-color: rgba(0, 0, 0, 0.02);
-  --igx-grid-toolbar-title-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-toolbar-button-background: rgba(0, 0, 0, 0.04);
-  --igx-grid-toolbar-button-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-toolbar-button-hover-background: rgba(0, 0, 0, 0.04);
-  --igx-grid-toolbar-button-hover-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-toolbar-button-focus-background: rgba(0, 0, 0, 0.04);
-  --igx-grid-toolbar-button-focus-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-toolbar-dropdown-background: #fff;
-  --igx-grid-toolbar-item-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-toolbar-item-hover-background: rgba(0, 0, 0, 0.04);
-  --igx-grid-toolbar-item-hover-text-color: rgba(0, 0, 0, 0.54);
-  --igx-grid-toolbar-item-focus-background: rgba(0, 0, 0, 0.04);
-  --igx-grid-toolbar-item-focus-text-color: rgba(0, 0, 0, 0.54); }
+  --igx-grid-toolbar-background-color: #222;
+  --igx-grid-toolbar-title-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-toolbar-button-background: rgba(255, 255, 255, 0.04);
+  --igx-grid-toolbar-button-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-toolbar-button-hover-background: rgba(255, 255, 255, 0.04);
+  --igx-grid-toolbar-button-hover-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-toolbar-button-focus-background: rgba(255, 255, 255, 0.04);
+  --igx-grid-toolbar-button-focus-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-toolbar-dropdown-background: #222;
+  --igx-grid-toolbar-item-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-toolbar-item-hover-background: rgba(255, 255, 255, 0.04);
+  --igx-grid-toolbar-item-hover-text-color: rgba(255, 255, 255, 0.54);
+  --igx-grid-toolbar-item-focus-background: rgba(255, 255, 255, 0.04);
+  --igx-grid-toolbar-item-focus-text-color: rgba(255, 255, 255, 0.54); }
 
 .igx-grid-toolbar, .igx-grid-toolbar--cosy, .igx-grid-toolbar--compact {
   display: flex;
@@ -4860,30 +4860,30 @@
   grid-row: 1;
   font-size: 1rem;
   padding: 0 1rem 0 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: #222;
   height: 3.625rem; }
   .igx-grid-toolbar .igx-button--flat, .igx-grid-toolbar--cosy .igx-button--flat, .igx-grid-toolbar--compact .igx-button--flat {
-    background: rgba(0, 0, 0, 0.04);
-    color: rgba(0, 0, 0, 0.54);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.54);
     margin-left: 0.5rem; }
     .igx-grid-toolbar .igx-button--flat:hover, .igx-grid-toolbar--cosy .igx-button--flat:hover, .igx-grid-toolbar--compact .igx-button--flat:hover {
-      background: rgba(0, 0, 0, 0.04);
-      color: rgba(0, 0, 0, 0.54); }
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.54); }
     .igx-grid-toolbar .igx-button--flat:focus, .igx-grid-toolbar--cosy .igx-button--flat:focus, .igx-grid-toolbar--compact .igx-button--flat:focus, .igx-grid-toolbar .igx-button--flat:active, .igx-grid-toolbar--cosy .igx-button--flat:active, .igx-grid-toolbar--compact .igx-button--flat:active {
-      background: rgba(0, 0, 0, 0.04);
-      color: rgba(0, 0, 0, 0.54); }
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.54); }
   .igx-grid-toolbar .igx-button--icon, .igx-grid-toolbar--cosy .igx-button--icon, .igx-grid-toolbar--compact .igx-button--icon {
-    background: rgba(0, 0, 0, 0.04);
-    color: rgba(0, 0, 0, 0.54);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.54);
     margin-left: 0.5rem;
     border-radius: 0; }
     .igx-grid-toolbar .igx-button--icon:hover, .igx-grid-toolbar--cosy .igx-button--icon:hover, .igx-grid-toolbar--compact .igx-button--icon:hover {
-      background: rgba(0, 0, 0, 0.04);
-      color: rgba(0, 0, 0, 0.54); }
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.54); }
     .igx-grid-toolbar .igx-button--icon:focus, .igx-grid-toolbar--cosy .igx-button--icon:focus, .igx-grid-toolbar--compact .igx-button--icon:focus, .igx-grid-toolbar .igx-button--icon:active, .igx-grid-toolbar--cosy .igx-button--icon:active, .igx-grid-toolbar--compact .igx-button--icon:active {
-      background: rgba(0, 0, 0, 0.04);
-      color: rgba(0, 0, 0, 0.54); }
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.54); }
   .igx-grid-toolbar .igx-grid-toolbar__button-space, .igx-grid-toolbar--cosy .igx-grid-toolbar__button-space, .igx-grid-toolbar--compact .igx-grid-toolbar__button-space {
     display: flex;
     justify-content: space-between;
@@ -4937,7 +4937,7 @@
   align-items: center; }
 
 .igx-grid-toolbar__title {
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(255, 255, 255, 0.54);
   flex: 1 1 auto;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -4961,7 +4961,7 @@
 
 .igx-grid-toolbar__dd-list {
   list-style: none;
-  background: #fff;
+  background: #222;
   margin: 0;
   padding: 0; }
 
@@ -4969,14 +4969,14 @@
   cursor: pointer;
   position: relative;
   padding: 0.5em 1em;
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(255, 255, 255, 0.54);
   white-space: nowrap; }
   .igx-grid-toolbar__dd-list-items:hover {
-    background: rgba(0, 0, 0, 0.04);
-    color: rgba(0, 0, 0, 0.54); }
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.54); }
   .igx-grid-toolbar__dd-list-items:focus {
-    background: rgba(0, 0, 0, 0.04);
-    color: rgba(0, 0, 0, 0.54); }
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.54); }
 
 :root {
   --igx-icon-color: currentColor;
@@ -4998,33 +4998,33 @@
   opacity: .54; }
 
 :root {
-  --igx-input-group-idle-text-color: rgba(0, 0, 0, 0.54);
-  --igx-input-group-filled-text-color: rgba(0, 0, 0, 0.87);
-  --igx-input-group-focused-text-color: rgba(0, 0, 0, 0.87);
-  --igx-input-group-disabled-text-color: rgba(0, 0, 0, 0.38);
-  --igx-input-group-idle-secondary-color: rgba(0, 0, 0, 0.54);
-  --igx-input-group-filled-secondary-color: rgba(0, 0, 0, 0.54);
+  --igx-input-group-idle-text-color: rgba(255, 255, 255, 0.54);
+  --igx-input-group-filled-text-color: rgba(255, 255, 255, 0.87);
+  --igx-input-group-focused-text-color: rgba(255, 255, 255, 0.87);
+  --igx-input-group-disabled-text-color: rgba(255, 255, 255, 0.38);
+  --igx-input-group-idle-secondary-color: rgba(255, 255, 255, 0.54);
+  --igx-input-group-filled-secondary-color: rgba(255, 255, 255, 0.54);
   --igx-input-group-focused-secondary-color: #17365d;
-  --igx-input-group-idle-bottom-line-color: rgba(0, 0, 0, 0.54);
-  --igx-input-group-hover-bottom-line-color: rgba(0, 0, 0, 0.87);
+  --igx-input-group-idle-bottom-line-color: rgba(255, 255, 255, 0.54);
+  --igx-input-group-hover-bottom-line-color: rgba(255, 255, 255, 0.87);
   --igx-input-group-focused-bottom-line-color: #17365d;
   --igx-input-group-interim-bottom-line-color: rgba(23, 54, 93, 0.12);
-  --igx-input-group-disabled-bottom-line-color: rgba(0, 0, 0, 0.38);
-  --igx-input-group-disabled-border-color: rgba(0, 0, 0, 0.06);
-  --igx-input-group-box-background: rgba(0, 0, 0, 0.08);
-  --igx-input-group-box-disabled-background: rgba(0, 0, 0, 0.04);
+  --igx-input-group-disabled-bottom-line-color: rgba(255, 255, 255, 0.38);
+  --igx-input-group-disabled-border-color: rgba(255, 255, 255, 0.06);
+  --igx-input-group-box-background: rgba(255, 255, 255, 0.08);
+  --igx-input-group-box-disabled-background: rgba(255, 255, 255, 0.04);
   --igx-input-group-border-background: transparent;
-  --igx-input-group-border-disabled-background: rgba(0, 0, 0, 0.04);
-  --igx-input-group-search-background: #fff;
-  --igx-input-group-search-disabled-background: rgba(0, 0, 0, 0.04);
+  --igx-input-group-border-disabled-background: rgba(255, 255, 255, 0.04);
+  --igx-input-group-search-background: #222;
+  --igx-input-group-search-disabled-background: rgba(255, 255, 255, 0.04);
   --igx-input-group-search-resting-elevation: 1;
   --igx-input-group-search-hover-elevation: 2;
   --igx-input-group-search-disabled-elevation: 0;
   --igx-input-group-success-secondary-color: #4eb862;
   --igx-input-group-warning-secondary-color: #fbb13c;
   --igx-input-group-error-secondary-color: #ff134a;
-  --igx-input-group-placeholder-color: rgba(0, 0, 0, 0.38);
-  --igx-input-group-disabled-placeholder-color: rgba(0, 0, 0, 0.26);
+  --igx-input-group-placeholder-color: rgba(255, 255, 255, 0.38);
+  --igx-input-group-disabled-placeholder-color: rgba(255, 255, 255, 0.26);
   --igx-input-group-box-border-radius: 4px 4px 0px 0px;
   --igx-input-group-border-border-radius: 4px;
   --igx-input-group-search-border-radius: 4px;
@@ -5037,7 +5037,7 @@
 .igx-input-group--focused {
   position: relative;
   display: block;
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(255, 255, 255, 0.54); }
   .igx-input-group igx-prefix, .igx-input-group--focused igx-prefix,
   .igx-input-group [igxPrefix],
   .igx-input-group--focused [igxPrefix] {
@@ -5076,7 +5076,7 @@
 .igx-input-group--disabled {
   pointer-events: none;
   user-select: none;
-  color: rgba(0, 0, 0, 0.38); }
+  color: rgba(255, 255, 255, 0.38); }
 
 .igx-input-group__bundle {
   position: relative;
@@ -5084,7 +5084,7 @@
   align-items: center;
   flex-flow: row nowrap;
   padding-top: 1.125rem;
-  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.54);
+  box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.54);
   transition: box-shadow 0.25s cubic-bezier(0.215, 0.61, 0.355, 1), color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 .igx-input-group--cosy .igx-input-group__bundle {
@@ -5095,8 +5095,8 @@
 
 .igx-input-group--box .igx-input-group__bundle {
   padding: 0 1rem;
-  background: rgba(0, 0, 0, 0.08);
-  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.54); }
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.54); }
   .igx-input-group--box .igx-input-group__bundle .igx-input-group__label + .igx-input-group__input, .igx-input-group--box .igx-input-group__bundle .igx-input-group--border .igx-input-group__label + .igx-input-group__input, .igx-input-group--box .igx-input-group__bundle .igx-input-group--search .igx-input-group__label + .igx-input-group__input {
     transform: translateY(0); }
 
@@ -5108,7 +5108,7 @@
 
 .igx-input-group__bundle:hover {
   cursor: pointer;
-  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.87); }
+  box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.87); }
 
 .igx-input-group--focused .igx-input-group__bundle {
   caret-color: #17365d;
@@ -5124,17 +5124,17 @@
 
 .igx-input-group--disabled .igx-input-group__bundle {
   box-shadow: none;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.38) 40%, transparent 10%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.38) 40%, transparent 10%);
   background-position: bottom;
   background-size: 4px 1px;
   background-repeat: repeat-x; }
 
 .igx-input-group--disabled.igx-input-group--box .igx-input-group__bundle {
-  background: rgba(0, 0, 0, 0.04); }
+  background: rgba(255, 255, 255, 0.04); }
 
 .igx-input-group--border .igx-input-group__bundle {
   padding: 0 1rem;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.54);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.54);
   border-radius: 4px;
   background: transparent; }
   .igx-input-group--border .igx-input-group__bundle .igx-input-group--box .igx-input-group__label + .igx-input-group__input, .igx-input-group--border .igx-input-group__bundle .igx-input-group__label + .igx-input-group__input, .igx-input-group--border .igx-input-group__bundle .igx-input-group--search .igx-input-group__label + .igx-input-group__input {
@@ -5147,7 +5147,7 @@
   padding: 0 0.72727rem; }
 
 .igx-input-group--border .igx-input-group__bundle:hover {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.54); }
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.54); }
 
 .igx-input-group--focused.igx-input-group--border .igx-input-group__bundle {
   box-shadow: inset 0 0 0 2px #17365d; }
@@ -5159,14 +5159,14 @@
   box-shadow: inset 0 0 0 2px #4eb862; }
 
 .igx-input-group--disabled.igx-input-group--border .igx-input-group__bundle {
-  background: rgba(0, 0, 0, 0.04);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06); }
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); }
 
 .igx-input-group--search .igx-input-group__bundle {
   padding: 0 1rem;
   border-radius: 4px;
   border-bottom: none;
-  background: #fff;
+  background: #222;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26), 0 1px 1px 0 rgba(0, 0, 0, 0.12), 0 2px 1px -1px rgba(0, 0, 0, 0.08); }
   .igx-input-group--search .igx-input-group__bundle .igx-input-group--box .igx-input-group__label + .igx-input-group__input, .igx-input-group--search .igx-input-group__bundle .igx-input-group--border .igx-input-group__label + .igx-input-group__input, .igx-input-group--search .igx-input-group__bundle .igx-input-group__label + .igx-input-group__input {
     transform: translateY(0); }
@@ -5184,7 +5184,7 @@
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08); }
 
 .igx-input-group--disabled.igx-input-group--search .igx-input-group__bundle {
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.04);
   box-shadow: none; }
 
 .igx-input-group__bundle-main {
@@ -5261,7 +5261,7 @@
   min-width: 0;
   overflow: visible;
   background: transparent;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   outline-style: none;
   box-shadow: none;
   border-top: 0.1875rem solid transparent;
@@ -5269,7 +5269,7 @@
   .igx-input-group__input::-webkit-input-placeholder, .igx-input-group__textarea::-webkit-input-placeholder {
     line-height: normal; }
   .igx-input-group__input::placeholder, .igx-input-group__textarea::placeholder {
-    color: rgba(0, 0, 0, 0.38);
+    color: rgba(255, 255, 255, 0.38);
     opacity: 1; }
 
 .igx-input-group--cosy .igx-input-group__input {
@@ -5293,12 +5293,12 @@
 
 .igx-input-group__input:focus, .igx-input-group__textarea:focus {
   cursor: text;
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(255, 255, 255, 0.87); }
 
 .igx-input-group--disabled .igx-input-group__input {
-  color: rgba(0, 0, 0, 0.38); }
+  color: rgba(255, 255, 255, 0.38); }
   .igx-input-group--disabled .igx-input-group__input::placeholder {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(255, 255, 255, 0.26); }
 
 .igx-input-group__textarea {
   min-height: 5.125rem;
@@ -5533,15 +5533,15 @@
   order: 1; }
 
 :root {
-  --igx-list-background: #fff;
-  --igx-list-header-background: #fff;
+  --igx-list-background: #222;
+  --igx-list-header-background: #222;
   --igx-list-header-text-color: #e36c09;
-  --igx-list-item-background: #fff;
-  --igx-list-item-background-hover: #eaeaea;
-  --igx-list-item-background-active: #eaeaea;
-  --igx-list-item-text-color: rgba(0, 0, 0, 0.74);
-  --igx-list-item-text-color-hover: rgba(0, 0, 0, 0.74);
-  --igx-list-item-text-color-active: rgba(0, 0, 0, 0.74);
+  --igx-list-item-background: #222;
+  --igx-list-item-background-hover: #424242;
+  --igx-list-item-background-active: #424242;
+  --igx-list-item-text-color: rgba(255, 255, 255, 0.74);
+  --igx-list-item-text-color-hover: rgba(255, 255, 255, 0.74);
+  --igx-list-item-text-color-active: rgba(255, 255, 255, 0.74);
   --igx-list-item-title-color: currentColor;
   --igx-list-item-title-color-hover: currentColor;
   --igx-list-item-title-color-active: currentColor;
@@ -5561,7 +5561,7 @@
   position: relative;
   display: flex;
   flex-flow: column nowrap;
-  background: #fff;
+  background: #222;
   height: 100%;
   overflow: hidden;
   z-index: 0;
@@ -5577,7 +5577,7 @@
 
 .message {
   text-align: center;
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(255, 255, 255, 0.74);
   padding: 1rem;
   z-index: 1; }
 
@@ -5591,7 +5591,7 @@
   display: flex;
   align-items: center;
   color: #e36c09;
-  background: #fff;
+  background: #222;
   padding: 0.5rem 1rem;
   user-select: none; }
 
@@ -5614,7 +5614,7 @@
   z-index: 1; }
 
 .igx-list__item-lines {
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(255, 255, 255, 0.74);
   display: flex;
   flex-direction: column;
   flex: 1 0 0%; }
@@ -5645,13 +5645,13 @@
   align-items: center;
   position: relative;
   padding: 0.5rem 1rem;
-  color: rgba(0, 0, 0, 0.74);
-  background: #fff;
+  color: rgba(255, 255, 255, 0.74);
+  background: #222;
   border-radius: 0px;
   z-index: 2; }
   .igx-list__item-content:hover {
-    color: rgba(0, 0, 0, 0.74);
-    background: #eaeaea; }
+    color: rgba(255, 255, 255, 0.74);
+    background: #424242; }
     .igx-list__item-content:hover .igx-list__item-lines {
       color: currentColor; }
     .igx-list__item-content:hover .igx-list__item-line-title {
@@ -5712,8 +5712,8 @@
   margin-left: 0.5rem; }
 
 .igx-list__item-content:active {
-  color: rgba(0, 0, 0, 0.74);
-  background: #eaeaea;
+  color: rgba(255, 255, 255, 0.74);
+  background: #424242;
   z-index: 3; }
   .igx-list__item-content:active .igx-list__item-line-title {
     color: currentColor; }
@@ -5801,19 +5801,19 @@ igx-action-icon {
   align-items: center; }
 
 :root {
-  --igx-navdrawer-background: #fff;
+  --igx-navdrawer-background: #222;
   --igx-navdrawer-border-color: rgba(0, 0, 0, 0.14);
   --igx-navdrawer-border-radius: 7px;
   --igx-navdrawer-item-border-radius: 4px;
-  --igx-navdrawer-item-header-text-color: rgba(0, 0, 0, 0.87);
-  --igx-navdrawer-item-text-color: rgba(0, 0, 0, 0.54);
-  --igx-navdrawer-item-icon-color: rgba(0, 0, 0, 0.54);
+  --igx-navdrawer-item-header-text-color: rgba(255, 255, 255, 0.87);
+  --igx-navdrawer-item-text-color: rgba(255, 255, 255, 0.54);
+  --igx-navdrawer-item-icon-color: rgba(255, 255, 255, 0.54);
   --igx-navdrawer-item-active-text-color: #17365d;
   --igx-navdrawer-item-active-background: rgba(23, 54, 93, 0.12);
-  --igx-navdrawer-item-hover-background: rgba(0, 0, 0, 0.08);
-  --igx-navdrawer-item-hover-text-color: rgba(0, 0, 0, 0.87);
+  --igx-navdrawer-item-hover-background: rgba(255, 255, 255, 0.08);
+  --igx-navdrawer-item-hover-text-color: rgba(255, 255, 255, 0.87);
   --igx-navdrawer-item-active-icon-color: #17365d;
-  --igx-navdrawer-item-hover-icon-color: rgba(0, 0, 0, 0.87);
+  --igx-navdrawer-item-hover-icon-color: rgba(255, 255, 255, 0.87);
   --igx-navdrawer-elevation: 16;
   --igx-navdrawer-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.26), 0 16px 24px 2px rgba(0, 0, 0, 0.12), 0 6px 30px 5px rgba(0, 0, 0, 0.08); }
 
@@ -5828,7 +5828,7 @@ igx-action-icon {
   max-width: 90%;
   min-height: 100%;
   overflow-x: hidden;
-  background: #fff;
+  background: #222;
   top: 0;
   bottom: 0;
   left: 0;
@@ -5909,7 +5909,7 @@ igx-action-icon {
   position: relative;
   display: flex;
   flex-flow: row nowrap;
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(255, 255, 255, 0.54);
   max-height: 3rem;
   padding: 0.75rem 1rem;
   cursor: pointer;
@@ -5924,12 +5924,12 @@ igx-action-icon {
   .igx-nav-drawer__item[dir='rtl'] > igx-icon + span, .igx-nav-drawer__item--active[dir='rtl'] > igx-icon + span {
     margin-right: 2rem; }
   .igx-nav-drawer__item igx-icon, .igx-nav-drawer__item--active igx-icon {
-    color: rgba(0, 0, 0, 0.54); }
+    color: rgba(255, 255, 255, 0.54); }
   .igx-nav-drawer__item:hover, .igx-nav-drawer__item--active:hover, .igx-nav-drawer__item:focus, .igx-nav-drawer__item--active:focus {
-    background: rgba(0, 0, 0, 0.08);
-    color: rgba(0, 0, 0, 0.87); }
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.87); }
     .igx-nav-drawer__item:hover igx-icon, .igx-nav-drawer__item--active:hover igx-icon, .igx-nav-drawer__item:focus igx-icon, .igx-nav-drawer__item--active:focus igx-icon {
-      color: rgba(0, 0, 0, 0.87); }
+      color: rgba(255, 255, 255, 0.87); }
 
 .igx-nav-drawer__item--active {
   color: #17365d;
@@ -5946,7 +5946,7 @@ igx-action-icon {
   display: block;
   padding: 0.75rem 1rem;
   white-space: nowrap;
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(255, 255, 255, 0.87); }
 
 .igx-nav-drawer__style-dummy {
   height: 0;
@@ -5956,7 +5956,7 @@ igx-action-icon {
   visibility: hidden; }
 
 :root {
-  --igx-overlay-background-color: rgba(0, 0, 0, 0.38); }
+  --igx-overlay-background-color: rgba(255, 255, 255, 0.38); }
 
 .igx-overlay {
   width: 0;
@@ -5976,7 +5976,7 @@ igx-action-icon {
   box-sizing: content-box; }
 
 .igx-overlay__wrapper--modal {
-  background: rgba(0, 0, 0, 0.38);
+  background: rgba(255, 255, 255, 0.38);
   pointer-events: initial; }
 
 .igx-overlay__wrapper--flex {
@@ -6001,18 +6001,18 @@ igx-action-icon {
 
 :root {
   --igx-grid-paginator-text-color: currentColor;
-  --igx-grid-paginator-background-color: #f4f4f4;
-  --igx-grid-paginator-border-color: rgba(0, 0, 0, 0.26); }
+  --igx-grid-paginator-background-color: #222;
+  --igx-grid-paginator-border-color: rgba(255, 255, 255, 0.26); }
 
 .igx-grid-paginator, .igx-grid-paginator--cosy, .igx-grid-paginator--compact {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: currentColor;
-  background: #f4f4f4;
+  background: #222;
   grid-row: 7;
   font-size: 12px;
-  border-top: 1px solid rgba(0, 0, 0, 0.26);
+  border-top: 1px solid rgba(255, 255, 255, 0.26);
   z-index: 1;
   padding: 0 1.5rem;
   height: 3.5rem; }
@@ -6059,9 +6059,9 @@ igx-action-icon {
     transform: rotate(360deg); } }
 
 :root {
-  --igx-circular-bar-base-circle-color: rgba(0, 0, 0, 0.12);
+  --igx-circular-bar-base-circle-color: rgba(255, 255, 255, 0.12);
   --igx-circular-bar-progress-circle-color: #17365d;
-  --igx-circular-bar-text-color: rgba(0, 0, 0, 0.62); }
+  --igx-circular-bar-text-color: rgba(255, 255, 255, 0.62); }
 
 
 .igx-circular-bar {
@@ -6082,7 +6082,7 @@ igx-action-icon {
 .igx-circular-bar__inner {
   stroke-width: 4;
   fill: transparent;
-  stroke: rgba(0, 0, 0, 0.12); }
+  stroke: rgba(255, 255, 255, 0.12); }
 
 .igx-circular-bar__outer {
   fill: transparent;
@@ -6101,7 +6101,7 @@ igx-action-icon {
 .igx-circular-bar__text, .igx-circular-bar__text--hidden {
   font-size: 2rem;
   font-weight: 600;
-  fill: rgba(0, 0, 0, 0.62); }
+  fill: rgba(255, 255, 255, 0.62); }
 
 .igx-circular-bar__text--hidden, .igx-circular-bar--indeterminate .igx-circular-bar__text {
   visibility: hidden; }
@@ -6114,14 +6114,14 @@ igx-action-icon {
     stroke-dashoffset: -180; } }
 
 :root {
-  --igx-linear-bar-track-color: rgba(0, 0, 0, 0.12);
+  --igx-linear-bar-track-color: rgba(255, 255, 255, 0.12);
   --igx-linear-bar-fill-color-default: #17365d;
   --igx-linear-bar-fill-color-danger: #ff134a;
   --igx-linear-bar-fill-color-warning: #fbb13c;
   --igx-linear-bar-fill-color-info: #1377d5;
   --igx-linear-bar-fill-color-success: #4eb862;
   --igx-linear-bar-stripes-color: rgba(255, 255, 255, 0.7);
-  --igx-linear-bar-text-color: rgba(0, 0, 0, 0.62); }
+  --igx-linear-bar-text-color: rgba(255, 255, 255, 0.62); }
 
 
 .igx-linear-bar {
@@ -6135,7 +6135,7 @@ igx-action-icon {
   position: relative;
   width: inherit;
   height: 4px;
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.12);
   overflow: hidden;
   z-index: 0; }
 
@@ -6178,7 +6178,7 @@ igx-action-icon {
 
 .igx-linear-bar__value, .igx-linear-bar__value--start, .igx-linear-bar__value--center, .igx-linear-bar__value--end, .igx-linear-bar__value--top, .igx-linear-bar__value--hidden, .igx-linear-bar--indeterminate .igx-linear-bar__value {
   margin: 0;
-  color: rgba(0, 0, 0, 0.62);
+  color: rgba(255, 255, 255, 0.62);
   font-size: 0.875em;
   font-weight: 600; }
 
@@ -6209,10 +6209,10 @@ igx-action-icon {
     transform-origin: right; } }
 
 :root {
-  --igx-radio-label-color: rgba(0, 0, 0, 0.87);
-  --igx-radio-empty-color: rgba(0, 0, 0, 0.54);
+  --igx-radio-label-color: rgba(255, 255, 255, 0.87);
+  --igx-radio-empty-color: rgba(255, 255, 255, 0.54);
   --igx-radio-fill-color: #e36c09;
-  --igx-radio-disabled-color: rgba(0, 0, 0, 0.26); }
+  --igx-radio-disabled-color: rgba(255, 255, 255, 0.26); }
 
 
 .igx-radio {
@@ -6220,7 +6220,7 @@ igx-action-icon {
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(255, 255, 255, 0.87); }
 
 .igx-radio__input {
   position: absolute;
@@ -6236,7 +6236,7 @@ igx-action-icon {
 
 .igx-radio--disabled {
   pointer-events: none;
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(255, 255, 255, 0.26);
   user-select: none; }
 
 .igx-radio__composite {
@@ -6247,7 +6247,7 @@ igx-action-icon {
   min-width: 1.25em;
   line-height: 1.25em;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   user-select: none; }
   .igx-radio__composite::before, .igx-radio__composite::after {
     position: absolute;
@@ -6262,7 +6262,7 @@ igx-action-icon {
     transform: scale3d(0, 0, 0);
     transition: all 0.2s ease-in; }
   .igx-radio__composite::after {
-    border: 2px solid rgba(0, 0, 0, 0.54); }
+    border: 2px solid rgba(255, 255, 255, 0.54); }
 
 .igx-radio--checked .igx-radio__composite::before {
   border: 2px solid #e36c09;
@@ -6273,13 +6273,13 @@ igx-action-icon {
   border: 2px solid #e36c09; }
 
 .igx-radio--disabled .igx-radio__composite::after {
-  border: 2px solid rgba(0, 0, 0, 0.26); }
+  border: 2px solid rgba(255, 255, 255, 0.26); }
 
 .igx-radio--checked.igx-radio--disabled .igx-radio__composite::after {
-  border: 2px solid rgba(0, 0, 0, 0.26); }
+  border: 2px solid rgba(255, 255, 255, 0.26); }
 
 .igx-radio--checked.igx-radio--disabled .igx-radio__composite::before {
-  background: rgba(0, 0, 0, 0.26);
+  background: rgba(255, 255, 255, 0.26);
   border: 2px solid transparent; }
 
 .igx-radio__label, .igx-radio__label--before {
@@ -6336,7 +6336,7 @@ igx-action-icon {
 
 .igx-radio--focused .igx-radio__ripple, .igx-radio--focused.igx-radio--checked .igx-radio__ripple {
   animation: "scale-in-out" 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-  background: rgba(0, 0, 0, 0.54);
+  background: rgba(255, 255, 255, 0.54);
   transition: background 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: .12; }
 
@@ -6353,7 +6353,7 @@ igx-action-icon {
   right: 0; }
 
 .igx-radio:hover .igx-radio__ripple::after, .igx-radio:active .igx-radio__ripple::after {
-  background: rgba(0, 0, 0, 0.54); }
+  background: rgba(255, 255, 255, 0.54); }
 
 .igx-radio--checked:hover .igx-radio__ripple::after, .igx-radio--checked:active .igx-radio__ripple::after {
   background: #e36c09; }
@@ -6366,9 +6366,9 @@ igx-action-icon {
   --igx-slider-thumb-color: #e36c09;
   --igx-slider-label-background-color: #e36c09;
   --igx-slider-label-text-color: black;
-  --igx-slider-disabled-thumb-color: #bcbcbc;
-  --igx-slider-base-track-color: rgba(0, 0, 0, 0.38);
-  --igx-slider-disabled-base-track-color: rgba(0, 0, 0, 0.26); }
+  --igx-slider-disabled-thumb-color: white;
+  --igx-slider-base-track-color: rgba(255, 255, 255, 0.38);
+  --igx-slider-disabled-base-track-color: rgba(255, 255, 255, 0.26); }
 
 
 .igx-slider,
@@ -6389,11 +6389,11 @@ igx-action-icon {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: rgba(0, 0, 0, 0.38);
+  background: rgba(255, 255, 255, 0.38);
   transition: background .2s ease; }
 
 .igx-slider--disabled .igx-slider__track {
-  background: rgba(0, 0, 0, 0.26); }
+  background: rgba(255, 255, 255, 0.26); }
 
 .igx-slider__track-ticks, .igx-slider--disabled .igx-slider__track-ticks {
   position: absolute;
@@ -6478,7 +6478,7 @@ igx-action-icon {
   transition: transform .2s ease-out; }
 
 .igx-slider--disabled .igx-slider__thumb-from .dot, .igx-slider--disabled .igx-slider__thumb-to .dot {
-  background: #bcbcbc;
+  background: white;
   transform: scale(0.9);
   border: 2px solid transparent; }
 
@@ -6495,8 +6495,8 @@ igx-action-icon {
 
 :root {
   --igx-snackbar-border-radius: 4px;
-  --igx-snackbar-background: rgba(0, 0, 0, 0.87);
-  --igx-snackbar-text-color: white;
+  --igx-snackbar-background: rgba(255, 255, 255, 0.87);
+  --igx-snackbar-text-color: black;
   --igx-snackbar-button-color: #e36c09;
   --igx-snackbar-elevation: 4;
   --igx-snackbar-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08); }
@@ -6511,8 +6511,8 @@ igx-action-icon {
   min-height: 3rem;
   padding: 0.4375rem 1.5rem;
   margin: 8px;
-  color: white;
-  background: rgba(0, 0, 0, 0.87);
+  color: black;
+  background: rgba(255, 255, 255, 0.87);
   backface-visibility: hidden;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
   border-radius: 4px; }
@@ -6538,12 +6538,12 @@ igx-action-icon {
 :root {
   --igx-switch-thumb-on-color: #e36c09;
   --igx-switch-track-on-color: rgba(227, 108, 9, 0.5);
-  --igx-switch-thumb-off-color: #eaeaea;
-  --igx-switch-track-disabled-color: rgba(0, 0, 0, 0.12);
-  --igx-switch-track-off-color: rgba(0, 0, 0, 0.54);
-  --igx-switch-thumb-disabled-color: #bcbcbc;
-  --igx-switch-label-color: rgba(0, 0, 0, 0.87);
-  --igx-switch-label-disabled-color: rgba(0, 0, 0, 0.26);
+  --igx-switch-thumb-off-color: white;
+  --igx-switch-track-disabled-color: rgba(255, 255, 255, 0.12);
+  --igx-switch-track-off-color: rgba(255, 255, 255, 0.54);
+  --igx-switch-thumb-disabled-color: #424242;
+  --igx-switch-label-color: rgba(255, 255, 255, 0.87);
+  --igx-switch-label-disabled-color: rgba(255, 255, 255, 0.26);
   --igx-switch-resting-elevation: 2;
   --igx-switch-hover-elevation: 3;
   --igx-switch-disabled-elevation: 1;
@@ -6584,7 +6584,7 @@ igx-action-icon {
   width: 36px;
   height: 14px;
   border-radius: 7px;
-  background: rgba(0, 0, 0, 0.54);
+  background: rgba(255, 255, 255, 0.54);
   cursor: pointer;
   user-select: none;
   transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
@@ -6593,7 +6593,7 @@ igx-action-icon {
   background: rgba(227, 108, 9, 0.5); }
 
 .igx-switch--disabled .igx-switch__composite {
-  background: rgba(0, 0, 0, 0.12); }
+  background: rgba(255, 255, 255, 0.12); }
 
 .igx-switch__composite-thumb {
   position: relative;
@@ -6602,7 +6602,7 @@ igx-action-icon {
   height: 20px;
   min-width: 20px;
   border-radius: 10px;
-  background: #eaeaea;
+  background: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
   transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
   .igx-switch__composite-thumb:hover {
@@ -6615,7 +6615,7 @@ igx-action-icon {
     transform: translateX(-16px); }
 
 .igx-switch--disabled .igx-switch__composite-thumb {
-  background: #bcbcbc;
+  background: #424242;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26), 0 1px 1px 0 rgba(0, 0, 0, 0.12), 0 2px 1px -1px rgba(0, 0, 0, 0.08); }
 
 .igx-switch__ripple {
@@ -6647,7 +6647,7 @@ igx-action-icon {
 
 .igx-switch--focused .igx-switch__ripple, .igx-switch--focused.igx-switch--checked .igx-switch__ripple {
   animation: "scale-in-out" 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-  background: rgba(0, 0, 0, 0.54);
+  background: rgba(255, 255, 255, 0.54);
   transition: background 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: .12; }
 
@@ -6656,7 +6656,7 @@ igx-action-icon {
 
 .igx-switch__label, .igx-switch__label--before {
   display: inline-block;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   user-select: none;
   word-wrap: break-all; }
@@ -6681,7 +6681,7 @@ igx-action-icon {
       margin: 0; }
 
 .igx-switch--disabled .igx-switch__label, .igx-switch--disabled .igx-switch__label--before {
-  color: rgba(0, 0, 0, 0.26); }
+  color: rgba(255, 255, 255, 0.26); }
 
 .igx-switch:hover .igx-switch__ripple::after, .igx-switch:active .igx-switch__ripple::after, .igx-switch--checked:hover .igx-switch__ripple::after, .igx-switch--checked:active .igx-switch__ripple::after {
   position: absolute;
@@ -6693,7 +6693,7 @@ igx-action-icon {
   right: 0; }
 
 .igx-switch:hover .igx-switch__ripple::after, .igx-switch:active .igx-switch__ripple::after {
-  background: rgba(0, 0, 0, 0.54); }
+  background: rgba(255, 255, 255, 0.54); }
 
 .igx-switch--checked:hover .igx-switch__ripple::after, .igx-switch--checked:active .igx-switch__ripple::after {
   background: #e36c09; }
@@ -6702,20 +6702,20 @@ igx-action-icon {
   opacity: .12; }
 
 :root {
-  --igx-tabs-item-text-color: rgba(0, 0, 0, 0.62);
-  --igx-tabs-item-background: #fff;
-  --igx-tabs-item-hover-background: rgba(0, 0, 0, 0.08);
-  --igx-tabs-item-hover-color: rgba(0, 0, 0, 0.62);
+  --igx-tabs-item-text-color: rgba(255, 255, 255, 0.62);
+  --igx-tabs-item-background: #222;
+  --igx-tabs-item-hover-background: rgba(255, 255, 255, 0.08);
+  --igx-tabs-item-hover-color: rgba(255, 255, 255, 0.62);
   --igx-tabs-item-active-color: #17365d;
   --igx-tabs-item-active-icon-color: #17365d;
-  --igx-tabs-item-active-background: rgba(0, 0, 0, 0.08);
+  --igx-tabs-item-active-background: rgba(255, 255, 255, 0.08);
   --igx-tabs-indicator-color: #17365d;
-  --igx-tabs-button-color: rgba(0, 0, 0, 0.38);
-  --igx-tabs-button-background: #fff;
-  --igx-tabs-button-hover-background: rgba(0, 0, 0, 0.04);
-  --igx-tabs-button-hover-color: rgba(0, 0, 0, 0.54);
-  --igx-tabs-tab-ripple-color: rgba(0, 0, 0, 0.04);
-  --igx-tabs-button-ripple-color: rgba(0, 0, 0, 0.04);
+  --igx-tabs-button-color: rgba(255, 255, 255, 0.38);
+  --igx-tabs-button-background: #222;
+  --igx-tabs-button-hover-background: rgba(255, 255, 255, 0.04);
+  --igx-tabs-button-hover-color: rgba(255, 255, 255, 0.54);
+  --igx-tabs-tab-ripple-color: rgba(255, 255, 255, 0.04);
+  --igx-tabs-button-ripple-color: rgba(255, 255, 255, 0.04);
   --igx-tabs-tab-area-shadow: none; }
 
 .igx-tabs {
@@ -6727,7 +6727,7 @@ igx-action-icon {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: #fff;
+  background: #222;
   box-shadow: none; }
 
 .igx-tabs__content-fixed,
@@ -6767,23 +6767,23 @@ igx-action-icon {
   position: relative;
   transition: all 0.3s cubic-bezier(0.35, 0, 0.25, 1);
   user-select: none;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.62);
+  background: #222;
+  color: rgba(255, 255, 255, 0.62);
   outline: 0; }
   .igx-tabs__header-menu-item::-moz-focus-inner, .igx-tabs__header-menu-item--selected::-moz-focus-inner, .igx-tabs__header-menu-item--disabled::-moz-focus-inner {
     border: 0; }
   .igx-tabs__header-menu-item:focus, .igx-tabs__header-menu-item--selected:focus, .igx-tabs__header-menu-item--disabled:focus {
-    background: rgba(0, 0, 0, 0.08); }
+    background: rgba(255, 255, 255, 0.08); }
   .igx-tabs__header-menu-item:hover, .igx-tabs__header-menu-item--selected:hover, .igx-tabs__header-menu-item--disabled:hover {
-    background: rgba(0, 0, 0, 0.08);
-    color: rgba(0, 0, 0, 0.62); }
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.62); }
   .igx-tabs__header-menu-item, .igx-tabs__header-menu-item--selected, .igx-tabs__header-menu-item--disabled {
-    --igx-ripple-color: rgba(0, 0, 0, 0.04); }
+    --igx-ripple-color: rgba(255, 255, 255, 0.04); }
   .igx-tabs__header-menu-item .igx-ripple__inner, .igx-tabs__header-menu-item--selected .igx-ripple__inner, .igx-tabs__header-menu-item--disabled .igx-ripple__inner {
     display: block;
     position: absolute;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.04);
     pointer-events: none;
     transform-origin: center;
     transform: translate3d(0, 0, 0) scale(0);
@@ -6792,16 +6792,16 @@ igx-action-icon {
   .igx-tabs__header-menu-item .igx-ripple, .igx-tabs__header-menu-item--selected .igx-ripple, .igx-tabs__header-menu-item--disabled .igx-ripple {
     overflow: hidden; }
   .igx-tabs__header-menu-item, .igx-tabs__header-menu-item--selected, .igx-tabs__header-menu-item--disabled {
-    --igx-ripple-color: rgba(0, 0, 0, 0.04); }
+    --igx-ripple-color: rgba(255, 255, 255, 0.04); }
 
 .igx-tabs__header-menu-item--selected {
   outline: 0;
   color: #17365d; }
   .igx-tabs__header-menu-item--selected:focus {
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.08);
     color: #17365d; }
   .igx-tabs__header-menu-item--selected:hover {
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.08);
     color: #17365d; }
   .igx-tabs__header-menu-item--selected .igx-tabs__header-menu-item-icon {
     color: #17365d; }
@@ -6847,25 +6847,25 @@ igx-action-icon {
   height: 3rem;
   cursor: pointer;
   position: relative;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.38);
+  background: #222;
+  color: rgba(255, 255, 255, 0.38);
   outline: 0;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.26), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.08); }
   .igx-tabs__header-button:hover, .igx-tabs__header-button--hidden:hover, .igx-tabs__header-button--active:hover {
-    background: rgba(0, 0, 0, 0.04);
-    color: rgba(0, 0, 0, 0.54); }
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.54); }
   .igx-tabs__header-button:focus, .igx-tabs__header-button--hidden:focus, .igx-tabs__header-button--active:focus {
     outline: 0;
-    background: rgba(0, 0, 0, 0.04); }
+    background: rgba(255, 255, 255, 0.04); }
   .igx-tabs__header-button::-moz-focus-inner, .igx-tabs__header-button--hidden::-moz-focus-inner, .igx-tabs__header-button--active::-moz-focus-inner {
     border: 0; }
   .igx-tabs__header-button, .igx-tabs__header-button--hidden, .igx-tabs__header-button--active {
-    --igx-ripple-color: rgba(0, 0, 0, 0.04); }
+    --igx-ripple-color: rgba(255, 255, 255, 0.04); }
   .igx-tabs__header-button .igx-ripple__inner, .igx-tabs__header-button--hidden .igx-ripple__inner, .igx-tabs__header-button--active .igx-ripple__inner {
     display: block;
     position: absolute;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.04);
     pointer-events: none;
     transform-origin: center;
     transform: translate3d(0, 0, 0) scale(0);
@@ -6874,7 +6874,7 @@ igx-action-icon {
   .igx-tabs__header-button .igx-ripple, .igx-tabs__header-button--hidden .igx-ripple, .igx-tabs__header-button--active .igx-ripple {
     overflow: hidden; }
   .igx-tabs__header-button, .igx-tabs__header-button--hidden, .igx-tabs__header-button--active {
-    --igx-ripple-color: rgba(0, 0, 0, 0.04); }
+    --igx-ripple-color: rgba(255, 255, 255, 0.04); }
 
 .igx-tabs__header-button--hidden {
   visibility: hidden; }
@@ -6905,8 +6905,8 @@ igx-action-icon {
   height: 4.5rem; }
 
 :root {
-  --igx-toast-background: rgba(0, 0, 0, 0.54);
-  --igx-toast-text-color: white;
+  --igx-toast-background: rgba(255, 255, 255, 0.54);
+  --igx-toast-text-color: black;
   --igx-toast-border-radius: 26px; }
 
 
@@ -6923,8 +6923,8 @@ igx-action-icon {
   margin: 2.625rem auto;
   padding: 1rem 1.5rem;
   min-width: 52px;
-  color: white;
-  background: rgba(0, 0, 0, 0.54);
+  color: black;
+  background: rgba(255, 255, 255, 0.54);
   border-radius: 26px;
   opacity: 0;
   z-index: 999999; }
@@ -6940,8 +6940,8 @@ igx-action-icon {
   bottom: 0; }
 
 :root {
-  --igx-tooltip-background: rgba(96, 96, 96, 0.9);
-  --igx-tooltip-text-color: white;
+  --igx-tooltip-background: rgba(255, 255, 255, 0.9);
+  --igx-tooltip-text-color: black;
   --igx-tooltip-roundness: 0.25rem;
   --igx-tooltip-border-radius: 4px; }
 
@@ -6952,8 +6952,8 @@ igx-action-icon {
   display: inline-flex;
   justify-content: center;
   flex-flow: column wrap;
-  background: rgba(96, 96, 96, 0.9);
-  color: white;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
   border-radius: 4px;
   margin: 0 auto; }
 
@@ -6966,14 +6966,14 @@ igx-action-icon {
   min-height: 2rem; }
 
 :root {
-  --igx-time-picker-text-color: rgba(0, 0, 0, 0.38);
+  --igx-time-picker-text-color: rgba(255, 255, 255, 0.38);
   --igx-time-picker-hover-text-color: #e36c09;
   --igx-time-picker-selected-text-color: #e36c09;
-  --igx-time-picker-active-item-background: rgba(0, 0, 0, 0.04);
+  --igx-time-picker-active-item-background: rgba(255, 255, 255, 0.04);
   --igx-time-picker-header-background: #e36c09;
   --igx-time-picker-header-hour-text-color: black;
   --igx-time-picker-header-time-period-color: rgba(0, 0, 0, 0.8);
-  --igx-time-picker-background-color: #fff;
+  --igx-time-picker-background-color: #222;
   --igx-time-picker-modal-elevation: 24;
   --igx-time-picker-dropdown-elevation: 8;
   --igx-time-picker-border-radius: 4px;
@@ -6995,7 +6995,7 @@ igx-action-icon {
   min-width: 33.75rem; }
 
 .igx-time-picker__main {
-  background: #fff;
+  background: #222;
   flex: 1 1 auto; }
 
 .igx-time-picker--dropdown {
@@ -7027,7 +7027,7 @@ igx-action-icon {
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(255, 255, 255, 0.38);
   overflow: hidden; }
   .igx-time-picker__column:focus, .igx-time-picker__column:active {
     outline: none; }
@@ -7050,7 +7050,7 @@ igx-action-icon {
   color: #e36c09; }
 
 .igx-time-picker__item--active {
-  background: rgba(0, 0, 0, 0.04); }
+  background: rgba(255, 255, 255, 0.04); }
 
 .igx-time-picker__header {
   background: #e36c09;
@@ -7648,8 +7648,8 @@ igx-action-icon {
   --igx-button-flat-focus-background: rgba(237, 118, 20, 0.12);
   --igx-button-flat-focus-text-color: #e36c09;
   --igx-button-outlined-background: transparent;
-  --igx-button-outlined-outline-color: rgba(0, 0, 0, 0.12);
-  --igx-button-outlined-disabled-outline-color: rgba(0, 0, 0, 0.12);
+  --igx-button-outlined-outline-color: rgba(255, 255, 255, 0.12);
+  --igx-button-outlined-disabled-outline-color: rgba(255, 255, 255, 0.12);
   --igx-button-outlined-text-color: #e36c09;
   --igx-button-outlined-hover-background: rgba(227, 108, 9, 0.05);
   --igx-button-outlined-hover-text-color: #e36c09;
@@ -7667,22 +7667,22 @@ igx-action-icon {
   --igx-button-fab-hover-text-color: black;
   --igx-button-fab-focus-background: #e88533;
   --igx-button-fab-focus-text-color: black;
-  --igx-button-icon-color: rgba(0, 0, 0, 0.74);
+  --igx-button-icon-color: rgba(255, 255, 255, 0.74);
   --igx-button-icon-background: transparent;
-  --igx-button-icon-hover-background: rgba(0, 0, 0, 0.04);
-  --igx-button-icon-hover-color: rgba(0, 0, 0, 0.74);
-  --igx-button-icon-focus-background: rgba(0, 0, 0, 0.26);
-  --igx-button-icon-focus-color: rgba(0, 0, 0, 0.74);
-  --igx-button-disabled-color: rgba(0, 0, 0, 0.26);
-  --igx-button-disabled-background: rgba(0, 0, 0, 0.04);
+  --igx-button-icon-hover-background: rgba(255, 255, 255, 0.04);
+  --igx-button-icon-hover-color: rgba(255, 255, 255, 0.74);
+  --igx-button-icon-focus-background: rgba(255, 255, 255, 0.26);
+  --igx-button-icon-focus-color: rgba(255, 255, 255, 0.74);
+  --igx-button-disabled-color: rgba(255, 255, 255, 0.26);
+  --igx-button-disabled-background: rgba(255, 255, 255, 0.04);
   --igx-button-raised-resting-elevation: 2;
   --igx-button-raised-hover-elevation: 4;
   --igx-button-raised-focus-elevation: 8;
   --igx-button-fab-resting-elevation: 6;
   --igx-button-fab-hover-elevation: 12;
   --igx-button-fab-focus-elevation: 12;
-  --igx-button-flat-border-radius: 10px;
-  --igx-button-raised-border-radius: 10px;
+  --igx-button-flat-border-radius: 0px;
+  --igx-button-raised-border-radius: 0px;
   --igx-button-outlined-border-radius: 4px;
   --igx-button-fab-border-radius: 28px;
   --igx-button-icon-border-radius: 20px;
@@ -7728,7 +7728,7 @@ igx-action-icon {
 .igx-button--flat {
   background: transparent;
   color: #e36c09;
-  border-radius: 10px; }
+  border-radius: 0px; }
   .igx-button--flat:hover {
     background: rgba(227, 108, 9, 0.05);
     color: #e36c09; }
@@ -7738,7 +7738,7 @@ igx-action-icon {
 
 .igx-button--outlined {
   border: 1px solid transparent;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.12);
   background: transparent;
   color: #e36c09;
   border-radius: 4px; }
@@ -7754,7 +7754,7 @@ igx-action-icon {
   color: black;
   background: #e36c09;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.08);
-  border-radius: 10px; }
+  border-radius: 0px; }
   .igx-button--raised:focus, .igx-button--raised:hover {
     color: black;
     background: #e88533;
@@ -7816,41 +7816,41 @@ igx-action-icon {
   height: 2.25rem;
   font-size: 1rem;
   padding: 0;
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(255, 255, 255, 0.74);
   background: transparent;
   border-radius: 20px; }
   .igx-button--icon:hover {
     transition: background 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), border 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
-    color: rgba(0, 0, 0, 0.74);
-    background: rgba(0, 0, 0, 0.04); }
+    color: rgba(255, 255, 255, 0.74);
+    background: rgba(255, 255, 255, 0.04); }
   .igx-button--icon:focus, .igx-button--icon:active {
-    color: rgba(0, 0, 0, 0.74);
-    background: rgba(0, 0, 0, 0.26); }
+    color: rgba(255, 255, 255, 0.74);
+    background: rgba(255, 255, 255, 0.26); }
 
 
 .igx-button--disabled {
   pointer-events: none;
   box-shadow: none; }
   .igx-button--flat.igx-button--disabled, .igx-button--outlined.igx-button--disabled, .igx-button--raised.igx-button--disabled, .igx-button--fab.igx-button--disabled, .igx-button--icon.igx-button--disabled {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(255, 255, 255, 0.26); }
   .igx-button--raised.igx-button--disabled, .igx-button--fab.igx-button--disabled {
-    background: rgba(0, 0, 0, 0.04); }
+    background: rgba(255, 255, 255, 0.04); }
   .igx-button--flat.igx-button--disabled, .igx-button--outlined.igx-button--disabled {
     background: transparent; }
   .igx-button--outlined.igx-button--disabled {
-    border-color: rgba(0, 0, 0, 0.12); }
+    border-color: rgba(255, 255, 255, 0.12); }
   .igx-button--disabled:focus {
     box-shadow: none; }
 
 :root {
-  --igx-card-background: #fff;
-  --igx-card-header-text-color: rgba(0, 0, 0, 0.87);
-  --igx-card-subtitle-text-color: rgba(0, 0, 0, 0.6);
-  --igx-card-content-text-color: rgba(0, 0, 0, 0.6);
-  --igx-card-actions-text-color: rgba(0, 0, 0, 0.6);
+  --igx-card-background: #222;
+  --igx-card-header-text-color: rgba(255, 255, 255, 0.87);
+  --igx-card-subtitle-text-color: rgba(255, 255, 255, 0.6);
+  --igx-card-content-text-color: rgba(255, 255, 255, 0.6);
+  --igx-card-actions-text-color: rgba(255, 255, 255, 0.6);
   --igx-card-resting-elevation: 2;
   --igx-card-hover-elevation: 8;
-  --igx-card-outline-color: rgba(0, 0, 0, 0.26);
+  --igx-card-outline-color: rgba(255, 255, 255, 0.26);
   --igx-card-border-radius: 4px;
   --igx-card-resting-shadow: none;
   --igx-card-hover-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26), 0 8px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 14px 2px rgba(0, 0, 0, 0.08); }
@@ -7861,7 +7861,7 @@ igx-action-icon {
   box-shadow: none;
   overflow: hidden;
   border-radius: 4px;
-  background: #fff;
+  background: #222;
   transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   backface-visibility: hidden; }
   .igx-card:hover {
@@ -7869,7 +7869,7 @@ igx-action-icon {
 
 .igx-card--outlined {
   box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.26); }
+  border: 1px solid rgba(255, 255, 255, 0.26); }
   .igx-card--outlined:hover {
     box-shadow: none; }
 
@@ -7883,7 +7883,7 @@ igx-action-icon {
   align-content: flex-start;
   width: 100%;
   padding: 1em;
-  color: rgba(0, 0, 0, 0.87); }
+  color: rgba(255, 255, 255, 0.87); }
   .igx-card-header:empty {
     display: none; }
 
@@ -7921,7 +7921,7 @@ igx-action-icon {
 
 .igx-card-header__subtitle {
   margin: 0;
-  color: rgba(0, 0, 0, 0.6); }
+  color: rgba(255, 255, 255, 0.6); }
 
 .igx-card__tgroup {
   margin: 0 1em; }
@@ -7930,7 +7930,7 @@ igx-action-icon {
   width: 100%;
   flex: 1 1 auto;
   padding: 1em;
-  color: rgba(0, 0, 0, 0.6); }
+  color: rgba(255, 255, 255, 0.6); }
 
 .igx-card-content__text {
   margin: 0; }
@@ -7965,7 +7965,7 @@ igx-action-icon {
   display: flex;
   align-items: center;
   order: 1;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   margin-left: auto; }
   .igx-card-actions__icons:empty {
     display: none; }
@@ -8023,7 +8023,7 @@ igx-action-icon {
   display: flex;
   flex-flow: row nowrap; }
   .igx-card-actions__igroup .igx-button--icon, .igx-card-actions__igroup--start .igx-button--icon, .igx-card-actions__igroup--end .igx-button--icon {
-    color: rgba(0, 0, 0, 0.6); }
+    color: rgba(255, 255, 255, 0.6); }
 
 .igx-card-actions__igroup--start {
   margin-right: auto; }
