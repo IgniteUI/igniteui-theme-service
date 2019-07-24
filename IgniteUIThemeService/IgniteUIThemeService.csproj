@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\ColorPalette.cs" />
     <Compile Remove="TaaSController.cs" />
   </ItemGroup>
 

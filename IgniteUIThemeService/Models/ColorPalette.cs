@@ -11,13 +11,13 @@ namespace IgniteUIThemeService.Models
         public ColorPalette(Colors colors)
         {
             this.palette = "igx-palette(" +
-                (colors.Primary != "null" ? "$primary: " + colors.Primary + "," : "") +
-                (colors.Secondary != "null" ? "$secondary: " + colors.Secondary + "," : "") +
-                (colors.Surface != "null" ? "$surface: " + colors.Surface + "," : "") +
-                (colors.Error != "null" ? "$error: " + colors.Error + "," : "") +
-                (colors.Success != "null" ? "$success: " + colors.Success + "," : "") +
-                //(colors.Warning != "null" ? "$warning: " + colors.Warning + "," : "") +
-                (colors.Info != "null" ? "$info: " + colors.Info + "," : "");
+                (colors.Primary != "null" ? "$primary: " + colors.Primary + "," : "");
+                //(colors.Secondary != "null" ? "$secondary: " + colors.Secondary + "," : "") +
+                //(colors.Surface != "null" ? "$surface: " + colors.Surface + "," : "") +
+                //(colors.Error != "null" ? "$error: " + colors.Error + "," : "") +
+                //(colors.Success != "null" ? "$success: " + colors.Success + "," : "") +
+                //(colors.Warning != "null" ? "$warn: " + colors.Warning + "," : "") +
+                //(colors.Info != "null" ? "$info: " + colors.Info + "," : "");
 
             // remove last coma from the string
             this.palette = this.palette.Remove(this.palette.Length - 1);

@@ -8,9 +8,9 @@ namespace IgniteUIThemeService.Models
     public class ThemeModel
     {
         public bool isDarkTheme { get; set; }
-        public ColorPalette colorPalette { get; set; }
+        public Colors colors { get; set; }
         public string typeface { get; set; }
-        public string roundness { get; set; }
-        public string elevation { get; set; }
+        public float roundness { get; set; }
+        public int elevation { get; set; }
     }
 }

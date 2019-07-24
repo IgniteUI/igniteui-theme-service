@@ -12,7 +12,25 @@ namespace IgniteUIThemeService.Models
         public string Surface { get; set; }
         public string Error { get; set; }
         public string Success { get; set; }
-        public string Warning { get; set; }
+        public string Warn { get; set; }
         public string Info { get; set; }
+
+        public string GetPalette()
+        {
+            string palette = "igx-palette(" +
+                (Primary != null ? "$primary: " + Primary + "," : "") +
+                (Secondary != null ? "$secondary: " + Secondary + "," : "") +
+                (Surface != null ? "$surface: " + Surface + "," : "") +
+                (Error != null ? "$error: " + Error + "," : "") +
+                (Success != null ? "$success: " + Success + "," : "") +
+                (Warn != null ? "$warn: " + Warn + "," : "") +
+                (Info != null ? "$info: " + Info + "," : "");
+
+            // remove last coma from the string
+            palette = palette.Remove(palette.Length - 1);
+            palette += ")";
+
+            return palette;
+        }
     }
 }

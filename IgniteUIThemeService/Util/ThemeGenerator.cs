@@ -30,10 +30,10 @@ namespace IgniteUIThemeService.Util
 
             fileContent = fileContent.Replace("{{RootPath}}", _contentRootPath.Replace('\\', '/'))
                 .Replace("{{theme}}", _themeModel.isDarkTheme ? "igx-dark-theme" : "igx-theme")
-                .Replace("{{palette}}", _themeModel.colorPalette.palette)
+                .Replace("{{palette}}", _themeModel.colors.GetPalette())
                 .Replace("{{typeface}}", _themeModel.typeface)
-                .Replace("{{roundness}}", _themeModel.roundness)
-                .Replace("{{elevation}}", _themeModel.elevation);
+                .Replace("{{roundness}}", _themeModel.roundness.ToString())
+                .Replace("{{elevation}}", _themeModel.elevation.ToString());
             return fileContent;
         }
 
