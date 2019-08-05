@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - IgniteUIThemeService</title>
+    <title>@ViewData["Title"] - Ignite UI ThemeService</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -20,20 +20,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">IgniteUIThemeService</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Ignite UI ThemeService</a>
             </div>
         </div>
     </nav>
@@ -42,23 +29,11 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - IgniteUIThemeService</p>
+            <p>&copy; 2019 - Ignite UI ThemeService</p>
         </footer>
     </div>
 
     <environment include="Development">
-        <!-- Ignite UI Required Combined CSS Files -->
-        <link href="http://cdn-na.infragistics.com/igniteui/2019.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
-        <link href="http://cdn-na.infragistics.com/igniteui/2019.1/latest/css/structure/infragistics.css" rel="stylesheet" />
-
-        <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-
-        <!-- Ignite UI Required Combined JavaScript Files -->
-        <script src="http://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.core.js"></script>
-        <script src="http://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.lob.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
@@ -79,54 +54,5 @@
 
     @RenderSection("Scripts", required: false)
 
-    <script type="text/javascript">
-        $(function () {
-            $("#color-picker-primary").igColorPicker();
-            $("#color-picker-primary").igColorPicker('selectColor', '#17365D');
-            $("#color-picker-secondary").igColorPicker();
-            $("#color-picker-secondary").igColorPicker('selectColor', '#E36C09');
-            $("#color-picker-surface").igColorPicker();
-            $("#color-picker-error").igColorPicker();
-            $("#color-picker-success").igColorPicker();
-            $("#color-picker-warning").igColorPicker();
-            $("#color-picker-info").igColorPicker();
-        });
-
-        function compile() {
-            var primaryColor = $("#color-picker-primary").igColorPicker("selectedColor");
-            var secondaryColor = $("#color-picker-secondary").igColorPicker("selectedColor");
-            var surfaceColor = $("#color-picker-surface").igColorPicker("selectedColor");
-            var errorColor = $("#color-picker-error").igColorPicker("selectedColor");
-            var successColor = $("#color-picker-success").igColorPicker("selectedColor");
-            var warningColor = $("#color-picker-warning").igColorPicker("selectedColor");
-            var infoColor = $("#color-picker-info").igColorPicker("selectedColor");
-            var isDarkTheme = $("#isDark").val();
-            var font = $("#font").val();
-            var roundness = $("#roundness").val();
-            var elevation = $("#elevation").val();
-            if ($("#loading").data("igLoading")) {
-                $("#loading").igLoading("show");
-            } else {
-                $("#loading").igLoading();
-            }
-            $.get('@Url.Action("taas", "api")',
-                {
-                    isDarkTheme: isDarkTheme,
-                    colors: "{ Primary: '" + primaryColor +
-                    "', Secondary: '" + secondaryColor +
-                    "', Surface: '" + surfaceColor +
-                    "', Error: '" + errorColor +
-                    "', Success: '" + successColor +
-                    "', Warn: '" + warningColor +
-                    "', Info: '" + infoColor +
-                    "'}",
-                    typeface: font,
-                    roundness: roundness,
-                    elevation: elevation
-                },
-                function () { $("#loading").igLoading("hide"); }
-            );
-        }
-    </script>
 </body>
 </html>

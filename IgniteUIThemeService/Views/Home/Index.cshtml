@@ -2,166 +2,23 @@
     ViewData["Title"] = "Home Page";
 }
 
+<h1>Theme</h1>
 <div class="row">
     <div class="col-md-12">
-        <h2>Theme</h2>
-        <h3>Choose between dark or light color</h3>
-        <select id="isDark">
-            <option value="false">Light</option>
-            <option value="true">Dark</option>
-        </select>
+        <h2>These are the parameters which can be passed to the API:</h2>
+        <ul>
+            <li>bool isDarkTheme</li>
+            <li>Colors colors</li>
+            <li>string typeface</li>
+            <li>float roundness</li>
+            <li>int elevation</li>
+        </ul>
     </div>
 </div>
-
-<div class="row">
-    <div class="col-md-3">
-        <h2>Primary color</h2>
-        <div id="color-picker-primary"></div>
-    </div>
-    <div class="col-md-3">
-        <h2>Secondary color</h2>
-        <div id="color-picker-secondary"></div>
-    </div>
-    <div class="col-md-3">
-        <h2>Surface color</h2>
-        <div id="color-picker-surface"></div>
-    </div>
-    <div class="col-md-3">
-        <h2>Error color</h2>
-        <div id="color-picker-error"></div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Success color</h2>
-        <div id="color-picker-success"></div>
-    </div>
-    <div class="col-md-4">
-        <h2>Warning color</h2>
-        <div id="color-picker-warning"></div>
-    </div>
-    <div class="col-md-4">
-        <h2>Info color</h2>
-        <div id="color-picker-info"></div>
-    </div>
-</div>
-
 <div class="row">
     <div class="col-md-12">
-        <h2>Typography</h2>
-        <h3>Font:</h3>
-        <select id="font">
-            <option value="Abadi MT Condensed Light">Abadi MT Condensed Light</option>
-            <option value="Albertus Extra Bold">Albertus Extra Bold</option>
-            <option value="Albertus Medium">Albertus Medium </option>
-            <option value="Antique Olive">Antique Olive </option>
-            <option value="Arial">Arial </option>
-            <option value="Arial Black">Arial Black </option>
-            <option value="Arial MT">Arial MT </option>
-            <option value="Arial Narrow">Arial Narrow </option>
-            <option value="Bazooka">Bazooka </option>
-            <option value="Book Antiqua">Book Antiqua </option>
-            <option value="Bookman Old Style">Bookman Old Style </option>
-            <option value="Boulder">Boulder </option>
-            <option value="Calisto MT">Calisto MT </option>
-            <option value="Calligrapher">Calligrapher </option>
-            <option value="Century Gothic">Century Gothic </option>
-            <option value="Century Schoolbook">Century Schoolbook </option>
-            <option value="Cezanne">Cezanne </option>
-            <option value="CG Omega">CG Omega </option>
-            <option value="CG Times">CG Times </option>
-            <option value="Charlesworth">Charlesworth </option>
-            <option value="Chaucer">Chaucer </option>
-            <option value="Clarendon Condensed">Clarendon Condensed </option>
-            <option value="Comic Sans MS">Comic Sans MS </option>
-            <option value="Copperplate Gothic Bold">Copperplate Gothic Bold </option>
-            <option value="Copperplate Gothic Light">Copperplate Gothic Light </option>
-            <option value="Cornerstone">Cornerstone </option>
-            <option value="Coronet">Coronet </option>
-            <option value="Courier">Courier </option>
-            <option value="Courier New">Courier New </option>
-            <option value="Cuckoo">Cuckoo </option>
-            <option value="Dauphin">Dauphin </option>
-            <option value="Denmark">Denmark </option>
-            <option value="Fransiscan">Fransiscan </option>
-            <option value="Garamond">Garamond </option>
-            <option value="Geneva">Geneva </option>
-            <option value="Haettenschweiler">Haettenschweiler </option>
-            <option value="Heather">Heather </option>
-            <option value="Helvetica">Helvetica </option>
-            <option value="Herald">Herald </option>
-            <option value="Impact">Impact </option>
-            <option value="Jester">Jester </option>
-            <option value="Letter Gothic">Letter Gothic </option>
-            <option value="Lithograph">Lithograph </option>
-            <option value="Lithograph Light">Lithograph Light </option>
-            <option value="Long Island">Long Island </option>
-            <option value="Lucida Console">Lucida Console </option>
-            <option value="Lucida Handwriting">Lucida Handwriting </option>
-            <option value="Lucida Sans">Lucida Sans </option>
-            <option value="Lucida Sans Unicode">Lucida Sans Unicode </option>
-            <option value="Marigold">Marigold </option>
-            <option value="Market">Market </option>
-            <option value="Matisse ITC">Matisse ITC </option>
-            <option value="MS LineDraw">MS LineDraw </option>
-            <option value="News GothicMT">News GothicMT </option>
-            <option value="OCR A Extended">OCR A Extended </option>
-            <option value="Old Century">Old Century </option>
-            <option value="Pegasus">Pegasus </option>
-            <option value="Pickwick">Pickwick </option>
-            <option value="Poster">Poster </option>
-            <option value="Pythagoras">Pythagoras </option>
-            <option value="Sceptre">Sceptre </option>
-            <option value="Sherwood">Sherwood </option>
-            <option value="Signboard">Signboard </option>
-            <option value="Socket">Socket </option>
-            <option value="Steamer">Steamer </option>
-            <option value="Storybook">Storybook </option>
-            <option value="Subway">Subway </option>
-            <option value="Tahoma">Tahoma </option>
-            <option value="Technical">Technical </option>
-            <option value="Teletype">Teletype </option>
-            <option value="Tempus Sans ITC">Tempus Sans ITC </option>
-            <option value="Times">Times </option>
-            <option value="Times New Roman">Times New Roman </option>
-            <option value="Times New Roman PS">Times New Roman PS </option>
-            <option value="Trebuchet MS">Trebuchet MS </option>
-            <option value="Tristan">Tristan </option>
-            <option value="Tubular">Tubular </option>
-            <option value="Unicorn">Unicorn </option>
-            <option value="Univers">Univers </option>
-        </select>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <h2>Roundness</h2>
-        <h3>Applied only to buttons at this point</h3>
-        <select id="roundness">
-            <option value="0">0</option>
-            <option value="0.5">0.5</option>
-            <option value="1">1</option>
-        </select>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <h2>Elevation</h2>
-        <h3>Applied only to card at this point</h3>
-        <select id="elevation">
-            <option value="0">Flat</option>
-            <option value="24">Raised</option>
-        </select>
-    </div>
-</div>
-
-<br />
-<div class="row">
-    <div class="col-md-12">
-        <button onclick="compile()">Compile</button>
+        Based on the parameters the API generates css theme. An example of it can be reviewed here:
+        http://localhost:2602/api/taas?isDarkTheme=false&colors.Primary=%23231736&colors.Secondary=%23231736
     </div>
 </div>
 
