@@ -27,8 +27,11 @@ namespace IgniteUIThemeService.Models
                 (Info != null ? "$info: " + Info + "," : "");
 
             // remove last coma from the string
-            palette = palette.Remove(palette.Length - 1);
+            palette = palette.Last() == ',' ? palette.Remove(palette.Length - 1) : palette;
             palette += ")";
+
+            // use the default palette if no colors are specified
+            palette = palette == "igx-palette()" ? "$default-palette" : palette;
 
             return palette;
         }
