@@ -26,4 +26,7 @@ The theming service API is available at `~/api/taas` and it takes the following 
 | elevation   | int    | global elevation factor for all of the components, the values are integer - from 0 to 24 |
 
 ## Example
-Here's an example of the requiest with all of the parameters specified `http://localhost:2602/api/taas?isDarkTheme=false&colors.Primary=%23231736&colors.Secondary=%23f542bf&colors.Surface=%2342f5e3&colors.Error=%23f54242&colors.Success=%23f54242&colors.Warn=%237a0004&colors.Info=%235a4db8&typeface=Roboto&roundness=0.5&elevation=0`
+Here's an example of the requiest with all of the parameters specified:
+```
+http://localhost:2602/api/taas?isDarkTheme=false&colors.Primary=%23231736&colors.Secondary=%23f542bf&colors.Surface=%2342f5e3&colors.Error=%23f54242&colors.Success=%23f54242&colors.Warn=%237a0004&colors.Info=%235a4db8&typeface=Roboto&roundness=0.5&elevation=0
+```
