@@ -7,18 +7,22 @@
     <div class="col-md-12">
         <h2>These are the parameters which can be passed to the API:</h2>
         <ul>
-            <li>bool isDarkTheme</li>
-            <li>Colors colors</li>
-            <li>string typeface</li>
-            <li>float roundness</li>
-            <li>int elevation</li>
+            <li>bool isDarkTheme - whether the preset theme will be light or dark</li>
+            <li>Colors colors - there are seven colors which can be specified in order to build a custom palette for your custom theme - Primary, Secondary, Surface, Error, Success, Warn, Info</li>
+            <li>string typeface - the name of the font</li>
+            <li>float roundness - global roundness factor for all of the components, the values it takes are from 0 to 1</li>
+            <li>int elevation - global elevation factor for all of the components, the values are integer - from 0 to 24</li>
         </ul>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-        Based on the parameters the API generates css theme. An example of it can be reviewed here:
-        http://localhost:2602/api/taas?isDarkTheme=false&colors.Primary=%23231736&colors.Secondary=%23231736
+        <p>The theming service API is available @Html.ActionLink("here", "taas", "api")</p>
+        <p>You can also review a request with all of the parameters specified:
+            <a href="http://localhost:2602/api/taas?isDarkTheme=false&colors.Primary=%23231736&colors.Secondary=%23f542bf&colors.Surface=%2342f5e3&colors.Error=%23f54242&colors.Success=%23f54242&colors.Warn=%237a0004&colors.Info=%235a4db8&typeface=Roboto&roundness=0.5&elevation=0">
+                here
+            </a>
+        </p>
     </div>
 </div>
 
