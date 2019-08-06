@@ -16,6 +16,7 @@ In order to run the project you'll need:
 
 ## Parameters
 The theming service API is available at `~/api/taas` and it takes the following parameters:
+
 | parameter   | type   | description |
 | --------:   | ----   | ----------- |
 | isDarkTheme | bool   | whether the preset theme will be light or dark |
